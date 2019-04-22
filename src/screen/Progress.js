@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {View,Text, Button, ProgressBarAndroid} from "react-native";
 import colors from "../componenet/Color"
 
-export default class Texts extends Component{
+export default class Progess extends Component{
     static navigationOptions = ({ navigation }) => ({
         headerTitle: "ProgressBarAndroid",
         headerStyle: {

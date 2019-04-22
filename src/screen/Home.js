@@ -16,10 +16,7 @@ export default class Home extends Component{
         return(
             <ImageBackground
                 style={{flex:1, alignSelf:"center", backgroundColor:colors.primary}}
-                resizeMode="cover"
-                //blurRadius={2}
-                //source={require('../image/background.png')}
-                >
+                resizeMode="cover">
         <StatusBar
             barStyle="light-content"
             backgroundColor={colors.primary}
@@ -32,12 +29,7 @@ export default class Home extends Component{
                     React Native lets you build mobile apps using only JavaScript. 
                     It uses the same design as React, letting you compose a rich mobile 
                     UI using declarative components.</Text>
-                    {/* <Text style={{ margin:20, textAlign:"center"}}>
-                    The apps you are building with React Native aren't mobile web apps
-                    because React Native uses the same fundamental UI building blocks as 
-                    regular iOS and Android apps. Instead of using Swift, Kotlin or Java, 
-                    you are putting those building blocks together using JavaScript and React.</Text> */}
-
+                   
                 <TouchableOpacity 
                   onPress={()=>this.props.navigation.openDrawer()}                  
                   style={{backgroundColor:colors.white, padding:5, margin:30,justifyContent:"flex-end"}}>

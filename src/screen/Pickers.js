@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {View, Text, Picker} from "react-native";
 import colors from "../componenet/Color";
 
-
 export default class Pickers extends Component{
     static navigationOptions = ({ navigation }) => ({
         headerTitle: "Picker",
@@ -13,8 +12,7 @@ export default class Pickers extends Component{
         headerTintColor: "#fff"
       });
 
-      state = {user: ''}
-      
+      state = {user: ''}      
       updateUser = (user) => {
         this.setState({ user: user })
       };

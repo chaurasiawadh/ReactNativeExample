@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Text, View, StyleSheet } from 'react-native';
 import colors from "../componenet/Color"
-export default class App extends React.Component {
+export default class Switchs extends React.Component {
 
   static navigationOptions = ({navigation}) => ({
     headerTitle:"Switch",

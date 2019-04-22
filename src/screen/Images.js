@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {View,Text, ScrollView,Image, TouchableOpacity} from "react-native";
 import colors from "../componenet/Color"
 
-export default class Texts extends Component{
+export default class Images extends Component{
     static navigationOptions = ({ navigation }) => ({
         headerTitle: "Image View",
         headerStyle: {

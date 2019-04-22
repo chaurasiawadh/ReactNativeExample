@@ -4,7 +4,6 @@ import {Easing,Animated} from "react-native";
 import SlideMenu from "../slideMenu/SlideMenu"
 import Home from "./Home";
 import Profile from "./Profile";
-import Details from "./Details";
 import Texts from "./Texts";
 import Buttons from "./Buttons";
 import Scroll from "./Scroll";
@@ -46,7 +45,6 @@ const AppNavigator = createStackNavigator(
   {
     Home: { screen: Home },
     Profile: { screen: Profile},
-    Details: { screen: Details},
     Texts: { screen: Texts},
     Buttons: { screen: Buttons},
     Scroll: { screen: Scroll},

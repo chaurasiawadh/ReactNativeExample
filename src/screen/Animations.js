@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {View,StyleSheet, Animated, TouchableOpacity, Text} from "react-native";
 import colors from "../componenet/Color"
 
-export default class Texts extends Component{
+export default class Animations extends Component{
     static navigationOptions = ({ navigation }) => ({
         headerTitle: "Animation",
         headerStyle: {

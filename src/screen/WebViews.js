@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {WebView} from "react-native";
 import colors from "../componenet/Color";
 
-
 export default class WebViews extends Component{
     static navigationOptions = ({ navigation }) => ({
         headerTitle: "WebView",

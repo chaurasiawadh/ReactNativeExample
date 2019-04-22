@@ -16,7 +16,7 @@ export default class App extends Component<Props> {
       <View style={{justifyContent:"center", flex:1}}>
         <View style={styles.card}>
         <Text style={styles.txt}>User Name</Text>
-        <Text style={styles.txt}>9936169852</Text>
+        <Text style={styles.txt}>Mobile No..</Text>
         <TouchableOpacity style={styles.btn}>
           <Button 
           onPress={() => this.props.navigation.navigate("Home")}

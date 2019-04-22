@@ -4,7 +4,7 @@ import Slideshow from "react-native-image-slider-show";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import colors from "../componenet/Color";
 
-export default class App extends Component<Props> {
+export default class Buttons extends Component<Props> {
   static navigationOptions = ({ navigation }) => ({
     headerTitle: "Button",
     headerStyle: {
@@ -41,8 +41,6 @@ export default class App extends Component<Props> {
           style={{marginTop:15, flexDirection:"row", backgroundColor:"#43a5f5", justifyContent:"center",padding:8}}>
           <Text style={{textAlign:"center", color:"white", fontWeight:"bold", fontSize:16}}>Call</Text>
           <Icon name="phone"  size={20} style={{alignSelf:"center", marginLeft:10, color:"black"}} />
-          {/* <Button title="Call"
-            onPress={() =>ToastAndroid.show('Calling', ToastAndroid.LONG)}/> */}
         </TouchableOpacity>
         <TouchableOpacity style={{ borderColor: '#2196f3', borderWidth:0.3, marginTop:15}}>
           <Button title="Pay" color="#2196f3"
@@ -71,6 +69,3 @@ export default class App extends Component<Props> {
    );
   }
 }
-const styles = StyleSheet.create({
-
-});

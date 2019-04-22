@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {View, Text, Share, Button, TouchableOpacity, Image} from "react-native";
+import {View,Share, Button, TouchableOpacity, Image} from "react-native";
 import colors from "../componenet/Color";
 
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View,SectionList, Alert } from "react-native";
 import colors from "../componenet/Color";
-export default class HomeActivity extends Component {
+export default class SectonLists extends Component {
     static navigationOptions=({navigation}) => ({
         headerTitle:"SectionList",
         headerStyle: {
@@ -32,7 +32,6 @@ GetSectionListItem=(item)=>{
     );
   }
 }
-
 const styles = StyleSheet.create({
     container: {
       flex: 1,
