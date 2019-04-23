@@ -17,6 +17,9 @@ import WebViews  from "./WebViews";
 import StatusBars from "./StatusBars"
 import Animations from "./Animations"
 
+//git Page
+import Gits from "./git"
+
 const transitionConfig = () => {
   return {
     transitionSpec: {
@@ -56,7 +59,9 @@ const AppNavigator = createStackNavigator(
     Shares :{ screen : Shares},
     WebViews: { screen: WebViews},
     StatusBars: { screen: StatusBars},
-    Animations:{ screen: Animations}
+    Animations:{ screen: Animations},
+
+    Git: { screen: Gits},
   },
   {
     transitionConfig

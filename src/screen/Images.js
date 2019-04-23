@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {View,Text, ScrollView,Image, TouchableOpacity} from "react-native";
+import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from "../componenet/Color"
 
 export default class Images extends Component{
@@ -9,7 +10,18 @@ export default class Images extends Component{
           backgroundColor: colors.primary,
           elevation: 0
         },
-        headerTintColor: "#fff"
+        headerTintColor: "#fff",
+        headerRight: (
+            <TouchableOpacity>
+            <Icon 
+              name="code" 
+              size={25} 
+              style={{marginRight:20}}
+              onPress={()=>navigation.navigate("Git", 
+                    {url:"https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/screen/Images.js"})}
+              />
+            </TouchableOpacity>
+          ),
       });
     render(){
         return(
@@ -32,11 +44,7 @@ export default class Images extends Component{
                         style={{height:200,width:200}}
                         source={require('../image/girl1.jpg')} />
                 </TouchableOpacity>
-                <TouchableOpacity style={{alignSelf:"center", marginLeft:10}}>
-                    <Image
-                        style={{height:150,width:150}}
-                        source={require('../image/girl1.jpg')} />
-                </TouchableOpacity>
+                
                 <TouchableOpacity style={{alignSelf:"center", marginLeft:10}}>
                     <Image
                         style={{height:100,width:100}}
@@ -47,21 +55,6 @@ export default class Images extends Component{
                         style={{height:50,width:50}}
                         source={require('../image/girl1.jpg')} />
                 </TouchableOpacity>
-                <TouchableOpacity style={{alignSelf:"center", marginLeft:10}}>
-                    <Image
-                        style={{height:100,width:100}}
-                        source={require('../image/girl1.jpg')} />
-                </TouchableOpacity>
-                <TouchableOpacity style={{alignSelf:"center", marginLeft:10}}>
-                    <Image
-                        style={{height:150,width:150}}
-                        source={require('../image/girl1.jpg')} />
-                </TouchableOpacity>
-                <TouchableOpacity style={{alignSelf:"center", marginLeft:10}}>
-                    <Image
-                        style={{height:200,width:200}}
-                        source={require('../image/girl1.jpg')} />
-                </TouchableOpacity>
                 </ScrollView>
                 </View>
                 <View style={{marginTop:10}}>
@@ -70,74 +63,19 @@ export default class Images extends Component{
                             <Image style={{height:200, width:200, borderRadius:30/2}}
                             source={require('../image/girl2.jpg')} />
                         </View>
-                        <View>
-                            <Image style={{height:200, width:200, borderRadius:60/2, marginLeft:10}}
-                            source={require('../image/girl2.jpg')} />
-                        </View>
-                        <View>
-                            <Image style={{height:200, width:200, borderRadius:90/2, marginLeft:10}}
-                            source={require('../image/girl2.jpg')} />
-                        </View>
-                        <View>
-                            <Image style={{height:200, width:200, borderRadius:120/2, marginLeft:10}}
-                            source={require('../image/girl2.jpg')} />
-                        </View>
-                        <View>
-                            <Image style={{height:200, width:200, borderRadius:160/2, marginLeft:10}}
-                            source={require('../image/girl2.jpg')} />
-                        </View>
                         <View style={{alignSelf:"center"}}>
                             <Image style={{height:180, width:180, borderRadius:200/2, marginLeft:10}}
                             source={require('../image/girl2.jpg')} />
                         </View>
                         <View style={{alignSelf:"center"}}>
                             <Image style={{height:140, width:140, borderRadius:300/2, marginLeft:10}}
-                            source={require('../image/girl2.jpg')} />
-                        </View>
-                        <View style={{alignSelf:"center"}}>
-                            <Image style={{height:100, width:100, borderRadius:500/2, marginLeft:10}}
-                            source={require('../image/girl2.jpg')} />
-                        </View>
-                        <View style={{alignSelf:"center"}}>
-                            <Image style={{height:80, width:80, borderRadius:500/2, marginLeft:10}}
                             source={require('../image/girl2.jpg')} />
                         </View>
                         <View style={{alignSelf:"center"}}>
                             <Image style={{height:40, width:40, borderRadius:500/2, marginLeft:10}}
                             source={require('../image/girl2.jpg')} />
                         </View>
-                        <View style={{alignSelf:"center"}}>
-                            <Image style={{height:80, width:80, borderRadius:500/2, marginLeft:10}}
-                            source={require('../image/girl2.jpg')} />
-                        </View>
-                        <View style={{alignSelf:"center"}}>
-                            <Image style={{height:100, width:100, borderRadius:500/2, marginLeft:10}}
-                            source={require('../image/girl2.jpg')} />
-                        </View>
-                        <View style={{alignSelf:"center"}}>
-                            <Image style={{height:140, width:140, borderRadius:300/2, marginLeft:10}}
-                            source={require('../image/girl2.jpg')} />
-                        </View>
-                        <View style={{alignSelf:"center"}}>
-                            <Image style={{height:180, width:180, borderRadius:200/2, marginLeft:10}}
-                            source={require('../image/girl2.jpg')} />
-                        </View>
-                        <View>
-                            <Image style={{height:200, width:200, borderRadius:160/2, marginLeft:10}}
-                            source={require('../image/girl2.jpg')} />
-                        </View>
-                        <View>
-                            <Image style={{height:200, width:200, borderRadius:120/2, marginLeft:10}}
-                            source={require('../image/girl2.jpg')} />
-                        </View>
-                        <View>
-                            <Image style={{height:200, width:200, borderRadius:90/2, marginLeft:10}}
-                            source={require('../image/girl2.jpg')} />
-                        </View>
-                        <View>
-                            <Image style={{height:200, width:200, borderRadius:30/2, marginLeft:10}}
-                            source={require('../image/girl2.jpg')} />
-                        </View>
+                       
                     </ScrollView>
                 </View>
                 </ScrollView>

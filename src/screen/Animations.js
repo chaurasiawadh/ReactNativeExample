@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {View,StyleSheet, Animated, TouchableOpacity, Text} from "react-native";
+import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from "../componenet/Color"
 
 export default class Animations extends Component{
@@ -10,7 +11,18 @@ export default class Animations extends Component{
           elevation: 0
 
         },
-        headerTintColor: "#fff"
+        headerTintColor: "#fff",
+        headerRight: (
+         <TouchableOpacity>
+         <Icon 
+           name="code" 
+           size={25} 
+           style={{marginRight:20}}
+           onPress={()=>navigation.navigate("Git", 
+                 {url:"https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/screen/Animations.js"})}
+           />
+         </TouchableOpacity>
+       ),
       });
 
       componentWillMount = () => {

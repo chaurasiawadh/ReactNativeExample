@@ -1,5 +1,6 @@
 import React from 'react';
-import { Switch, Text, View, StyleSheet } from 'react-native';
+import { Switch, Text, View, StyleSheet,TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from "../componenet/Color"
 export default class Switchs extends React.Component {
 
@@ -9,7 +10,18 @@ export default class Switchs extends React.Component {
       backgroundColor:colors.primary,
       elevation:0
     },
-    headerTintColor:"#fff"
+    headerTintColor:"#fff",
+    headerRight: (
+      <TouchableOpacity>
+      <Icon 
+        name="code" 
+        size={25} 
+        style={{marginRight:20}}
+        onPress={()=>navigation.navigate("Git", 
+              {url:"https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/screen/Switch.js"})}
+        />
+      </TouchableOpacity>
+    ),
   })
   state = { switchValue: false,
     switchCheck: false,

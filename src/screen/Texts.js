@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {View,Text, ScrollView} from "react-native";
+import {View,Text,TouchableOpacity} from "react-native";
+import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from "../componenet/Color"
 
 export default class Texts extends Component{
@@ -10,7 +11,19 @@ export default class Texts extends Component{
           elevation: 0
 
         },
-        headerTintColor: "#fff"
+        
+        headerTintColor: "#fff",
+        headerRight: (
+          <TouchableOpacity>
+          <Icon 
+            name="code" 
+            size={25} 
+            style={{marginRight:20}}
+            onPress={()=>navigation.navigate("Git", 
+                  {url:"https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/screen/Texts.js"})}
+            />
+          </TouchableOpacity>
+        ),
       });
     render(){
         return(
@@ -18,7 +31,6 @@ export default class Texts extends Component{
                 <Text>Default Text</Text>
                 <Text style={{fontStyle:"italic"}}>italic Text</Text>
                 <Text style={{fontWeight:"bold"}}>Bold Text</Text>
-                <Text style={{fontFamily: 'MMA Champ'}}>Font family kaam ahi kr raha</Text>
                 <Text style={{fontSize:10}}>Small Text</Text>
                 <Text style={{fontSize:25,}}>Large Text</Text>
                 <Text style={{color:"red"}}>Text Color</Text>

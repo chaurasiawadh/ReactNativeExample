@@ -11,7 +11,18 @@ export default class Buttons extends Component<Props> {
       backgroundColor: colors.primary,
       elevation: 0
     },
-    headerTintColor: "#fff"
+    headerTintColor: "#fff",
+    headerRight: (
+      <TouchableOpacity>
+      <Icon 
+        name="code" 
+        size={25} 
+        style={{marginRight:20}}
+        onPress={()=>navigation.navigate("Git", 
+              {url:"https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/screen/Buttons.js"})}
+        />
+      </TouchableOpacity>
+    ),
   });
 
   

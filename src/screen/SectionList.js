@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View,SectionList, Alert } from "react-native";
+import { StyleSheet, Text, View,SectionList, Alert,TouchableOpacity } from "react-native";
+import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from "../componenet/Color";
 export default class SectonLists extends Component {
     static navigationOptions=({navigation}) => ({
@@ -8,7 +9,18 @@ export default class SectonLists extends Component {
             backgroundColor:colors.primary,
             elevation:0
         },
-        headerTintColor:"#fff"
+        headerTintColor:"#fff",
+        headerRight: (
+          <TouchableOpacity>
+          <Icon 
+            name="code" 
+            size={25} 
+            style={{marginRight:20}}
+            onPress={()=>navigation.navigate("Git", 
+                  {url:"https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/screen/SectionList.js"})}
+            />
+          </TouchableOpacity>
+        ),
     })
 GetSectionListItem=(item)=>{
       Alert.alert(item)

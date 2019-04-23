@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {View,Share, Button, TouchableOpacity, Image} from "react-native";
+import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from "../componenet/Color";
 
 
@@ -10,14 +11,25 @@ export default class Shares extends Component{
           backgroundColor: colors.primary,
           elevation: 0
         },
-        headerTintColor: "#fff"
+        headerTintColor: "#fff",
+        headerRight: (
+          <TouchableOpacity>
+          <Icon 
+            name="code" 
+            size={25} 
+            style={{marginRight:20}}
+            onPress={()=>navigation.navigate("Git", 
+                  {url:"https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/screen/Share.js"})}
+            />
+          </TouchableOpacity>
+        ),
       });
 
     onShare = async () => {
         try {
           const result = await Share.share({
             message:
-              'React Native Example App Download to the play store.. Click on this Link https://www.google.com',
+              'React Native Example App Download to the play store.. Click on this Link https://play.google.com/store/apps/details?id=com.ravi',
           });
     
           if (result.action === Share.sharedAction) {
@@ -37,7 +49,7 @@ export default class Shares extends Component{
         return (
             <View>
              <TouchableOpacity style={{justifyContent:"center", margin:30}}> 
-                 <Button title="Share" onPress={this.onShare} color={colors.primary} />
+                 <Button title="Share " onPress={this.onShare} color={colors.primary} />
             </TouchableOpacity>
             <TouchableOpacity onPress={this.onShare}>
                 <Image 
