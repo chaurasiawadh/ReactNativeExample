@@ -5,7 +5,7 @@ import colors from "../componenet/Color";
 
 export default class VectorIcons extends Component{
     static navigationOptions = ({ navigation }) => ({
-        headerTitle: "VBector Icons",
+        headerTitle: "Vector Icons",
         headerStyle: {
           backgroundColor: colors.primary,
           elevation: 0
