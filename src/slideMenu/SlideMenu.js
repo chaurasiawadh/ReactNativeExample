@@ -90,6 +90,12 @@ export default class slideMenu extends Component{
                 <Icon name="book" size={20} />
                  <Text style={styles.txt}>Share</Text>
               </TouchableOpacity>
+              <TouchableOpacity
+                onPress={()=> this.props.navigation.navigate("VectorIcon")}
+                style={styles.subCard}>
+                <Icon name="book" size={20} />
+                 <Text style={styles.txt}>Vector Icons</Text>
+              </TouchableOpacity>
               
             </View>
          );

@@ -29,7 +29,7 @@ export default class Shares extends Component{
         try {
           const result = await Share.share({
             message:
-              'React Native Example App Download to the play store.. Click on this Link https://play.google.com/store/apps/details?id=com.ravi',
+              'React Native Example Android Application. Now Available on Play Store. Download now http://bit.ly/2URxDJQ',
           });
     
           if (result.action === Share.sharedAction) {

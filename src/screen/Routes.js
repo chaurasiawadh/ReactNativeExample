@@ -16,6 +16,7 @@ import Shares from "./Share";
 import WebViews  from "./WebViews";
 import StatusBars from "./StatusBars"
 import Animations from "./Animations"
+import VectorIcon from "./VectorIcon"
 
 //git Page
 import Gits from "./git"
@@ -60,6 +61,7 @@ const AppNavigator = createStackNavigator(
     WebViews: { screen: WebViews},
     StatusBars: { screen: StatusBars},
     Animations:{ screen: Animations},
+    VectorIcon: { screen : VectorIcon},
 
     Git: { screen: Gits},
   },
