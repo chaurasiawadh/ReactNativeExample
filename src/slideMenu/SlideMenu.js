@@ -10,8 +10,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from '../component/Color';
 
 let list = [
-  {name: 'Text', click: 'Texts', icons: 'book'},
-  {name: 'Button', click: 'Buttons', icons: 'book'},
+  // {name: 'Text', click: 'Texts', icons: 'book'},
+  // {name: 'Button', click: 'Buttons', icons: 'book'},
   {name: 'Scroll View', click: 'Scroll', icons: 'book'},
   {name: 'Image', click: 'Images', icons: 'book'},
   {name: 'Animation', click: 'Animations', icons: 'book'},
