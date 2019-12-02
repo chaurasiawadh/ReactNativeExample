@@ -7,7 +7,7 @@ import {
   ScrollView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from '../componenet/Color';
+import colors from '../component/Color';
 
 let list = [
   {name: 'Text', click: 'Texts', icons: 'book'},

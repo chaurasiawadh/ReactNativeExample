@@ -6,7 +6,7 @@ import {
   Button,
   TouchableOpacity,
 } from 'react-native';
-import colors from '../componenet/Color';
+import colors from '../component/Color';
 
 export default class Profile extends Component {
   static navigationOptions = ({navigation}) => ({

@@ -9,7 +9,7 @@ import {
   Alert,
   TouchableOpacity
 } from "react-native";
-import colors from "../componenet/Color";
+import colors from "../component/Color";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 class FlatLists extends Component {

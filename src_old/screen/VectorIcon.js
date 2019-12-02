@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {TouchableOpacity, ActivityIndicator, View, Text} from 'react-native';
 // import {WebView} from 'react-native-webview';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from '../componenet/Color';
+import colors from '../component/Color';
 
 export default class VectorIcons extends Component {
   static navigationOptions = ({navigation}) => ({

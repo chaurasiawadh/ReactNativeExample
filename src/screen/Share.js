@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Share, Button, TouchableOpacity, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from '../componenet/Color';
+import colors from '../component/Color';
 
 export default class Shares extends Component {
   static navigationOptions = ({navigation}) => ({

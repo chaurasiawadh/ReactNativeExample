@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from '../componenet/Color';
+import colors from '../component/Color';
 
 export default class Progess extends Component {
   static navigationOptions = ({navigation}) => ({

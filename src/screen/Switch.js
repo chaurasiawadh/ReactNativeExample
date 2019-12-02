@@ -1,7 +1,7 @@
 import React from 'react';
 import {Switch, Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from '../componenet/Color';
+import colors from '../component/Color';
 export default class Switchs extends React.Component {
   static navigationOptions = ({navigation}) => ({
     headerTitle: 'Switch',

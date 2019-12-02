@@ -19,13 +19,13 @@ import Animations from './Animations';
 import VectorIcon from './VectorIcon';
 
 //Animation
-import shadow from '../componenet/Animation/shadow';
-import zoom from '../componenet/Animation/zoom';
-import fade from '../componenet/Animation/fade';
-import loader from '../componenet/Animation/loader';
+import shadow from '../component/Animation/shadow';
+import zoom from '../component/Animation/zoom';
+import fade from '../component/Animation/fade';
+import loader from '../component/Animation/loader';
 
 //Slide List left-right
-import swipe from '../componenet/swipe/swipe';
+import swipe from '../component/swipe/swipe';
 
 //git Page
 import Gits from './git';

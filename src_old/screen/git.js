@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 // import {WebView} from 'react-native-webview';
 import {View, Text} from "react-native"
-import colors from '../componenet/Color';
+import colors from '../component/Color';
 
 export default class Gits extends Component {
   static navigationOptions = ({navigation}) => ({

@@ -1,7 +1,7 @@
 import {createStackNavigator, createDrawerNavigator} from 'react-navigation';
 import React, {Component} from 'react';
 import {SafeAreaView, Text, Button, StatusBar} from 'react-native';
-import colors from '../componenet/Color';
+import colors from '../component/Color';
 
 class Screen1 extends React.Component {
   render() {
