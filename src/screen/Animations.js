@@ -1,62 +1,72 @@
-import React, { Component } from 'react';
-import {View,StyleSheet, Animated, TouchableOpacity, Text} from "react-native";
+import React, {Component} from 'react';
+import {View, StyleSheet, Animated, TouchableOpacity, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from "../componenet/Color"
+import colors from '../componenet/Color';
 
-export default class Animations extends Component{
-    static navigationOptions = ({ navigation }) => ({
-        headerTitle: "Animation",
-        headerStyle: {
-          backgroundColor: colors.primary,
-          elevation: 0
+let list = [
+  {name: 'Multiple', click: 'zoom'},
+  {name: 'Fade', click: 'fade'},
+  {name: 'Shadow', click: 'shadow'},
+  {name: 'Loader', click: 'loader'},
+];
 
-        },
-        headerTintColor: "#fff",
-        headerRight: (
-         <TouchableOpacity>
-         <Icon 
-           name="code" 
-           size={25} 
-           style={{marginRight:20}}
-           onPress={()=>navigation.navigate("Git", 
-                 {url:"https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/screen/Animations.js"})}
-           />
-         </TouchableOpacity>
-       ),
-      });
-
-      componentWillMount = () => {
-      this.animatedWidth = new Animated.Value(100)
-      this.animatedHeight = new Animated.Value(100)
-     }
-     animatedBox = () => {
-      Animated.timing(this.animatedWidth, {
-         toValue: 370,
-         duration: 5000
-      }).start()
-      Animated.timing(this.animatedHeight, {
-         toValue: 650,
-         duration: 5000
-      }).start()
-    }
-
-    render(){
-      const animatedStyle = { width: this.animatedWidth, height: this.animatedHeight }
-   return (
-      <View style={{flex:1,justifyContent:"center",alignSelf:"center"}}>
-      <Text style={{fontSize:22, fontWeight:"bold", color:"#000",alignSelf:"center"}}>Click this Box</Text>
-      <TouchableOpacity style = {styles.container} onPress = {this.animatedBox}>
-         <Animated.View style = {[styles.box, animatedStyle]}/>
+export default class Animations extends Component {
+  static navigationOptions = ({navigation}) => ({
+    headerTitle: 'Animation',
+    headerStyle: {
+      backgroundColor: colors.primary,
+      elevation: 0,
+    },
+    headerTintColor: '#fff',
+    headerRight: (
+      <TouchableOpacity>
+        <Icon
+          name="code"
+          size={25}
+          color="white"
+          style={{marginRight: 20}}
+          onPress={() =>
+            navigation.navigate('Git', {
+              url:
+                'https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/screen/Animations.js',
+            })
+          }
+        />
       </TouchableOpacity>
+    ),
+  });
+
+  render() {
+    return (
+      <View style={styles.container}>
+        {list.map(item => (
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate(item.click)}
+            style={styles.box}>
+            <Text style={styles.name}>{item.name}</Text>
+          </TouchableOpacity>
+        ))}
       </View>
-      )
-    }
+    );
+  }
 }
 const styles = StyleSheet.create({
-   box: {
-      backgroundColor: 'green',
-      width: 100,
-      height: 100,
-      borderRadius:30
-   }
-})
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignSelf: 'center',
+  },
+  box: {
+    padding: 20,
+    paddingLeft: 60,
+    paddingRight: 60,
+    borderRadius: 10,
+    alignItems: 'center',
+    backgroundColor: colors.primary,
+    marginBottom: 20,
+  },
+  name: {
+    color: colors.white,
+    fontSize: 28,
+  },
+});

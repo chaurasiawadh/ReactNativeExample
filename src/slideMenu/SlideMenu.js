@@ -1,121 +1,77 @@
-import React, { Component } from 'react';
-import { View ,Text, StyleSheet, TouchableOpacity} from "react-native";
+import React, {Component} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from "../componenet/Color";
+import colors from '../componenet/Color';
 
-export default class slideMenu extends Component{
-    render(){
-        return (
-            <View>
-              <TouchableOpacity
-              onPress={() => this.props.navigation.navigate("Home")}
-              style={styles.card}>
-              <Text style={{ color: colors.white, fontSize: 22 }}>React Native</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-              onPress={() => this.props.navigation.navigate("Home")}
+let list = [
+  {name: 'Text', click: 'Texts', icons: 'book'},
+  {name: 'Button', click: 'Buttons', icons: 'book'},
+  {name: 'Scroll View', click: 'Scroll', icons: 'book'},
+  {name: 'Image', click: 'Images', icons: 'book'},
+  {name: 'Animation', click: 'Animations', icons: 'book'},
+  {name: 'Flatlist', click: 'flatList', icons: 'book'},
+  {name: 'Swipe List', click: 'swipe', icons: 'book'},
+  {name: 'Picker', click: 'Pickers', icons: 'book'},
+  {name: 'StatusBar', click: 'StatusBars', icons: 'book'},
+  {name: 'Storage', click: 'storage', icons: 'book'},
+  {name: 'Progress Bar', click: 'Progress', icons: 'book'},
+  {name: 'SectionList', click: 'SectionList', icons: 'book'},
+  {name: 'Switch', click: 'Switch', icons: 'book'},
+  {name: 'WebView', click: 'WebViews', icons: 'book'},
+  {name: 'Share', click: 'Shares', icons: 'book'},
+  // {name: 'Vector Icon', click: 'VectorIcon', icons: 'book'},
+];
+
+export default class slideMenu extends Component {
+  render() {
+    return (
+      <View>
+        <ScrollView>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Home')}
+            style={styles.card}>
+            <Text style={{color: colors.white, fontSize: 22}}>
+              React Native
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Home')}
+            style={styles.subCard}>
+            <Icon name="home" size={20} />
+            <Text style={styles.txt}>Home</Text>
+          </TouchableOpacity>
+          {list.map(item => (
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate(item.click)}
               style={styles.subCard}>
-                <Icon name="home" size={20} />
-                <Text style={styles.txt}>Home</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-              onPress={()=> this.props.navigation.navigate("Texts")}
-              style={styles.subCard}>
-                <Icon name="book" size={20} />
-                <Text style={styles.txt}>Text</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-              onPress={()=> this.props.navigation.navigate("Buttons")}
-              style={styles.subCard}>
-                <Icon name="book" size={20} />
-                <Text style={styles.txt}>Button</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={()=>this.props.navigation.navigate("Scroll")}
-                style={styles.subCard}>
-                <Icon name="book" size={20} />
-                <Text style={styles.txt}>Scroll View</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={()=>this.props.navigation.navigate("Images")}
-                style={styles.subCard}>
-                <Icon name="book" size={20} />
-                <Text style={styles.txt}>Image</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={()=> this.props.navigation.navigate("Animations")} 
-                style={styles.subCard}>
-                <Icon name="book" size={20} />
-                <Text style={styles.txt}>Animation</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={()=>this.props.navigation.navigate("Pickers")}
-                style={styles.subCard}>
-                <Icon name="book" size={20} />
-                <Text style={styles.txt}>Picker</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                 onPress={()=>this.props.navigation.navigate("Progress")}
-                 style={styles.subCard}>
-                <Icon name="book" size={20} />
-                <Text style={styles.txt}>Progress Bar</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={()=> this.props.navigation.navigate("SectionList")}
-                style={styles.subCard}>
-                <Icon name="book" size={20} />
-                 <Text style={styles.txt}>SectionList</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={()=> this.props.navigation.navigate("StatusBars")}
-                style={styles.subCard}>
-                <Icon name="book" size={20} />
-                 <Text style={styles.txt}>Status Bar</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={()=> this.props.navigation.navigate("Switch")}
-                style={styles.subCard}>
-                <Icon name="book" size={20} />
-                 <Text style={styles.txt}>Switch</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={()=>this.props.navigation.navigate("WebViews")}
-                style={styles.subCard}>
-                <Icon name="book" size={20} />
-                 <Text style={styles.txt}>Web View</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={()=> this.props.navigation.navigate("Shares")}
-                style={styles.subCard}>
-                <Icon name="book" size={20} />
-                 <Text style={styles.txt}>Share</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={()=> this.props.navigation.navigate("VectorIcon")}
-                style={styles.subCard}>
-                <Icon name="book" size={20} />
-                 <Text style={styles.txt}>Vector Icons</Text>
-              </TouchableOpacity>
-              
-            </View>
-         );
-    }
+              <Icon name={item.icons} size={20} />
+              <Text style={styles.txt}>{item.name}</Text>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+      </View>
+    );
+  }
 }
 const styles = StyleSheet.create({
-    card: {
-      //margin: 8,
-      backgroundColor: colors.primary,
-      //elevation: 1,
-      padding: 50,
-      borderRadius: 2
-    },
-    subCard:{
-        backgroundColor:colors.white,
-        padding:10,
-        borderBottomWidth:0.5,
-        flexDirection:"row"
-    },
-    txt:{
-        marginLeft:10
-    }
-  });
+  card: {
+    backgroundColor: colors.primary,
+    padding: 50,
+    borderRadius: 2,
+  },
+  subCard: {
+    backgroundColor: colors.white,
+    padding: 10,
+    borderBottomWidth: 0.5,
+    flexDirection: 'row',
+  },
+  txt: {
+    marginLeft: 10,
+  },
+});
