@@ -21,7 +21,7 @@ export default class Infinite extends Component {
           onPress={() =>
             navigation.navigate('Git', {
               url:
-                'https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/component/Animation/loader.js',
+                'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/component/Animation/loader.js',
             })
           }
         />
@@ -59,12 +59,12 @@ export default class Infinite extends Component {
                 }),
               },
             ],
-            height: 80,
-            width: 80,
+            height: 82,
+            width: 79,
             margin: 5,
-            borderWidth: 4,
-            borderColor: '#888',
-            borderBottomColor: '#8bffff',
+            borderWidth: 6,
+            borderColor: 'green',
+            borderBottomColor: 'red',
             borderRadius: 50,
             justifyContent: 'center',
           }}

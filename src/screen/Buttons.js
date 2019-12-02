@@ -31,7 +31,7 @@ export default class Buttons extends Component {
           onPress={() =>
             navigation.navigate('Git', {
               url:
-                'https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/screen/Buttons.js',
+                'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/Buttons.js',
             })
           }
         />

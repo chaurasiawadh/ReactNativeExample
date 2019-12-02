@@ -21,7 +21,7 @@ class Storage extends Component {
           onPress={() =>
             navigation.navigate('Git', {
               url:
-                'https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/screen/storage.js',
+                'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/storage.js',
             })
           }
         />

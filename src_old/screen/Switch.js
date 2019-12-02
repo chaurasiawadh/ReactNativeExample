@@ -19,7 +19,7 @@ export default class Switchs extends React.Component {
           onPress={() =>
             navigation.navigate('Git', {
               url:
-                'https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/screen/Switch.js',
+                'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/Switch.js',
             })
           }
         />
