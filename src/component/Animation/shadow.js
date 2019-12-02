@@ -31,7 +31,7 @@ class Animations extends Component {
           onPress={() =>
             navigation.navigate('Git', {
               url:
-                'https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/Component/shadow.js',
+                'https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/component/Animation/shadow.js',
             })
           }
         />

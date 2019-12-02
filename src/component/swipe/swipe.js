@@ -42,7 +42,7 @@ class Swipe extends Component {
           onPress={() =>
             navigation.navigate('Git', {
               url:
-                'https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/screen/swipe.js',
+                'https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/component/swipe/swipe.js',
             })
           }
         />

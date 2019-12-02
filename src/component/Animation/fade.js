@@ -21,7 +21,7 @@ class Fade extends Component {
           onPress={() =>
             navigation.navigate('Git', {
               url:
-                'https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/Component/fade.js',
+                'https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/component/Animation/fade.js',
             })
           }
         />

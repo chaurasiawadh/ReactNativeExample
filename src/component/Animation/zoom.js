@@ -29,7 +29,7 @@ export default class Animations extends Component {
           onPress={() =>
             navigation.navigate('Git', {
               url:
-                'https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/Component/zoom.js',
+                'https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/component/Animation/zoom.js',
             })
           }
         />

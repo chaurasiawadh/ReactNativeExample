@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {
   View,
   Text,
+  Linking,
   StyleSheet,
   TouchableOpacity,
   ScrollView,
@@ -29,12 +30,18 @@ let list = [
 ];
 
 export default class slideMenu extends Component {
+  playStore =  () => {
+    let link = 'https://play.google.com/store/apps/details?id=com.ravi'
+    Linking.canOpenURL(link).then(supported => {
+        supported && Linking.openURL(link);
+    }, (err) => console.log(err));
+}
   render() {
     return (
       <View>
         <ScrollView>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('Home')}
+            onPress={() => this.playStore()}
             style={styles.card}>
             <Text style={{color: colors.white, fontSize: 22}}>
               React Native

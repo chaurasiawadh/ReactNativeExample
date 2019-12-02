@@ -15,6 +15,7 @@ export default class Switchs extends React.Component {
         <Icon
           name="code"
           size={25}
+          color="#fff"
           style={{marginRight: 20}}
           onPress={() =>
             navigation.navigate('Git', {

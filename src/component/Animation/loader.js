@@ -21,7 +21,7 @@ export default class Infinite extends Component {
           onPress={() =>
             navigation.navigate('Git', {
               url:
-                'https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/Component/loader.js',
+                'https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/component/Animation/loader.js',
             })
           }
         />
