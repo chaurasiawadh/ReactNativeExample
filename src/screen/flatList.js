@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
 import {
   Platform,
@@ -7,56 +7,56 @@ import {
   Text,
   FlatList,
   Alert,
-  TouchableOpacity,
-} from 'react-native';
-import colors from '../componenet/Color';
-import Icon from 'react-native-vector-icons/FontAwesome';
+  TouchableOpacity
+} from "react-native";
+import colors from "../componenet/Color";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 class FlatLists extends Component {
-  static navigationOptions = ({navigation}) => ({
-    headerTitle: 'Flatlist',
+  static navigationOptions = ({ navigation }) => ({
+    headerTitle: "Flatlist",
     headerStyle: {
       backgroundColor: colors.primary,
-      elevation: 0,
+      elevation: 0
     },
-    headerTintColor: '#fff',
+    headerTintColor: "#fff",
     headerRight: (
       <TouchableOpacity>
         <Icon
           name="code"
           size={25}
           color="white"
-          style={{marginRight: 20}}
+          style={{ marginRight: 20 }}
           onPress={() =>
-            navigation.navigate('Git', {
+            navigation.navigate("Git", {
               url:
-                'https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/screen/flatList.js',
+                "https://github.com/Awadhesh786/ReactNativeExample/blob/master/src/screen/flatList.js"
             })
           }
         />
       </TouchableOpacity>
-    ),
+    )
   });
-    // Header()
+  // Header()
   constructor() {
     super();
     this.state = {
       FlatListItems: [
-        {key: 'China', population: '1,433,783,686'},
-        {key: 'India', population: '1,366,417,754'},
-        {key: 'Indonesia', population: '270,625,568'},
-        {key: 'Pakistan', population: '216,565,318'},
-        {key: 'Bangladesh', population: '163,046,161'},
-        {key: 'Japan', population: '126,860,301'},
-        {key: 'Philippines', population: '108,116,615'},
-        {key: 'Vietnam', population: '96,462,106'},
-        {key: 'Turkey', population: '83,429,615'},
-        {key: 'Iran', population: '82,913,906'},
-        {key: 'Thailand', population: '69,625,582'},
-        {key: 'Myanmar', population: '54,045,420'},
-        {key: 'South Korea', population: '51,225,308'},
-        {key: 'Iraq', population: '39,309,783'},
-        {key: 'Afghanistan', population: '38,041,754'},
+        { key: "China", population: "1,433,783,686" },
+        { key: "India", population: "1,366,417,754" },
+        { key: "Indonesia", population: "270,625,568" },
+        { key: "Pakistan", population: "216,565,318" },
+        { key: "Bangladesh", population: "163,046,161" },
+        { key: "Japan", population: "126,860,301" },
+        { key: "Philippines", population: "108,116,615" },
+        { key: "Vietnam", population: "96,462,106" },
+        { key: "Turkey", population: "83,429,615" },
+        { key: "Iran", population: "82,913,906" },
+        { key: "Thailand", population: "69,625,582" },
+        { key: "Myanmar", population: "54,045,420" },
+        { key: "South Korea", population: "51,225,308" },
+        { key: "Iraq", population: "39,309,783" },
+        { key: "Afghanistan", population: "38,041,754" }
       ],
       refreshing: false
     };
@@ -67,25 +67,22 @@ class FlatLists extends Component {
       <View
         style={{
           height: 8,
-          width: '100%',
+          width: "100%",
           backgroundColor: colors.primary
         }}
       />
     );
   };
 
-
   onRefresh = async () => {
     this.setState({
-        refreshing: true
+      refreshing: true
     });
-    
 
     this.setState({
-        refreshing: false
+      refreshing: false
     });
-
-}
+  };
 
   GetFlatListItem = item => {
     Alert.alert(item);
@@ -119,10 +116,11 @@ class FlatLists extends Component {
           ItemSeparatorComponent={this.FlatListItemSeparator}
           onRefresh={this.onRefresh}
           refreshing={this.state.refreshing}
-          renderItem={({item}) => (
+          renderItem={({ item }) => (
             <TouchableOpacity
               style={styles.container}
-              onPress={() => this.GetFlatListItem(item.key)}>
+              onPress={() => this.GetFlatListItem(item.key)}
+            >
               <Text style={styles.key}>{item.key}</Text>
               <Text style={styles.population}>{item.population}</Text>
             </TouchableOpacity>
@@ -139,36 +137,36 @@ export default FlatLists;
 
 const styles = StyleSheet.create({
   MainContainer: {
-    justifyContent: 'center',
+    justifyContent: "center",
     flex: 1,
-    paddingTop: Platform.OS === 'iOS' ? 20 : 0,
+    paddingTop: Platform.OS === "iOS" ? 20 : 0
   },
 
   key: {
     fontSize: 28,
-    color:"blue"
+    color: "blue"
   },
-  population:{
-    color:"red",
-    fontSize:20
+  population: {
+    color: "red",
+    fontSize: 20
   },
 
   header_footer_style: {
-    width: '100%',
+    width: "100%",
     height: 44,
-    backgroundColor: '#4CAF50',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#4CAF50",
+    alignItems: "center",
+    justifyContent: "center"
   },
 
   textStyle: {
-    textAlign: 'center',
-    color: '#fff',
-    fontSize: 21,
+    textAlign: "center",
+    color: "#fff",
+    fontSize: 21
   },
   container: {
-    alignItems: 'center',
+    alignItems: "center",
     padding: 20,
-    backgroundColor: 'yellow',
-  },
+    backgroundColor: "yellow"
+  }
 });

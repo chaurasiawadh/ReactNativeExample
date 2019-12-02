@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {WebView} from 'react-native-webview';
-import colors from '../component/Color';
+// import {WebView} from 'react-native-webview';
+import {View, Text} from "react-native"
+import colors from '../componenet/Color';
 
 export default class Gits extends Component {
   static navigationOptions = ({navigation}) => ({
@@ -9,14 +10,18 @@ export default class Gits extends Component {
       backgroundColor: colors.primary,
       elevation: 0,
     },
-    headerTintColor: '#fff',  
+    headerTintColor: '#fff',
   });
 
   state = {
     url: this.props.navigation.state.params.url,
   };
 
+  //<WebView source={{uri: this.state.url}} style={{flex: 1}} />;
   render() {
-    return <WebView source={{uri: this.state.url}} style={{flex: 1}} />;
+    return <View>
+      <Text>HIHIH</Text>
+      </View>
+        
   }
 }
