@@ -1,38 +1,23 @@
 import React, {Component} from 'react';
-import {TouchableOpacity, ActivityIndicator, View, Text} from 'react-native';
+import {View} from 'react-native';
 import {WebView} from 'react-native-webview';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from '../component/Color';
 
-export default class VectorIcons extends Component {
-  static navigationOptions = ({navigation}) => ({
-    headerTitle: 'Vector Icons',
-    headerStyle: {
-      backgroundColor: colors.primary,
-      elevation: 0,
-    },
-    headerTintColor: '#fff',
-    headerRight: (
-      <TouchableOpacity>
-        <Icon
-          name="code"
-          size={25}
-          color="white"
-          style={{marginRight: 20}}
-          onPress={() =>
-            navigation.navigate('Git', {
-              url:
-                'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/VectorIcon.js',
-            })
-          }
-        />
-      </TouchableOpacity>
-    ),
-  });
+import Header from '../component/Header/header';
 
+class VectorIcon extends Component {
+  goBack = () => {
+    this.props.navigation.goBack(null);
+  };
+  code = () => {
+    this.props.navigation.navigate('Git', {
+      url:
+        'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src//screen/VectorIcon.js',
+    });
+  };
   render() {
     return (
       <View>
+        <Header headerTitle="Vector Icon" back={this.goBack} code={this.code} />
         <WebView
           source={{
             uri: 'https://oblador.github.io/react-native-vector-icons/',
@@ -43,3 +28,4 @@ export default class VectorIcons extends Component {
     );
   }
 }
+export default VectorIcon;

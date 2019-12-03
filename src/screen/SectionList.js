@@ -1,39 +1,19 @@
 import React, {Component} from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  SectionList,
-  Alert,
-  TouchableOpacity,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {Text, View, Alert, StyleSheet, SectionList} from 'react-native';
 import colors from '../component/Color';
-export default class SectonLists extends Component {
-  static navigationOptions = ({navigation}) => ({
-    headerTitle: 'SectionList',
-    headerStyle: {
-      backgroundColor: colors.primary,
-      elevation: 0,
-    },
-    headerTintColor: '#fff',
-    headerRight: (
-      <TouchableOpacity>
-        <Icon
-          name="code"
-          size={25}
-          color="white"
-          style={{marginRight: 20}}
-          onPress={() =>
-            navigation.navigate('Git', {
-              url:
-                'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/SectionList.js',
-            })
-          }
-        />
-      </TouchableOpacity>
-    ),
-  });
+import Header from '../component/Header/header';
+
+class SectonLists extends Component {
+  goBack = () => {
+    this.props.navigation.goBack(null);
+  };
+  code = () => {
+    this.props.navigation.navigate('Git', {
+      url:
+        'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/SectionList.js',
+    });
+  };
+
   GetSectionListItem = item => {
     Alert.alert(item);
   };
@@ -41,6 +21,7 @@ export default class SectonLists extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Header headerTitle="SectionList" back={this.goBack} code={this.code} />
         <SectionList
           sections={[
             {
@@ -63,8 +44,7 @@ export default class SectonLists extends Component {
             <Text
               style={styles.SectionListItemS}
               onPress={this.GetSectionListItem.bind(this, item)}>
-              {' '}
-              {item}{' '}
+              {item}
             </Text>
           )}
           keyExtractor={(item, index) => index}
@@ -73,6 +53,7 @@ export default class SectonLists extends Component {
     );
   }
 }
+export default SectonLists;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

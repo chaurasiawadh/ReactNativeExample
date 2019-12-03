@@ -26,7 +26,7 @@ let list = [
   {name: 'Switch', click: 'Switch', icons: 'book'},
   {name: 'WebView', click: 'WebViews', icons: 'book'},
   {name: 'Share', click: 'Shares', icons: 'book'},
-  // {name: 'Vector Icon', click: 'VectorIcon', icons: 'book'},
+  {name: 'Vector Icon', click: 'VectorIcon', icons: 'book'},
 ];
 
 export default class slideMenu extends Component {

@@ -1,37 +1,26 @@
 import React, {Component} from 'react';
-import {TouchableOpacity} from 'react-native';
+import {View} from 'react-native';
 import {WebView} from 'react-native-webview';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from '../component/Color';
+import Header from '../component/Header/header';
 
-export default class WebViews extends Component {
-  static navigationOptions = ({navigation}) => ({
-    headerTitle: 'WebView',
-    headerStyle: {
-      backgroundColor: colors.primary,
-      elevation: 0,
-    },
-    headerTintColor: '#fff',
-    headerRight: (
-      <TouchableOpacity>
-        <Icon
-          name="code"
-          size={25}
-          color="white"
-          style={{marginRight: 20}}
-          onPress={() =>
-            navigation.navigate('Git', {
-              url:
-                'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/WebViews.js',
-            })
-          }
-        />
-      </TouchableOpacity>
-    ),
-  });
+class WebViews extends Component {
+  goBack = () => {
+    this.props.navigation.goBack(null);
+  };
+  code = () => {
+    this.props.navigation.navigate('Git', {
+      url:
+        'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/WebViews.js',
+    });
+  };
+
   render() {
     return (
-      <WebView source={{uri: 'https://www.google.com'}} style={{flex: 1}} />
+      <View>
+        <Header headerTitle="WebView" back={this.goBack} code={this.code} />
+        <WebView source={{uri: 'https://www.google.com'}} style={{flex: 1}} />
+      </View>
     );
   }
 }
+export default WebViews;

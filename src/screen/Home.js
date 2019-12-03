@@ -15,7 +15,7 @@ const Intro =
   'React Native lets you build mobile apps using only JavaScript. It uses the same design as React, letting you compose a rich mobile UI using declarative components.';
 
 export default class Home extends Component {
-  static navigationOptions = ({navigation}) => ({
+  static navigationOptions = () => ({
     headerTitle: 'React Native Example',
     headerStyle: {
       backgroundColor: colors.primary,
@@ -71,13 +71,13 @@ const styles = StyleSheet.create({
   start: {
     backgroundColor: colors.white,
     margin: 30,
-    borderRadius:4,
+    borderRadius: 4,
     justifyContent: 'flex-end',
   },
   get: {
-    fontSize: 20, 
-    textAlign: 'center', 
-    color: "red",
-    padding:10
+    fontSize: 20,
+    textAlign: 'center',
+    color: 'red',
+    padding: 10,
   },
 });

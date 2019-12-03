@@ -1,33 +1,19 @@
 import React, {Component} from 'react';
 import {View, Share, Button, TouchableOpacity, Image} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from '../component/Color';
+import Header from '../component/Header/header';
 
-export default class Shares extends Component {
-  static navigationOptions = ({navigation}) => ({
-    headerTitle: 'Share',
-    headerStyle: {
-      backgroundColor: colors.primary,
-      elevation: 0,
-    },
-    headerTintColor: '#fff',
-    headerRight: (
-      <TouchableOpacity>
-        <Icon
-          name="code"
-          size={25}
-          style={{marginRight: 20}}
-          color="white"
-          onPress={() =>
-            navigation.navigate('Git', {
-              url:
-                'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/Share.js',
-            })
-          }
-        />
-      </TouchableOpacity>
-    ),
-  });
+class Shares extends Component {
+  
+  goBack = () => {
+    this.props.navigation.goBack(null);
+  };
+  code = () => {
+    this.props.navigation.navigate('Git', {
+      url:
+        'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/Share.js',
+    });
+  };
 
   onShare = async () => {
     try {
@@ -52,6 +38,7 @@ export default class Shares extends Component {
   render() {
     return (
       <View>
+        <Header headerTitle="Share" back={this.goBack} code={this.code} />
         <TouchableOpacity style={{justifyContent: 'center', margin: 30}}>
           <Button
             title="Share "
@@ -69,3 +56,4 @@ export default class Shares extends Component {
     );
   }
 }
+export default Shares;

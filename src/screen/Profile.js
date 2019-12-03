@@ -1,22 +1,17 @@
 import React, {Component} from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  TouchableOpacity,
-} from 'react-native';
-import colors from '../component/Color';
+import {StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
 
-export default class Profile extends Component {
-  static navigationOptions = ({navigation}) => ({
-    headerTitle: 'Profile',
-    headerStyle: {
-      backgroundColor: colors.primary,
-      elevation: 0,
-    },
-    headerTintColor: '#fff',
-  });
+class Profile extends Component {
+  goBack = () => {
+    this.props.navigation.goBack(null);
+  };
+  code = () => {
+    this.props.navigation.navigate('Git', {
+      url:
+        'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src//screen/VectorIcon.js',
+    });
+  };
+
   render() {
     return (
       <View style={{justifyContent: 'center', flex: 1}}>
@@ -34,9 +29,11 @@ export default class Profile extends Component {
     );
   }
 }
+
+export default Profile;
+
 const styles = StyleSheet.create({
   card: {
-    //backgroundColor:"red",
     padding: 30,
   },
   txt: {

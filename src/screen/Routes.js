@@ -1,5 +1,6 @@
+import React from 'react';
+import {Easing, Animated, View} from 'react-native';
 import {createStackNavigator, createDrawerNavigator} from 'react-navigation';
-import {Easing, Animated} from 'react-native';
 
 import SlideMenu from '../slideMenu/SlideMenu';
 import Home from './Home';
@@ -63,40 +64,227 @@ const transitionConfig = () => {
 const AppNavigator = createStackNavigator(
   {
     Home: {screen: Home},
-    Profile: {screen: Profile},
-    Texts: {screen: Texts},
-    Buttons: {screen: Buttons},
-    Scroll: {screen: Scroll},
-    Images: {screen: Images},
-    Pickers: {screen: Pickers},
-    Progress: {screen: Progress},
-    SectionList: {screen: SectionList},
-    Switch: {screen: Switch},
-    Shares: {screen: Shares},
-    WebViews: {screen: WebViews},
-    StatusBars: {screen: StatusBars},
-    
-    VectorIcon: {screen: VectorIcon},
+    Profile: {
+      screen: Profile,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
+    Texts: {
+      screen: Texts,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
+    Buttons: {
+      screen: Buttons,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
+    Scroll: {
+      screen: Scroll,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
+    Images: {
+      screen: Images,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
+    Pickers: {
+      screen: Pickers,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
+    Progress: {
+      screen: Progress,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
+    SectionList: {
+      screen: SectionList,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
+    Switch: {
+      screen: Switch,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
+    Shares: {
+      screen: Shares,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
+    WebViews: {
+      screen: WebViews,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
+    StatusBars: {
+      screen: StatusBars,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
+
+    VectorIcon: {
+      screen: VectorIcon,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
 
     Git: {screen: Gits},
 
     //Animaton
-    Animations: {screen: Animations},
-    shadow: {screen: shadow},
-    fade: {screen: fade},
-    zoom: {screen: zoom},
-    loader: {screen: loader},
-
+    Animations: {
+      screen: Animations,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
+    shadow: {
+      screen: shadow,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
+    fade: {
+      screen: fade,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
+    zoom: {
+      screen: zoom,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
+    loader: {
+      screen: loader,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
 
     //Swipe
-    swipe:{screen: swipe},
+    swipe: {
+      screen: swipe,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
 
     //Storage
-    storage: { screen: storage},
+    storage: {
+      screen: storage,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
 
     //FlatList
-    flatList:{screen: flatList},
-
+    flatList: {
+      screen: flatList,
+      navigationOptions: () => ({
+        header: <View />,
+        headerStyle: {
+          elevation: 0,
+          marginTop: 20,
+        },
+      }),
+    },
   },
   {
     transitionConfig,

@@ -2,32 +2,18 @@ import React, {Component} from 'react';
 import {View, Text, Picker, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from '../component/Color';
+import Header from '../component/Header/header';
 
 export default class Pickers extends Component {
-  static navigationOptions = ({navigation}) => ({
-    headerTitle: 'ProgressBarAndroid',
-    headerStyle: {
-      backgroundColor: colors.primary,
-      elevation: 0,
-    },
-    headerTintColor: '#fff',
-    headerRight: (
-      <TouchableOpacity>
-        <Icon
-          name="code"
-          size={25}
-          color="white"
-          style={{marginRight: 20}}
-          onPress={() =>
-            navigation.navigate('Git', {
-              url:
-                'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/Pickers.js',
-            })
-          }
-        />
-      </TouchableOpacity>
-    ),
-  });
+  goBack = () => {
+    this.props.navigation.goBack(null);
+  };
+  code = () => {
+    this.props.navigation.navigate('Git', {
+      url:
+        'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/Pickers.js',
+    });
+  };
 
   state = {user: ''};
   updateUser = user => {
@@ -37,6 +23,11 @@ export default class Pickers extends Component {
   render() {
     return (
       <View>
+        <Header
+          headerTitle="ProgressBarAndroid"
+          back={this.goBack}
+          code={this.code}
+        />
         <Text style={{fontSize: 25, margin: 8, color: 'black'}}>
           Picker Select
         </Text>

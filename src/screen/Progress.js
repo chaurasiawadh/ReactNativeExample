@@ -2,41 +2,30 @@ import React, {Component} from 'react';
 import {
   View,
   Text,
-  Button,
   ProgressBarAndroid,
-  TouchableOpacity,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from '../component/Color';
+import Header from '../component/Header/header';
 
-export default class Progess extends Component {
-  static navigationOptions = ({navigation}) => ({
-    headerTitle: 'ProgressBarAndroid',
-    headerStyle: {
-      backgroundColor: colors.primary,
-      elevation: 0,
-    },
-    headerTintColor: '#fff',
-    headerRight: (
-      <TouchableOpacity>
-        <Icon
-          name="code"
-          size={25}
-          color="white"
-          style={{marginRight: 20}}
-          onPress={() =>
-            navigation.navigate('Git', {
-              url:
-                'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/Progress.js',
-            })
-          }
-        />
-      </TouchableOpacity>
-    ),
-  });
+class Progess extends Component {
+  
+  goBack = () => {
+    this.props.navigation.goBack(null);
+  };
+  code = () => {
+    this.props.navigation.navigate('Git', {
+      url:
+        'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/Progress.js',
+    });
+  };
+
   render() {
     return (
       <View style={{alignSelf: 'center', padding: 10}}>
+        <Header
+          headerTitle="Progress Bar"
+          back={this.goBack}
+          code={this.code}
+        />
         <Text style={{fontSize: 25, fontWeight: 'bold', color: 'black'}}>
           Show ProgressBarAndroid
         </Text>
@@ -57,3 +46,4 @@ export default class Progess extends Component {
     );
   }
 }
+export default Progess;

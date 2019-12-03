@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Animated, TouchableOpacity, Text} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
 import colors from '../component/Color';
+import Header from '../component/Header/header';
 
 let list = [
   {name: 'Multiple', click: 'zoom'},
@@ -10,49 +10,39 @@ let list = [
   {name: 'Loader', click: 'loader'},
 ];
 
-export default class Animations extends Component {
-  static navigationOptions = ({navigation}) => ({
-    headerTitle: 'Animation',
-    headerStyle: {
-      backgroundColor: colors.primary,
-      elevation: 0,
-    },
-    headerTintColor: '#fff',
-    headerRight: (
-      <TouchableOpacity>
-        <Icon
-          name="code"
-          size={25}
-          color="white"
-          style={{marginRight: 20}}
-          onPress={() =>
-            navigation.navigate('Git', {
-              url:
-                'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/Animations.js',
-            })
-          }
-        />
-      </TouchableOpacity>
-    ),
-  });
+class Animations extends Component {
+  goBack = () => {
+    this.props.navigation.goBack(null);
+  };
+  code = () => {
+    this.props.navigation.navigate('Git', {
+      url:
+        'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/Animations.js',
+    });
+  };
 
   render() {
     return (
-      <View style={styles.container}>
-        {list.map(item => (
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate(item.click)}
-            style={styles.box}>
-            <Text style={styles.name}>{item.name}</Text>
-          </TouchableOpacity>
-        ))}
+      <View>
+        <Header headerTitle="Animation" back={this.goBack} code={this.code} />
+        <View style={styles.container}>
+          {list.map(item => (
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate(item.click)}
+              style={styles.box}>
+              <Text style={styles.name}>{item.name}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
       </View>
     );
   }
 }
+export default Animations;
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    marginTop: 50,
     justifyContent: 'center',
     alignSelf: 'center',
   },
