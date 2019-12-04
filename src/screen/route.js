@@ -316,7 +316,7 @@ const AppNavigator = createStackNavigator(
     StatusBars: {
       screen: StatusBars,
       navigationOptions: ({navigation}) => ({
-        headerTitle: 'StatusBars',
+        headerTitle: 'StatusBar',
         headerStyle: {
           backgroundColor: colors.primary,
           elevation: 0,
@@ -331,7 +331,7 @@ const AppNavigator = createStackNavigator(
               style={{marginRight: 20}}
               onPress={() =>
                 navigation.navigate('Git', {
-                  url: urlCommon + 'screen/statusBars.js',
+                  url: urlCommon + 'screen/statusBar.js',
                 })
               }
             />
@@ -350,7 +350,7 @@ const AppNavigator = createStackNavigator(
     Animations: {
       screen: Animations,
       navigationOptions: ({navigation}) => ({
-        headerTitle: 'Animations',
+        headerTitle: 'Animation',
         headerStyle: {
           backgroundColor: colors.primary,
           elevation: 0,
@@ -365,7 +365,7 @@ const AppNavigator = createStackNavigator(
               style={{marginRight: 20}}
               onPress={() =>
                 navigation.navigate('Git', {
-                  url: urlCommon + 'screen/animations.js',
+                  url: urlCommon + 'screen/animation.js',
                 })
               }
             />

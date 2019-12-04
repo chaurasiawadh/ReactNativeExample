@@ -35,16 +35,6 @@ class FlatLists extends Component {
     };
   }
 
-  goBack = () => {
-    this.props.navigation.goBack(null);
-  };
-  code = () => {
-    this.props.navigation.navigate('Git', {
-      url:
-        'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/flatList.js',
-    });
-  };
-
   FlatListItemSeparator = () => {
     return (
       <View
