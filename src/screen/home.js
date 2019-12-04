@@ -14,15 +14,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 const Intro =
   'React Native lets you build mobile apps using only JavaScript. It uses the same design as React, letting you compose a rich mobile UI using declarative components.';
 
-export default class Home extends Component {
-  static navigationOptions = () => ({
-    headerTitle: 'React Native Example',
-    headerStyle: {
-      backgroundColor: colors.primary,
-      elevation: 0,
-    },
-    headerTintColor: '#fff',
-  });
+class Home extends Component {
   render() {
     return (
       <ImageBackground style={styles.container} resizeMode="cover">
@@ -30,6 +22,11 @@ export default class Home extends Component {
         <View style={styles.head}>
           <Icon name="code" size={120} color="#fff" style={styles.icn} />
         </View>
+        <TouchableOpacity 
+          onPress={()=> this.props.navigation.navigate('Tutorial')}
+        style={styles.tut}>
+          <Text style={styles.tutxt}>Tutorial</Text>
+        </TouchableOpacity>
         <View style={styles.foot}>
           <Text style={styles.intro}>{Intro}</Text>
 
@@ -43,6 +40,8 @@ export default class Home extends Component {
     );
   }
 }
+
+export default Home;
 
 const styles = StyleSheet.create({
   container: {
@@ -79,5 +78,21 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'red',
     padding: 10,
+  },
+  tut: {
+    backgroundColor: colors.primary,
+    alignSelf: 'center',
+    paddingLeft: 20,
+    paddingRight: 20,
+    borderColor: colors.white,
+    borderWidth: 2,
+    borderRadius: 10,
+  },
+  tutxt: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    padding: 20,
+    color: colors.white,
   },
 });

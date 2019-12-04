@@ -58,7 +58,7 @@ class FlatLists extends Component {
   };
 
   GetFlatListItem = item => {
-    Alert.alert(item);
+    Alert.alert(item.key, item.population);
   };
 
   render_FlatList_footer = () => {
@@ -92,9 +92,9 @@ class FlatLists extends Component {
           renderItem={({item}) => (
             <TouchableOpacity
               style={styles.container}
-              onPress={() => this.GetFlatListItem(item.key)}>
+              onPress={() => this.GetFlatListItem(item)}>
               <Text style={styles.key}>{item.key}</Text>
-              <Text style={styles.population}>{item.population}</Text>
+              <Text style={styles.population}>Population: {'  '} {item.population}</Text>
             </TouchableOpacity>
           )}
           ListHeaderComponent={this.render_FlatList_header}

@@ -1,4 +1,6 @@
 import React from 'react';
+import colors from '../component/color';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import {Easing, Animated, View, TouchableOpacity} from 'react-native';
 import {createStackNavigator, createDrawerNavigator} from 'react-navigation';
 
@@ -36,8 +38,7 @@ import flatList from './flatlist';
 //git Page
 import Gits from './git';
 
-import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from '../component/color';
+import Tutorial from '../tutorial/index';
 
 const transitionConfig = () => {
   return {
@@ -49,10 +50,8 @@ const transitionConfig = () => {
     },
     screenInterpolator: sceneProps => {
       const {layout, position, scene} = sceneProps;
-
       const thisSceneIndex = scene.index;
       const width = layout.initWidth;
-
       const translateX = position.interpolate({
         inputRange: [thisSceneIndex - 1, thisSceneIndex],
         outputRange: [width, 0],
@@ -68,7 +67,16 @@ const urlCommon =
 
 const AppNavigator = createStackNavigator(
   {
-    Home: {screen: Home},
+    Home: {screen: Home,
+      navigationOptions: ({navigation}) => ({
+        headerTitle: 'React Native Example',
+        headerStyle: {
+          backgroundColor: colors.primary,
+          elevation: 0,
+        },
+        headerTintColor: '#fff'
+      }),
+    },
     Profile: {
       screen: Profile,
       navigationOptions: () => ({
@@ -555,6 +563,33 @@ const AppNavigator = createStackNavigator(
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'screen//flatList.js',
+                })
+              }
+            />
+          </TouchableOpacity>
+        ),
+      }),
+    },
+
+    Tutorial: {
+      screen: Tutorial,
+      navigationOptions: ({navigation}) => ({
+        headerTitle: 'Tutorial',
+        headerStyle: {
+          backgroundColor: colors.primary,
+          elevation: 0,
+        },
+        headerTintColor: '#fff',
+        headerRight: (
+          <TouchableOpacity>
+            <Icon
+              name="code"
+              size={25}
+              color="white"
+              style={{marginRight: 20}}
+              onPress={() =>
+                navigation.navigate('Git', {
+                  url: urlCommon + 'tutorial/index.js',
                 })
               }
             />
