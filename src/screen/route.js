@@ -580,21 +580,6 @@ const AppNavigator = createStackNavigator(
           elevation: 0,
         },
         headerTintColor: '#fff',
-        headerRight: (
-          <TouchableOpacity>
-            <Icon
-              name="code"
-              size={25}
-              color="white"
-              style={{marginRight: 20}}
-              onPress={() =>
-                navigation.navigate('Git', {
-                  url: urlCommon + 'tutorial/index.js',
-                })
-              }
-            />
-          </TouchableOpacity>
-        ),
       }),
     },
   },
