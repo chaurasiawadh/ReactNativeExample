@@ -1,21 +1,19 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   TextInput,
   Button,
   View,
-  AsyncStorage
+  AsyncStorage,
 } from 'react-native';
 
 class Merge extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
-        myKey: null
-    }
+      myKey: null,
+    };
   }
 
   async getKey() {
@@ -23,7 +21,7 @@ class Merge extends Component {
       const value = await AsyncStorage.getItem('@MySuperStore:key');
       this.setState({myKey: value});
     } catch (error) {
-      console.log("Error retrieving data" + error);
+      console.log('Error retrieving data' + error);
     }
   }
 
@@ -31,7 +29,7 @@ class Merge extends Component {
     try {
       await AsyncStorage.setItem('@MySuperStore:key', value);
     } catch (error) {
-      console.log("Error saving data" + error);
+      console.log('Error saving data' + error);
     }
   }
 
@@ -41,47 +39,43 @@ class Merge extends Component {
       const value = await AsyncStorage.getItem('@MySuperStore:key');
       this.setState({myKey: value});
     } catch (error) {
-      console.log("Error resetting data" + error);
+      console.log('Error resetting data' + error);
     }
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Stored AsyncStorage!
-        </Text>
+        <Text style={styles.welcome}>Stored AsyncStorage!</Text>
 
         <TextInput
           style={styles.formInput}
           placeholder="Enter key you want to save!"
           value={this.state.myKey}
-          onChangeText={(value) => this.saveKey(value)}
-          />
-
-        <View style={{margin:10}}>
-        <Button
-          onPress={this.getKey.bind(this)}
-          title="Get Key"
-          color="#2196f3"
-          accessibilityLabel="Get Key"
+          onChangeText={value => this.saveKey(value)}
         />
+
+        <View style={{margin: 10}}>
+          <Button
+            onPress={this.getKey.bind(this)}
+            title="Get Key"
+            color="#2196f3"
+            accessibilityLabel="Get Key"
+          />
         </View>
 
-        <View style={{margin:10}}>
-        <Button
-          onPress={this.resetKey.bind(this)}
-          title="Reset"
-          color="#f44336"
-          accessibilityLabel="Reset"
-        />
+        <View style={{margin: 10}}>
+          <Button
+            onPress={this.resetKey.bind(this)}
+            title="Reset"
+            color="#f44336"
+            accessibilityLabel="Reset"
+          />
         </View>
 
         <Text style={styles.instructions}>
           Stored key is = {this.state.myKey}
         </Text>
-
-
       </View>
     );
   }
@@ -103,10 +97,10 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
     height: 50,
     borderWidth: 1,
-    borderColor: "#555555",
-    margin:10,
-    borderRadius:4,
-    paddingLeft:10
+    borderColor: '#555555',
+    margin: 10,
+    borderRadius: 4,
+    paddingLeft: 10,
   },
 
   instructions: {

@@ -1,6 +1,6 @@
 import {createStackNavigator} from 'react-navigation';
 import React, {Component} from 'react';
-import {SafeAreaView, Text, StatusBar, TouchableOpacity, Button} from 'react-native';
+import {SafeAreaView, Text, StatusBar, TouchableOpacity} from 'react-native';
 
 class Screen1 extends React.Component {
   

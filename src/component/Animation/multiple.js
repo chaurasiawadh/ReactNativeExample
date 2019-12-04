@@ -3,39 +3,14 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
   Animated,
   Easing,
   ScrollView,
+  TouchableOpacity
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from '../Color';
 
-export default class Animations extends Component {
-  static navigationOptions = ({navigation}) => ({
-    headerTitle: 'Multiple Animation',
-    headerStyle: {
-      backgroundColor: colors.primary,
-      elevation: 0,
-    },
-    headerTintColor: '#fff',
-    headerRight: (
-      <TouchableOpacity>
-        <Icon
-          name="code"
-          size={25}
-          style={{marginRight: 20}}
-          color="#fff"
-          onPress={() =>
-            navigation.navigate('Git', {
-              url:
-                'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/component/Animation/zoom.js',
-            })
-          }
-        />
-      </TouchableOpacity>
-    ),
-  });
+class Zoom extends Component {
+  
 
   constructor() {
     super();
@@ -186,6 +161,7 @@ export default class Animations extends Component {
     );
   }
 }
+export default Zoom;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

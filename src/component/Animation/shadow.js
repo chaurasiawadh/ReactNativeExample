@@ -5,40 +5,13 @@ import {
   Animated,
   TouchableOpacity,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from '../Color';
 
 const arr = [];
-for (var i = 0; i < 500; i++) {
+for (var i = 0; i < 150; i++) {
   arr.push(i);
 }
 
-class Animations extends Component {
-  static navigationOptions = ({navigation}) => ({
-    headerTitle: 'Shadow',
-    headerStyle: {
-      backgroundColor: colors.primary,
-      elevation: 0,
-    },
-    headerTintColor: '#fff',
-    headerRight: (
-      <TouchableOpacity>
-        <Icon
-          name="code"
-          size={25}
-          color="white"
-          style={{marginRight: 20}}
-          onPress={() =>
-            navigation.navigate('Git', {
-              url:
-                'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/component/Animation/shadow.js',
-            })
-          }
-        />
-      </TouchableOpacity>
-    ),
-  });
-
+class Shadow extends Component {
   constructor() {
     super();
     this.animatedValue = [];
@@ -100,7 +73,7 @@ class Animations extends Component {
   }
 }
 
-export default Animations;
+export default Shadow;
 
 const styles = StyleSheet.create({
   container: {

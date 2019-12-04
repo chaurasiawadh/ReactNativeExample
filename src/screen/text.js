@@ -1,21 +1,10 @@
 import React, {Component} from 'react';
 import {View, Text, ScrollView} from 'react-native';
-import Header from '../component/Header/header';
 
 class Texts extends Component {
-  goBack = () => {
-    this.props.navigation.goBack(null);
-  };
-  code = () => {
-    this.props.navigation.navigate('Git', {
-      url:
-      'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/Texts.js',
-    });
-  };
+ 
   render() {
     return (
-      <View>
-        <Header headerTitle="Text" back={this.goBack} code={this.code} />
         <View
           style={{
             alignSelf: 'center',
@@ -72,7 +61,6 @@ class Texts extends Component {
             </Text>
           </ScrollView>
         </View>
-      </View>
     );
   }
 }

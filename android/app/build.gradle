@@ -131,8 +131,8 @@ android {
         applicationId "com.ravi"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 107
-        versionName "3.0.7"
+        versionCode 108
+        versionName "3.0.8"
     }
 
     signingConfigs {

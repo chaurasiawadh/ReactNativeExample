@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import Routes from "./src/screen/Routes";
+import Routes from "./src/screen/route";
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <Routes />
    );
   }
 }
+export default App;

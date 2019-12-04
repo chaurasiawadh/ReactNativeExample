@@ -1,34 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, Animated, TouchableOpacity} from 'react-native';
-import colors from '../Color';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 class Fade extends Component {
-  static navigationOptions = ({navigation}) => ({
-    headerTitle: 'Fade animation',
-    headerStyle: {
-      backgroundColor: colors.primary,
-      elevation: 0,
-    },
-    headerTintColor: '#fff',
-    headerRight: (
-      <TouchableOpacity>
-        <Icon
-          name="code"
-          size={25}
-          style={{marginRight: 20}}
-          color="white"
-          onPress={() =>
-            navigation.navigate('Git', {
-              url:
-                'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/component/Animation/fade.js',
-            })
-          }
-        />
-      </TouchableOpacity>
-    ),
-  });
-
   constructor() {
     super();
     this.state = {

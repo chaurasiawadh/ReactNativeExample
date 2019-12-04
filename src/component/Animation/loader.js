@@ -1,33 +1,9 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, Animated, TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from '../Color';
+import {View, StyleSheet, Animated} from 'react-native';
+import colors from '../color';
 
-export default class Infinite extends Component {
-  static navigationOptions = ({navigation}) => ({
-    headerTitle: 'Loader Animation',
-    headerStyle: {
-      backgroundColor: colors.primary,
-      elevation: 0,
-    },
-    headerTintColor: '#fff',
-    headerRight: (
-      <TouchableOpacity>
-        <Icon
-          name="code"
-          size={25}
-          color="white"
-          style={{marginRight: 20}}
-          onPress={() =>
-            navigation.navigate('Git', {
-              url:
-                'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/component/Animation/loader.js',
-            })
-          }
-        />
-      </TouchableOpacity>
-    ),
-  });
+class Loader extends Component {
+  
 
   state = {
     rotateValue: new Animated.Value(0),
@@ -60,11 +36,11 @@ export default class Infinite extends Component {
               },
             ],
             height: 82,
-            width: 79,
+            width: 82,
             margin: 5,
             borderWidth: 6,
-            borderColor: 'green',
-            borderBottomColor: 'red',
+            borderColor: colors.primary,
+            borderBottomColor: colors.black,
             borderRadius: 50,
             justifyContent: 'center',
           }}
@@ -74,6 +50,7 @@ export default class Infinite extends Component {
     );
   }
 }
+export default Loader;
 
 const styles = StyleSheet.create({
   container: {

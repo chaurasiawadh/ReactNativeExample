@@ -5,7 +5,7 @@ import {
   StatusBar,
   TouchableOpacity,
 } from 'react-native';
-import colors from '../Color';
+import colors from '../color';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import IconMaterial from 'react-native-vector-icons/MaterialIcons';
 

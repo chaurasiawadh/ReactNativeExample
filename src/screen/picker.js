@@ -1,20 +1,7 @@
 import React, {Component} from 'react';
-import {View, Text, Picker, TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from '../component/Color';
-import Header from '../component/Header/header';
+import {View, Text, Picker} from 'react-native';
 
-export default class Pickers extends Component {
-  goBack = () => {
-    this.props.navigation.goBack(null);
-  };
-  code = () => {
-    this.props.navigation.navigate('Git', {
-      url:
-        'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/Pickers.js',
-    });
-  };
-
+class Pickers extends Component {
   state = {user: ''};
   updateUser = user => {
     this.setState({user: user});
@@ -23,11 +10,6 @@ export default class Pickers extends Component {
   render() {
     return (
       <View>
-        <Header
-          headerTitle="ProgressBarAndroid"
-          back={this.goBack}
-          code={this.code}
-        />
         <Text style={{fontSize: 25, margin: 8, color: 'black'}}>
           Picker Select
         </Text>
@@ -55,3 +37,4 @@ export default class Pickers extends Component {
     );
   }
 }
+export default Pickers;

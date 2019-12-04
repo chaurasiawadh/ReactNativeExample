@@ -5,12 +5,8 @@ import {
   Text,
   TouchableOpacity,
   View,
-  Keyboard,
   Button,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import colors from '../Color'
-
 import GetSetClear from './getSetClear';
 import MergeItem from './merge';
 
@@ -33,31 +29,8 @@ const TESTS = {
   },
 };
 
-export default class App extends Component {
-  static navigationOptions = ({navigation}) => ({
-    headerTitle: 'Storage',
-    headerStyle: {
-      backgroundColor: colors.primary,
-      elevation: 0,
-    },
-    headerTintColor: '#fff',
-    headerRight: (
-      <TouchableOpacity>
-        <Icon
-          name="code"
-          size={25}
-          style={{marginRight: 20}}
-          color="white"
-          onPress={() =>
-            navigation.navigate('Git', {
-              url:
-                'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/screen/storage.js',
-            })
-          }
-        />
-      </TouchableOpacity>
-    ),
-  });
+class Storage extends Component {
+  
 
   state = {
     restarting: false,
@@ -121,6 +94,7 @@ export default class App extends Component {
     );
   }
 }
+export default Storage;
 
 const styles = StyleSheet.create({
   container: {
