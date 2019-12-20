@@ -27,6 +27,14 @@ class Home extends Component {
         style={styles.tut}>
           <Text style={styles.tutxt}>Tutorial</Text>
         </TouchableOpacity>
+
+        {/* <TouchableOpacity 
+          onPress={()=> this.props.navigation.navigate('Ads')}
+        style={styles.tut}>
+          <Text style={styles.tutxt}>Ads check</Text>
+        </TouchableOpacity> */}
+
+        
         <View style={styles.foot}>
           <Text style={styles.intro}>{Intro}</Text>
 

@@ -37,8 +37,11 @@ import flatList from './flatlist';
 
 //git Page
 import Gits from './git';
-
 import Tutorial from '../tutorial/index';
+
+//API
+import ApiHome from '../component/Api/apiHome';
+import RedditApi from '../component/Api/Reddit/reddit';
 
 const transitionConfig = () => {
   return {
@@ -350,6 +353,29 @@ const AppNavigator = createStackNavigator(
 
     VectorIcon: {
       screen: VectorIcon,
+      navigationOptions: ({navigation}) => ({
+        headerTitle: 'Vector Icons',
+        headerStyle: {
+          backgroundColor: colors.primary,
+          elevation: 0,
+        },
+        headerTintColor: '#fff',
+        headerRight: (
+          <TouchableOpacity>
+            <Icon
+              name="code"
+              size={25}
+              color="white"
+              style={{marginRight: 20}}
+              onPress={() =>
+                navigation.navigate('Git', {
+                  url: urlCommon + 'screen/statusBar.js',
+                })
+              }
+            />
+          </TouchableOpacity>
+        ),
+      }),
     },
 
     Git: {screen: Gits},
@@ -548,6 +574,59 @@ const AppNavigator = createStackNavigator(
       screen: flatList,
       navigationOptions: ({navigation}) => ({
         headerTitle: 'FlatList',
+        headerStyle: {
+          backgroundColor: colors.primary,
+          elevation: 0,
+        },
+        headerTintColor: '#fff',
+        headerRight: (
+          <TouchableOpacity>
+            <Icon
+              name="code"
+              size={25}
+              color="white"
+              style={{marginRight: 20}}
+              onPress={() =>
+                navigation.navigate('Git', {
+                  url: urlCommon + 'screen//flatList.js',
+                })
+              }
+            />
+          </TouchableOpacity>
+        ),
+      }),
+    },
+
+    ApiHome: {
+      screen: ApiHome,
+      navigationOptions: ({navigation}) => ({
+        headerTitle: 'API',
+        headerStyle: {
+          backgroundColor: colors.primary,
+          elevation: 0,
+        },
+        headerTintColor: '#fff',
+        headerRight: (
+          <TouchableOpacity>
+            <Icon
+              name="code"
+              size={25}
+              color="white"
+              style={{marginRight: 20}}
+              onPress={() =>
+                navigation.navigate('Git', {
+                  url: urlCommon + 'screen//flatList.js',
+                })
+              }
+            />
+          </TouchableOpacity>
+        ),
+      }),
+    },
+    RedditApi: {
+      screen: RedditApi,
+      navigationOptions: ({navigation}) => ({
+        headerTitle: 'Reddit Popular Api',
         headerStyle: {
           backgroundColor: colors.primary,
           elevation: 0,
