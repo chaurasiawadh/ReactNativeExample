@@ -90,11 +90,12 @@ const styles = StyleSheet.create({
   tut: {
     backgroundColor: colors.primary,
     alignSelf: 'center',
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 16,
+    paddingRight: 16,
     borderColor: colors.white,
     borderWidth: 2,
     borderRadius: 10,
+    margin:4
   },
   tutxt: {
     fontSize: 28,

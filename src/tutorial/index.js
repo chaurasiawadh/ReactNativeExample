@@ -11,6 +11,7 @@ import {
 import Modal from 'react-native-modal';
 import colors from '../component/color';
 import styles from './tutorialStyle';
+import list from './component/list'
 
 class index extends Component {
   constructor() {
@@ -18,27 +19,32 @@ class index extends Component {
     this.state = {
       data: [],
       keys: '',
+      urls: '',
       loading: true,
       isModalVisible: false,
     };
   }
 
-  componentDidMount() {
-    this._ques();
+  componentDidMount() {    
+    this.setState({
+      data: list,
+      loading: false
+    })
   }
 
-  _ques = () => {
-    let url = 'http://5de8ff8fcb3e3800141b8c48.mockapi.io/reactnative/ques';
-    fetch(url)
-      .then(response => response.json())
-      .then(responseJson => {
-        this.setState({
-          loading: false,
-          data: responseJson,
-        });
-      })
-      .catch(error => alert(error));
-  };
+  // _ques = async () => {
+  //   let url = 'http://5de8ff8fcb3e3800141b8c48.mockapi.io/reactnative/ques';
+  //   await fetch(url)
+  //     .then(response => response.json())
+  //     .then(responseJson => {
+  //       this.setState({
+  //         loading: false,
+  //         data: responseJson,
+  //         urls: url
+  //       });
+  //     })
+  //     .catch(error => alert(error));
+  // };
 
   toggleModal = key => {
     this.setState({isModalVisible: !this.state.isModalVisible, keys: key});

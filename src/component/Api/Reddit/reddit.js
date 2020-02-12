@@ -203,7 +203,7 @@ class Reddit extends Component {
 
           <TouchableOpacity
             onPress={() => this.sendOnWhatsApp(title + subreddit + domain)}>
-            <IconFont name="whatsapp" size={24} color={colors.icn} />
+            <IconFont name="whatsapp" size={24} color='green' />
           </TouchableOpacity>
 
           <TouchableOpacity

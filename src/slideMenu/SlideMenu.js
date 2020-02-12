@@ -91,7 +91,7 @@ class SlideMenu extends Component {
               {subList.map(item => (
                 <TouchableOpacity
                   onPress={() => this.props.navigation.navigate(item.click)}
-                  style={styles.subCard}>
+                  style={[styles.subCard,{marginLeft:16}]}>
                   <Icon name={item.icons} color={colors.primary} size={20} />
                   <Text style={styles.txt}>{item.name}</Text>
                 </TouchableOpacity>

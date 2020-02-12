@@ -369,7 +369,7 @@ const AppNavigator = createStackNavigator(
               style={{marginRight: 20}}
               onPress={() =>
                 navigation.navigate('Git', {
-                  url: urlCommon + 'screen/statusBar.js',
+                  url: urlCommon + 'screen/vectorIcon.js',
                 })
               }
             />
@@ -615,7 +615,7 @@ const AppNavigator = createStackNavigator(
               style={{marginRight: 20}}
               onPress={() =>
                 navigation.navigate('Git', {
-                  url: urlCommon + 'screen//flatList.js',
+                  url: urlCommon + 'component/Api/apiHome.js',
                 })
               }
             />
@@ -641,7 +641,7 @@ const AppNavigator = createStackNavigator(
               style={{marginRight: 20}}
               onPress={() =>
                 navigation.navigate('Git', {
-                  url: urlCommon + 'screen//flatList.js',
+                  url: urlCommon + 'component/Api/Reddit/reddit.js',
                 })
               }
             />

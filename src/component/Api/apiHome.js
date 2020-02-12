@@ -75,15 +75,16 @@ const styles = StyleSheet.create({
   },
   box: {
     padding: 20,
-    paddingLeft: 60,
-    paddingRight: 60,
+    paddingLeft: 30,
+    paddingRight: 30,
     borderRadius: 10,
     alignItems: 'center',
     backgroundColor: colors.primary,
+    margin:10,
     marginBottom: 20,
   },
   name: {
     color: colors.white,
-    fontSize: 28,
+    fontSize: 22,
   },
 });

@@ -1,0 +1,97 @@
+[1mdiff --git a/android/app/my-release-key.zip b/android/app/my-release-key.zip[m
+[1mdeleted file mode 100644[m
+[1mindex eae9c48..0000000[m
+Binary files a/android/app/my-release-key.zip and /dev/null differ
+[1mdiff --git a/android/hs_err_pid2229.log b/android/hs_err_pid2229.log[m
+[1mdeleted file mode 100644[m
+[1mindex 1199995..0000000[m
+[1m--- a/android/hs_err_pid2229.log[m
+[1m+++ /dev/null[m
+[36m@@ -1,1202 +0,0 @@[m
+[31m-#[m
+[31m-# There is insufficient memory for the Java Runtime Environment to continue.[m
+[31m-# Native memory allocation (mmap) failed to map 101711872 bytes for committing reserved memory.[m
+[31m-# Possible reasons:[m
+[31m-#   The system is out of physical RAM or swap space[m
+[31m-#   In 32 bit mode, the process size limit was hit[m
+[31m-# Possible solutions:[m
+[31m-#   Reduce memory load on the system[m
+[31m-#   Increase physical memory or swap space[m
+[31m-#   Check if swap backing store is full[m
+[31m-#   Use 64 bit Java on a 64 bit OS[m
+[31m-#   Decrease Java heap size (-Xmx/-Xms)[m
+[31m-#   Decrease number of Java threads[m
+[31m-#   Decrease Java thread stack sizes (-Xss)[m
+[31m-#   Set larger code cache with -XX:ReservedCodeCacheSize=[m
+[31m-# This output file may be truncated or incomplete.[m
+[31m-#[m
+[31m-#  Out of Memory Error (os_linux.cpp:2746), pid=2229, tid=0x00007fe9a444f700[m
+[31m-#[m
+[31m-# JRE version: OpenJDK Runtime Environment (8.0_191-b12) (build 1.8.0_191-8u191-b12-2ubuntu0.18.04.1-b12)[m
+[31m-# Java VM: OpenJDK 64-Bit Server VM (25.191-b12 mixed mode linux-amd64 compressed oops)[m
+[31m-# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again[m
+[31m-#[m
+[31m-[m
+[31m----------------  T H R E A D  ---------------[m
+[31m-[m
+[31m-Current thread (0x00007fe9b4079000):  VMThread [stack: 0x00007fe9a4350000,0x00007fe9a4450000] [id=2238][m
+[31m-[m
+[31m-Stack: [0x00007fe9a4350000,0x00007fe9a4450000],  sp=0x00007fe9a444e440,  free space=1017k[m
+[31m-Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)[m
+[31m-V  [libjvm.so+0xab2552][m
+[31m-V  [libjvm.so+0x4d9e37][m
+[31m-V  [libjvm.so+0x8ed5e0][m
+[31m-V  [libjvm.so+0x8e470e][m
+[31m-V  [libjvm.so+0x968466][m
+[31m-V  [libjvm.so+0x9570da][m
+[31m-V  [libjvm.so+0x9572a8][m
+[31m-V  [libjvm.so+0x957eb0][m
+[31m-V  [libjvm.so+0x95e24c][m
+[31m-V  [libjvm.so+0x966335][m
+[31m-V  [libjvm.so+0x9149a8][m
+[31m-V  [libjvm.so+0xab4212][m
+[31m-V  [libjvm.so+0xab8dd6][m
+[31m-V  [libjvm.so+0xab7075][m
+[31m-V  [libjvm.so+0xab79ed][m
+[31m-V  [libjvm.so+0xab7dc7][m
+[31m-V  [libjvm.so+0x8ea992][m
+[31m-[m
+[31m-VM_Operation (0x00007fe925ea4080): ParallelGCFailedAllocation, mode: safepoint, requested by thread 0x00007fe92c53b000[m
+[31m-[m
+[31m-[m
+[31m----------------  P R O C E S S  ---------------[m
+[31m-[m
+[31m-Java Threads: ( => current thread )[m
+[31m-  0x00007fe92c53b000 JavaThread "pool-10-thread-16" [_thread_blocked, id=7634, stack(0x00007fe925da5000,0x00007fe925ea6000)][m
+[31m-  0x00007fe9b4762800 JavaThread "Cache worker for Java compile cache (/home/super/test/ravi/android/.gradle/4.10.2/javaCompile)" [_thread_blocked, id=7506, stack(0x00007fe92529c000,0x00007fe92539d000)][m
+[31m-  0x00007fe9b41bf800 JavaThread "Cache worker for Java compile cache (/home/super/.gradle/caches/4.10.2/javaCompile)" [_thread_blocked, id=7505, stack(0x00007fe925ca4000,0x00007fe925da5000)][m
+[31m-  0x00007fe940021800 JavaThread "stdout" daemon [_thread_in_native, id=7502, stack(0x00007fe92559d000,0x00007fe92569e000)][m
+[31m-  0x00007fe940018800 JavaThread "stderr" daemon [_thread_in_native, id=7501, stack(0x00007fe92569e000,0x00007fe92579f000)][m
+[31m-  0x00007fe94001c800 JavaThread "process reaper" daemon [_thread_in_native, id=7500, stack(0x00007fe994365000,0x00007fe99439e000)][m
+[31m-  0x00007fe944039000 JavaThread "stdout" daemon [_thread_in_native, id=7499, stack(0x00007fe92579f000,0x00007fe9258a0000)][m
+[31m-  0x00007fe944038000 JavaThread "stderr" daemon [_thread_in_native, id=7498, stack(0x00007fe9258a0000,0x00007fe9259a1000)][m
+[31m-  0x00007fe938088000 JavaThread "stdout" daemon [_thread_in_native, id=7497, stack(0x00007fe9259a1000,0x00007fe925aa2000)][m
+[31m-  0x00007fe938087800 JavaThread "stderr" daemon [_thread_in_native, id=7496, stack(0x00007fe925aa2000,0x00007fe925ba3000)][m
+[31m-  0x00007fe938083800 JavaThread "process reaper" daemon [_thread_in_native, id=7495, stack(0x00007fe99439e000,0x00007fe9943d7000)][m
+[31m-  0x00007fe938013800 JavaThread "pool-9-thread-1" [_thread_blocked, id=7491, stack(0x00007fe925ba3000,0x00007fe925ca4000)][m
+[31m-  0x00007fe928004800 JavaThread "process reaper" daemon [_thread_in_native, id=7384, stack(0x00007fe9943d7000,0x00007fe994410000)][m
+[31m-  0x00007fe9a0042000 JavaThread "Cache worker for Build Output Cleanup Cache (/home/super/test/ravi/android/.gradle/buildOutputCleanup)" [_thread_blocked, id=7380, stack(0x00007fe9976fb000,0x00007fe9977fc000)][m
+[31m-  0x00007fe9a0041000 JavaThread "Cache worker for task history cache (/home/super/test/ravi/android/.gradle/4.10.2/taskHistory)" [_thread_blocked, id=7379, stack(0x00007fe927bfe000,0x00007fe927cff000)][m
+[31m-  0x00007fe92c428800 JavaThread "Task worker for ':' Thread 3" [_thread_blocked, id=7378, stack(0x00007fe99413a000,0x00007fe99423b000)][m
+[31m-  0x00007fe92c427000 JavaThread "Task worker for ':' Thread 2" [_thread_blocked, id=7377, stack(0x00007fe994039000,0x00007fe99413a000)][m
+[31m-  0x00007fe92c425000 JavaThread "Task worker for ':'" [_thread_blocked, id=7376, stack(0x00007fe9962f3000,0x00007fe9963f4000)][m
+[31m-  0x00007fe92c424800 JavaThread "Cache worker for file content cache (/home/super/test/ravi/android/.gradle/4.10.2/fileContent)" [_thread_blocked, id=7375, stack(0x00007fe995827000,0x00007fe995928000)][m
+[31m-  0x00007fe92c3ff000 JavaThread "pool-8-thread-1" [_thread_blocked, id=7374, stack(0x00007fe99c2a7000,0x00007fe99c3a8000)][m
+[31m-  0x00007fe92c0bb800 JavaThread "Build operations Thread 4" [_thread_blocked, id=7373, stack(0x00007fe9264a8000,0x00007fe9265a9000)][m
+[31m-  0x00007fe92c0bb000 JavaThread "Build operations Thread 3" [_thread_blocked, id=7372, stack(0x00007fe9263a7000,0x00007fe9264a8000)][m
+[31m-  0x00007fe92c0ba000 JavaThread "Build operations Thread 2" [_thread_blocked, id=7371, stack(0x00007fe9275fa000,0x00007fe9276fb000)][m
+[31m-  0x00007fe92c0b2800 JavaThread "Build operations" [_thread_blocked, id=7370, stack(0x00007fe99c1a6000,0x00007fe99c2a7000)][m
+[31m-  0x00007fe92c0b1000 JavaThread "Cache worker for cache directory md-rule (/home/super/.gradle/caches/4.10.2/md-rule)" [_thread_blocked, id=7368, stack(0x00007fe9964f5000,0x00007fe9965f6000)][m
+[31m-  0x00007fe92c0b6000 JavaThread "Cache worker for cache directory md-supplier (/home/super/.gradle/caches/4.10.2/md-supplier)" [_thread_blocked, id=7367, stack(0x00007fe996af9000,0x00007fe996bfa000)][m
+[31m-  0x00007fe92c0c2000 JavaThread "Cache worker for file hash cache (/home/super/test/ravi/android/.gradle/4.10.2/fileHashes)" [_thread_blocked, id=7365, stack(0x00007fe997eff000,0x00007fe998000000)][m
+[31m-  0x00007fe92c0b4000 JavaThread "Stdin handler" [_thread_blocked, id=7364, stack(0x00007fe9965f6000,0x00007fe9966f7000)][m
+[31m-  0x00007fe92c0b8000 JavaThread "Asynchronous log dispatcher for DefaultDaemonConnection: socket connection from /0:0:0:0:0:0:0:1:44263 to /0:0:0:0:0:0:0:1:58010" [_thread_blocked, id=7363, stack(0x00007fe997dfe000,0x00007fe997eff000)][m
+[31m-  0x00007fe958466800 JavaThread "Daemon worker Thread 6" [_thread_blocked, id=7362, stack(0x00007fe9969f8000,0x00007fe996af9000)][m
+[31m-  0x00007fe95800a000 JavaThread "Cancel handler" [_thread_blocked, id=7361, stack(0x00007fe9963f4000,0x00007fe9964f5000)][m
+[31m-  0x00007fe958006000 JavaThread "Handler for socket connection from /0:0:0:0:0:0:0:1:44263 to /0:0:0:0:0:0:0:1:58010" [_thread_in_native, id=7360, stack(0x00007fe99c0a5000,0x00007fe99c1a6000)][m
+[31m-  0x00007fe960024000 JavaThread "Daemon Thread 6" [_thread_blocked, id=7359, stack(0x00007fe99
