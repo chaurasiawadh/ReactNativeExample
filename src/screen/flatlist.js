@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
@@ -15,21 +15,21 @@ class FlatLists extends Component {
     super();
     this.state = {
       FlatListItems: [
-        {key: 'China', population: '1,433,783,686'},
-        {key: 'India', population: '1,366,417,754'},
-        {key: 'Indonesia', population: '270,625,568'},
-        {key: 'Pakistan', population: '216,565,318'},
-        {key: 'Bangladesh', population: '163,046,161'},
-        {key: 'Japan', population: '126,860,301'},
-        {key: 'Philippines', population: '108,116,615'},
-        {key: 'Vietnam', population: '96,462,106'},
-        {key: 'Turkey', population: '83,429,615'},
-        {key: 'Iran', population: '82,913,906'},
-        {key: 'Thailand', population: '69,625,582'},
-        {key: 'Myanmar', population: '54,045,420'},
-        {key: 'South Korea', population: '51,225,308'},
-        {key: 'Iraq', population: '39,309,783'},
-        {key: 'Afghanistan', population: '38,041,754'},
+        { key: 'China', population: '1,433,783,686' },
+        { key: 'India', population: '1,366,417,754' },
+        { key: 'Indonesia', population: '270,625,568' },
+        { key: 'Pakistan', population: '216,565,318' },
+        { key: 'Bangladesh', population: '163,046,161' },
+        { key: 'Japan', population: '126,860,301' },
+        { key: 'Philippines', population: '108,116,615' },
+        { key: 'Vietnam', population: '96,462,106' },
+        { key: 'Turkey', population: '83,429,615' },
+        { key: 'Iran', population: '82,913,906' },
+        { key: 'Thailand', population: '69,625,582' },
+        { key: 'Myanmar', population: '54,045,420' },
+        { key: 'South Korea', population: '51,225,308' },
+        { key: 'Iraq', population: '39,309,783' },
+        { key: 'Afghanistan', population: '38,041,754' },
       ],
       refreshing: false,
     };
@@ -89,8 +89,9 @@ class FlatLists extends Component {
           ItemSeparatorComponent={this.FlatListItemSeparator}
           onRefresh={this.onRefresh}
           refreshing={this.state.refreshing}
-          renderItem={({item}) => (
+          renderItem={({ item }) => (
             <TouchableOpacity
+              key={item.key}
               style={styles.container}
               onPress={() => this.GetFlatListItem(item)}>
               <Text style={styles.key}>{item.key}</Text>

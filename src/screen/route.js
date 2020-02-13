@@ -1,24 +1,24 @@
 import React from 'react';
 import colors from '../component/color';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {Easing, Animated, View, TouchableOpacity} from 'react-native';
-import {createStackNavigator, createDrawerNavigator} from 'react-navigation';
+import { Easing, Animated, View, TouchableOpacity } from 'react-native';
+import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
 
-import SlideMenu from '../slideMenu/slideMenu';
 import Home from './home';
-import Profile from './profile';
 import Texts from './text';
-import Scroll from './scroll';
-import Images from './image';
-import Pickers from './picker';
-import Progress from './progress';
-import SectionList from './sectionlist';
-import Switch from './switch';
 import Shares from './share';
+import Images from './image';
+import Switch from './switch';
+import Scroll from './scroll';
+import Pickers from './picker';
+import Profile from './profile';
 import WebViews from './webview';
+import Progress from './progress';
 import StatusBars from './statusBar';
 import Animations from './animation';
 import VectorIcon from './vectorIcon';
+import SectionList from './sectionlist';
+import SlideMenu from '../slideMenu/slideMenu';
 
 //Animation
 import shadow from '../component/Animation/shadow';
@@ -37,7 +37,7 @@ import flatList from './flatlist';
 
 //git Page
 import Gits from './git';
-import Tutorial from '../tutorial/index';
+import Tutorial from '../tutorial/tutorial';
 
 //API
 import ApiHome from '../component/Api/apiHome';
@@ -52,7 +52,7 @@ const transitionConfig = () => {
       useNativeDriver: true,
     },
     screenInterpolator: sceneProps => {
-      const {layout, position, scene} = sceneProps;
+      const { layout, position, scene } = sceneProps;
       const thisSceneIndex = scene.index;
       const width = layout.initWidth;
       const translateX = position.interpolate({
@@ -60,7 +60,7 @@ const transitionConfig = () => {
         outputRange: [width, 0],
       });
 
-      return {transform: [{translateX}]};
+      return { transform: [{ translateX }] };
     },
   };
 };
@@ -70,15 +70,16 @@ const urlCommon =
 
 const AppNavigator = createStackNavigator(
   {
-    Home: {screen: Home,
-      navigationOptions: ({navigation}) => ({
-        headerTitle: 'React Native Example',
+    Home: {
+      screen: Home,
+      navigationOptions: () => ({
+        header: <View />,
         headerStyle: {
-          backgroundColor: colors.primary,
           elevation: 0,
+          marginTop: 20,
         },
-        headerTintColor: '#fff'
       }),
+
     },
     Profile: {
       screen: Profile,
@@ -92,7 +93,7 @@ const AppNavigator = createStackNavigator(
     },
     Texts: {
       screen: Texts,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'Text',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -105,7 +106,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'screen/text.js',
@@ -118,7 +119,7 @@ const AppNavigator = createStackNavigator(
     },
     Scroll: {
       screen: Scroll,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'ScrollView',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -131,7 +132,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'screen/scroll.js',
@@ -144,7 +145,7 @@ const AppNavigator = createStackNavigator(
     },
     Images: {
       screen: Images,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'Image',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -157,7 +158,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'screen/image.js',
@@ -170,7 +171,7 @@ const AppNavigator = createStackNavigator(
     },
     Pickers: {
       screen: Pickers,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'Picker',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -183,7 +184,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'screen/picker.js',
@@ -196,7 +197,7 @@ const AppNavigator = createStackNavigator(
     },
     Progress: {
       screen: Progress,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'Progress Bar',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -209,7 +210,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'screen/progress.js',
@@ -222,7 +223,7 @@ const AppNavigator = createStackNavigator(
     },
     SectionList: {
       screen: SectionList,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'SectionList',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -235,7 +236,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'screen/sectionlist.js',
@@ -248,7 +249,7 @@ const AppNavigator = createStackNavigator(
     },
     Switch: {
       screen: Switch,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'Switch',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -261,7 +262,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'screen/switch.js',
@@ -274,7 +275,7 @@ const AppNavigator = createStackNavigator(
     },
     Shares: {
       screen: Shares,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'Share',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -287,7 +288,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'screen/share.js',
@@ -300,7 +301,7 @@ const AppNavigator = createStackNavigator(
     },
     WebViews: {
       screen: WebViews,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'WebView',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -313,7 +314,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'screen/webview.js',
@@ -326,7 +327,7 @@ const AppNavigator = createStackNavigator(
     },
     StatusBars: {
       screen: StatusBars,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'StatusBar',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -339,7 +340,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'screen/statusBar.js',
@@ -353,7 +354,7 @@ const AppNavigator = createStackNavigator(
 
     VectorIcon: {
       screen: VectorIcon,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'Vector Icons',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -366,7 +367,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'screen/vectorIcon.js',
@@ -378,12 +379,12 @@ const AppNavigator = createStackNavigator(
       }),
     },
 
-    Git: {screen: Gits},
+    Git: { screen: Gits },
 
     //Animaton
     Animations: {
       screen: Animations,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'Animation',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -396,7 +397,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'screen/animation.js',
@@ -409,7 +410,7 @@ const AppNavigator = createStackNavigator(
     },
     shadow: {
       screen: shadow,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'Shadow',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -422,7 +423,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'component/Animation/shadow.js',
@@ -435,7 +436,7 @@ const AppNavigator = createStackNavigator(
     },
     fade: {
       screen: fade,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'Fade Animation',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -447,7 +448,7 @@ const AppNavigator = createStackNavigator(
             <Icon
               name="code"
               size={25}
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               color="white"
               onPress={() =>
                 navigation.navigate('Git', {
@@ -461,7 +462,7 @@ const AppNavigator = createStackNavigator(
     },
     Multiple: {
       screen: Multiple,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'Multiple Animation',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -473,7 +474,7 @@ const AppNavigator = createStackNavigator(
             <Icon
               name="code"
               size={25}
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               color="#fff"
               onPress={() =>
                 navigation.navigate('Git', {
@@ -487,7 +488,7 @@ const AppNavigator = createStackNavigator(
     },
     loader: {
       screen: loader,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'Loader Animation',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -500,7 +501,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'component/Animation/loader.js',
@@ -515,7 +516,7 @@ const AppNavigator = createStackNavigator(
     //Swipe
     swipe: {
       screen: swipe,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'Swipe',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -529,7 +530,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'component/Swipe/swipe.js',
@@ -544,7 +545,7 @@ const AppNavigator = createStackNavigator(
     //Storage
     storage: {
       screen: storage,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'Storage',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -556,7 +557,7 @@ const AppNavigator = createStackNavigator(
             <Icon
               name="code"
               size={25}
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               color="white"
               onPress={() =>
                 navigation.navigate('Git', {
@@ -572,7 +573,7 @@ const AppNavigator = createStackNavigator(
     //FlatList
     flatList: {
       screen: flatList,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'FlatList',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -585,7 +586,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'screen//flatList.js',
@@ -599,7 +600,7 @@ const AppNavigator = createStackNavigator(
 
     ApiHome: {
       screen: ApiHome,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'API',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -612,7 +613,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'component/Api/apiHome.js',
@@ -625,7 +626,7 @@ const AppNavigator = createStackNavigator(
     },
     RedditApi: {
       screen: RedditApi,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'Reddit Popular Api',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -638,7 +639,7 @@ const AppNavigator = createStackNavigator(
               name="code"
               size={25}
               color="white"
-              style={{marginRight: 20}}
+              style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
                   url: urlCommon + 'component/Api/Reddit/reddit.js',
@@ -652,7 +653,7 @@ const AppNavigator = createStackNavigator(
 
     Tutorial: {
       screen: Tutorial,
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: ({ navigation }) => ({
         headerTitle: 'Tutorial',
         headerStyle: {
           backgroundColor: colors.primary,
@@ -668,7 +669,7 @@ const AppNavigator = createStackNavigator(
 );
 const Drawer = createDrawerNavigator(
   {
-    AppNavigator: {screen: AppNavigator},
+    AppNavigator: { screen: AppNavigator },
   },
   {
     contentComponent: SlideMenu,

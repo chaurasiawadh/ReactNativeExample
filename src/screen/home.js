@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   View,
   Text,
+  Linking,
   StatusBar,
-  ImageBackground,
-  Button,
   StyleSheet,
+  ImageBackground,
   TouchableOpacity,
 } from 'react-native';
 import colors from '../component/color';
@@ -16,25 +16,22 @@ const Intro =
 
 class Home extends Component {
   render() {
+    const url = 'https://github.com/Awadhesh786/ReactNativeExample/tree/master'
     return (
       <ImageBackground style={styles.container} resizeMode="cover">
         <StatusBar barStyle="light-content" backgroundColor={colors.primary} />
-        <View style={styles.head}>
+        <Text style={styles.headerTxt}>React Native Example</Text>
+        <TouchableOpacity
+          onPress={() => Linking.openURL(url).catch((err) => alert('Error: ', err))}
+          style={styles.head}>
           <Icon name="code" size={120} color="#fff" style={styles.icn} />
-        </View>
-        <TouchableOpacity 
-          onPress={()=> this.props.navigation.navigate('Tutorial')}
-        style={styles.tut}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => this.props.navigation.navigate('Tutorial')}
+          style={styles.tut}>
           <Text style={styles.tutxt}>Tutorial</Text>
         </TouchableOpacity>
 
-        {/* <TouchableOpacity 
-          onPress={()=> this.props.navigation.navigate('Ads')}
-        style={styles.tut}>
-          <Text style={styles.tutxt}>Ads check</Text>
-        </TouchableOpacity> */}
-
-        
         <View style={styles.foot}>
           <Text style={styles.intro}>{Intro}</Text>
 
@@ -60,6 +57,12 @@ const styles = StyleSheet.create({
   head: {
     justifyContent: 'center',
     flex: 1,
+  },
+  headerTxt: {
+    fontSize: 28,
+    fontWeight: "bold",
+    margin: 20,
+    color: colors.white
   },
   icn: {
     textAlign: 'center',
@@ -95,7 +98,7 @@ const styles = StyleSheet.create({
     borderColor: colors.white,
     borderWidth: 2,
     borderRadius: 10,
-    margin:4
+    margin: 4
   },
   tutxt: {
     fontSize: 28,

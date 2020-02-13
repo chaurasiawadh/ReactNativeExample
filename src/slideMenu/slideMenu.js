@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   View,
   Text,
@@ -6,31 +6,30 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
-  ActivityIndicator,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import colors from '../component/color';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 let list = [
-  {name: 'Animation', click: 'Animations', icons: 'book'},
-  {name: 'Storage', click: 'storage', icons: 'book'},
-  {name: 'Api', click: 'ApiHome', icons: 'book'},
-  {name: 'Vector Icon', click: 'VectorIcon', icons: 'book'},
+  { name: 'Animation', click: 'Animations', icons: 'book' },
+  { name: 'Storage', click: 'storage', icons: 'book' },
+  { name: 'Api', click: 'ApiHome', icons: 'book' },
+  { name: 'Vector Icon', click: 'VectorIcon', icons: 'book' },
 ];
 
 let subList = [
-  {name: 'Text', click: 'Texts', icons: 'book'},
-  {name: 'Scroll View', click: 'Scroll', icons: 'book'},
-  {name: 'Image', click: 'Images', icons: 'book'},
-  {name: 'Flatlist', click: 'flatList', icons: 'book'},
-  {name: 'Swipe List', click: 'swipe', icons: 'book'},
-  {name: 'Picker', click: 'Pickers', icons: 'book'},
-  {name: 'StatusBar', click: 'StatusBars', icons: 'book'},
-  {name: 'Progress Bar', click: 'Progress', icons: 'book'},
-  {name: 'SectionList', click: 'SectionList', icons: 'book'},
-  {name: 'Switch', click: 'Switch', icons: 'book'},
-  {name: 'WebView', click: 'WebViews', icons: 'book'},
-  {name: 'Share', click: 'Shares', icons: 'book'},
+  { name: 'Text', click: 'Texts', icons: 'book' },
+  { name: 'Scroll View', click: 'Scroll', icons: 'book' },
+  { name: 'Image', click: 'Images', icons: 'book' },
+  { name: 'Flatlist', click: 'flatList', icons: 'book' },
+  { name: 'Swipe List', click: 'swipe', icons: 'book' },
+  { name: 'Picker', click: 'Pickers', icons: 'book' },
+  { name: 'StatusBar', click: 'StatusBars', icons: 'book' },
+  { name: 'Progress Bar', click: 'Progress', icons: 'book' },
+  { name: 'SectionList', click: 'SectionList', icons: 'book' },
+  { name: 'Switch', click: 'Switch', icons: 'book' },
+  { name: 'WebView', click: 'WebViews', icons: 'book' },
+  { name: 'Share', click: 'Shares', icons: 'book' },
 ];
 
 class SlideMenu extends Component {
@@ -51,17 +50,17 @@ class SlideMenu extends Component {
   };
 
   toggleSideMenuFolderList = () => {
-    this.setState({toggleDown: !this.state.toggleDown});
+    this.setState({ toggleDown: !this.state.toggleDown });
   };
 
   render() {
     return (
-      <View>
+      <View style={{ paddingBottom: 30 }}>
         <ScrollView>
           <TouchableOpacity
             onPress={() => this.playStore()}
             style={styles.card}>
-            <Text style={{color: colors.white, fontSize: 22}}>
+            <Text style={{ color: colors.white, fontSize: 22 }}>
               React Native
             </Text>
           </TouchableOpacity>
@@ -79,19 +78,20 @@ class SlideMenu extends Component {
               <Icon name="book" color={colors.primary} size={20} />
               <Text style={styles.txt}>Default Component</Text>
             </View>
-            {this.state.toggleDown ? (
+            {this.state.toggleDown ?
               <Icon name="caret-up" color={colors.primary} size={20} />
-            ) : (
+              :
               <Icon name="caret-down" color={colors.primary} size={20} />
-            )}
+            }
           </TouchableOpacity>
 
           {this.state.toggleDown ? (
             <View>
               {subList.map(item => (
                 <TouchableOpacity
+                  key={item.name}
                   onPress={() => this.props.navigation.navigate(item.click)}
-                  style={[styles.subCard,{marginLeft:16}]}>
+                  style={[styles.subCard, { marginLeft: 16 }]}>
                   <Icon name={item.icons} color={colors.primary} size={20} />
                   <Text style={styles.txt}>{item.name}</Text>
                 </TouchableOpacity>
@@ -101,6 +101,7 @@ class SlideMenu extends Component {
 
           {list.map(item => (
             <TouchableOpacity
+              key={item.name}
               onPress={() => this.props.navigation.navigate(item.click)}
               style={styles.subCard}>
               <Icon name={item.icons} color={colors.primary} size={20} />
@@ -117,28 +118,26 @@ export default SlideMenu;
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: colors.primary,
     padding: 50,
     borderRadius: 2,
+    backgroundColor: colors.primary,
   },
   element: {
-    backgroundColor: colors.white,
     padding: 10,
-    borderBottomWidth: 0.5,
     flexDirection: 'row',
+    borderBottomWidth: 0.5,
+    backgroundColor: colors.white,
     justifyContent: 'space-between',
   },
   subCard: {
-    backgroundColor: colors.white,
     padding: 10,
-    borderBottomWidth: 0.5,
     flexDirection: 'row',
+    borderBottomWidth: 0.5,
+    backgroundColor: colors.white,
   },
   sub: {
-    backgroundColor: colors.white,
-    // padding: 10,
-    // borderBottomWidth: 0.5,
     flexDirection: 'row',
+    backgroundColor: colors.white,
   },
   txt: {
     marginLeft: 10,

@@ -130,8 +130,8 @@ android {
         applicationId "com.ravi"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 311
-        versionName "3.1.1"
+        versionCode 312
+        versionName "3.1.2"
     }
 
     signingConfigs {
@@ -180,7 +180,7 @@ dependencies {
     implementation project(':react-native-webview')
     implementation project(':react-native-vector-icons')
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation "com.facebook.react:react-native:+"
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";

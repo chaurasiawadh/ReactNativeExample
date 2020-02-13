@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   View,
   Text,
@@ -10,15 +10,15 @@ import {
 } from 'react-native';
 import colors from '../../color';
 import Header from './header';
-import {popularApi} from './api';
-import {DrawerActions} from 'react-navigation';
+import { popularApi } from './api';
+import { DrawerActions } from 'react-navigation';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FAF from 'react-native-vector-icons/FontAwesome5';
 import IconFont from 'react-native-vector-icons/FontAwesome';
 import IconFontisto from 'react-native-vector-icons/Fontisto';
 import OIcon from 'react-native-vector-icons/Octicons';
 import LocalStorage from 'react-native-local-storage';
-import {styles} from './styles';
+import { styles } from './styles';
 
 class Reddit extends Component {
   constructor(props) {
@@ -48,7 +48,7 @@ class Reddit extends Component {
   }
 
   goBack = () => {
-    this.props.navigation.navigate('ApiHome');
+    this.props.navigation.navigate('Home');
   };
 
   apis = () => {
@@ -113,7 +113,7 @@ class Reddit extends Component {
       }
     }
     this.setState({
-      favItems: {...localState},
+      favItems: { ...localState },
     });
   };
 
@@ -143,7 +143,7 @@ class Reddit extends Component {
   };
 
   handleScroll = e => {
-    this.setState({scrollPosition: e.nativeEvent.contentOffset.y});
+    this.setState({ scrollPosition: e.nativeEvent.contentOffset.y });
   };
 
   sendOnWhatsApp = text => {
@@ -177,7 +177,7 @@ class Reddit extends Component {
           <Text style={styles.comment}>{num_comments} comments</Text>
         </View>
         {preview ? (
-          <Image style={styles.Image} source={{uri: thumbnail}} />
+          <Image style={styles.Image} source={{ uri: thumbnail }} />
         ) : null}
 
         <View style={styles.IconView}>
@@ -193,8 +193,8 @@ class Reddit extends Component {
             {this.findFavItem(name) ? (
               <IconFont name="star" color={colors.red} size={20} />
             ) : (
-              <IconFont name="star-o" color={colors.icn} size={20} />
-            )}
+                <IconFont name="star-o" color={colors.icn} size={20} />
+              )}
           </TouchableOpacity>
 
           <TouchableOpacity>
@@ -243,8 +243,8 @@ class Reddit extends Component {
             </TouchableOpacity>
           </View>
         ) : (
-          <ActivityIndicator />
-        )}
+            <ActivityIndicator />
+          )}
       </View>
     );
   }

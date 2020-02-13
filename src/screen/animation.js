@@ -1,12 +1,17 @@
-import React, {Component} from 'react';
-import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
+import React, { Component } from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 import colors from '../component/color';
 
 let list = [
-  {name: 'Multiple', click: 'Multiple'},
-  {name: 'Fade', click: 'fade'},
-  {name: 'Shadow', click: 'shadow'},
-  {name: 'Loader', click: 'loader'},
+  { name: 'Multiple', click: 'Multiple' },
+  { name: 'Fade', click: 'fade' },
+  { name: 'Shadow', click: 'shadow' },
+  { name: 'Loader', click: 'loader' },
 ];
 
 class Animations extends Component {
@@ -15,6 +20,7 @@ class Animations extends Component {
       <View style={styles.container}>
         {list.map(item => (
           <TouchableOpacity
+            key={item.name}
             onPress={() => this.props.navigation.navigate(item.click)}
             style={styles.box}>
             <Text style={styles.name}>{item.name}</Text>
