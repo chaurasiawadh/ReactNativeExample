@@ -41,7 +41,7 @@ React component that wraps the platform DrawerLayout (Android only). The Drawer 
 ### Static Image Resources
 React Native provides a unified way of managing images and other media assets in your Android and iOS apps. To add a static image to your app, place it somewhere in your source code tree and reference it like this:
 
-```javascript <Image source={require('./my-icon.png')} /> ```
+``` <Image source={require('./my-icon.png')} /> ```
 
 The image name is resolved the same way JS modules are resolved. In the example above, the packager will look for my-icon.png in the same folder as the component that requires it. Also, if you have my-icon.ios.png and my-icon.android.png, the packager will pick the correct file for the platform.
 
@@ -315,10 +315,50 @@ const styles = StyleSheet.create({
 
 This is a convenience wrapper around <VirtualizedList>, and thus inherits its props (as well as those of <ScrollView>) that aren't explicitly listed here, along with the following caveats:
 
-Internal state is not preserved when content scrolls out of the render window. Make sure all your data is captured in the item data or external stores like Flux, Redux, or Relay.
-This is a PureComponent which means that it will not re-render if props remain shallow-equal. Make sure that everything your renderItem function depends on is passed as a prop (e.g. extraData) that is not === after updates, otherwise your UI may not update on changes. This includes the data prop and parent component state.
-In order to constrain memory and enable smooth scrolling, content is rendered asynchronously offscreen. This means it's possible to scroll faster than the fill rate and momentarily see blank content. This is a tradeoff that can be adjusted to suit the needs of each application, and we are working on improving it behind the scenes.
-By default, the list looks for a key prop on each item and uses that for the React key. Alternatively, you can provide a custom keyExtractor prop.
+* Internal state is not preserved when content scrolls out of the render window. Make sure all your data is captured in the item data or external stores like Flux, Redux, or Relay.
+* This is a PureComponent which means that it will not re-render if props remain shallow-equal. Make sure that everything your renderItem function depends on is passed as a prop (e.g. extraData) that is not === after updates, otherwise your UI may not update on changes. This includes the data prop and parent component state.
+* In order to constrain memory and enable smooth scrolling, content is rendered asynchronously offscreen. This means it's possible to scroll faster than the fill rate and momentarily see blank content. This is a tradeoff that can be adjusted to suit the needs of each application, and we are working on improving it behind the scenes.
+* By default, the list looks for a key prop on each item and uses that for the React key. Alternatively, you can provide a custom keyExtractor prop.
+
+## renderItem
+``` renderItem({item, index, separators}); ```
+Takes an item from data and renders it into the list.
+
+Provides additional metadata like index if you need it, as well as a more generic separators.updateProps function which let you set whatever props you want to change the rendering of either the leading separator or trailing separator in case the more common highlight and unhighlight (which set the highlighted: boolean prop) are insufficient for your use case.
+
+## TYPE	REQUIRED
+**function	Yes**
+* item (Object): The item from data being rendered.
+* index (number): The index corresponding to this item in the data array.
+* separators (Object)
+  * highlight (Function)
+  * unhighlight (Function)
+  * updateProps (Function)
+    * select (enum('leading', 'trailing'))
+    * newProps (Object)
+    
+**Example usage:**
+
+```javascript
+
+<FlatList
+  ItemSeparatorComponent={Platform.OS !== 'android' && ({highlighted}) => (
+    <View style={[style.separator, highlighted && {marginLeft: 0}]} />
+  )}
+  data={[{title: 'Title Text', key: 'item1'}]}
+  renderItem={({item, index, separators}) => (
+    <TouchableHighlight
+      onPress={() => this._onPress(item)}
+      onShowUnderlay={separators.highlight}
+      onHideUnderlay={separators.unhighlight}>
+      <View style={{backgroundColor: 'white'}}>
+        <Text>{item.title}</Text>
+      </View>
+    </TouchableHighlight>
+  )}
+/>
+
+```
 
 ## FlatList
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/flatList.jpg" width="300px" height="500px" />
