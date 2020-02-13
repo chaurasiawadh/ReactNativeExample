@@ -3,6 +3,8 @@ react native example
 
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/wallpaper.png" />
 
+React Native is an open-source mobile application framework created by Facebook. It is used to develop applications for Android, iOS, Weband UWP by enabling developers to use React along with native platform capabilities.
+
 ## Home
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/home.png"/>
 
