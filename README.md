@@ -4,7 +4,7 @@ react native example
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/wallpaper.png" />
 
 ## Home
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/home.png" width="300px" height="500px" />
+<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/home.png"/>
 
 ## Slide Menu
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/slideMenu.jpg"  width="300px" height="500px"/>
