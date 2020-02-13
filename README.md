@@ -41,7 +41,7 @@ React component that wraps the platform DrawerLayout (Android only). The Drawer 
 ### Static Image Resources
 React Native provides a unified way of managing images and other media assets in your Android and iOS apps. To add a static image to your app, place it somewhere in your source code tree and reference it like this:
 
-_<Image source={require('./my-icon.png')} />_
+```javascript <Image source={require('./my-icon.png')} /> ```
 
 The image name is resolved the same way JS modules are resolved. In the example above, the packager will look for my-icon.png in the same folder as the component that requires it. Also, if you have my-icon.ios.png and my-icon.android.png, the packager will pick the correct file for the platform.
 
@@ -76,11 +76,14 @@ By default, timing will use a easeInOut curve that conveys gradual acceleration 
 
 For example, if we want to create a 2-second long animation of an object that slightly backs up before moving to its final position:
 
+```javascript
 Animated.timing(this.state.xPosition, {
   toValue: 100,
   easing: Easing.back(),
   duration: 2000,
 }).start();
+```
+
 Take a look at the Configuring animations section of the Animated API reference to learn more about all the config parameters supported by the built-in animations.
 
 ## Composing animations
