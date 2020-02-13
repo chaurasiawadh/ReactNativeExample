@@ -1,4 +1,4 @@
 # ReactNativeExample
 react native example
 
-<Image source={require('./screenshot/wallpaper.png)} />
+<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/wallpaper.png" />
