@@ -133,8 +133,6 @@ Animated.spring(a, {
 
 ## Animation
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/animation.jpg" width="300px" height="500px" />
-
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/multipleAnimate.jpg" width="300px" height="500px" />
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/mutipleAnimation.jpg" width="300px" height="500px" />
 
 ### Shadow Animation
@@ -363,11 +361,67 @@ Provides additional metadata like index if you need it, as well as a more generi
 ## FlatList
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/flatList.jpg" width="300px" height="500px" />
 
-## Popular
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/popular.jpeg" width="300px" height="500px" />
+# AsyncStorage
+Deprecated. Use _react-native-community/react-native-async-storage_ instead.
 
-## flatList.jpg
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/flatList.jpg" width="300px" height="500px" />
+AsyncStorage is an unencrypted, asynchronous, persistent, key-value storage system that is global to the app. It should be used instead of LocalStorage.
+
+It is recommended that you use an abstraction on top of AsyncStorage instead of AsyncStorage directly for anything more than light usage since it operates globally.
+
+On iOS, AsyncStorage is backed by native code that stores small values in a serialized dictionary and larger values in separate files. On Android, AsyncStorage will use either RocksDB or SQLite based on what is available.
+
+The AsyncStorage JavaScript code is a facade that provides a clear JavaScript API, real Error objects, and non-multi functions. Each method in the API returns a Promise object.
+
+Importing the AsyncStorage library:
+
+```javascript
+import {AsyncStorage} from 'react-native';
+Persisting data:
+
+_storeData = async () => {
+  try {
+    await AsyncStorage.setItem('@MySuperStore:key', 'I like to save it.');
+  } catch (error) {
+    // Error saving data
+  }
+};
+Fetching data:
+
+_retrieveData = async () => {
+  try {
+    const value = await AsyncStorage.getItem('TASKS');
+    if (value !== null) {
+      // We have data!!
+      console.log(value);
+    }
+  } catch (error) {
+    // Error retrieving data
+  }
+};
+
+```
+## Reference
+### Methods
+
+* **getItem()**
+```static getItem(key: string, [callback]: ?(error: ?Error, result: ?string) => void) ```
+
+Fetches an item for a key and invokes a callback upon completion. Returns a Promise object.
+
+* **setItem()**
+```static setItem(key: string, value: string, [callback]: ?(error: ?Error) => void)```
+Sets the value for a key and invokes a callback upon completion. Returns a Promise object.
+
+* **removeItem()**
+_static removeItem(key: string, [callback]: ?(error: ?Error) => void)_
+Removes an item for a key and invokes a callback upon completion. Returns a Promise object.
+
+* **mergeItem()**
+```static mergeItem(key: string, value: string, [callback]: ?(error: ?Error) => void)```
+Merges an existing key value with an input value, assuming both values are stringified JSON. Returns a Promise object.
+
+* **clear()**
+```static clear([callback]: ?(error: ?Error) => void)```
 
 ## Local Storage
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/localStorage.jpg" width="300px" height="500px" />
@@ -389,4 +443,9 @@ Provides additional metadata like index if you need it, as well as a more generi
 
 ## Tutorial
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/tutorial.jpeg" width="300px" height="500px" />
+
+
+
+## Popular
+<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/popular.jpeg" width="300px" height="500px" />
 
