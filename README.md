@@ -91,6 +91,7 @@ Animations can be combined and played in sequence or in parallel. Sequential ani
 
 **For example, the following animation coasts to a stop, then it springs back while twirling in parallel:**
 
+```javascript
 Animated.sequence([
   // decay, then spring to start and twirl
   Animated.decay(position, {
@@ -109,6 +110,7 @@ Animated.sequence([
     }),
   ]),
 ]).start(); // start the sequence group
+```
 
 If one **animation is stopped or interrupted**, then all other animations in the group are also stopped. Animated.parallel has a stopTogether option that can be set to false to disable this.
 
@@ -119,6 +121,7 @@ You can combine two animated values via addition, multiplication, division, or m
 
 There are some cases where an animated value needs to invert another animated value for calculation. An example is inverting a scale (2x --> 0.5x):
 
+```javascript
 const a = new Animated.Value(1);
 const b = Animated.divide(1, a);
 
@@ -126,16 +129,196 @@ Animated.spring(a, {
   toValue: 2,
 }).start();
 
+```
+
 ## Animation
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/animation.jpg" width="300px" height="500px" />
 
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/multipleAnimate.jpg" width="300px" height="500px" />
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/mutipleAnimation.jpg" width="300px" height="500px" />
 
-
-## Shadow Animation
+### Shadow Animation
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/shadowAnimation.jpg" width="300px" height="500px" />
 
+# FlatList
+A performant interface for rendering basic, flat lists, supporting the most handy features:
+
+* Fully cross-platform.
+* Optional horizontal mode.
+* Configurable viewability callbacks.
+* Header support.
+* Footer support.
+* Separator support.
+* Pull to Refresh.
+* Scroll loading.
+* ScrollToIndex support.
+* Multiple column support.
+If you need section support, use <SectionList>.
+
+Basic Example:
+
+```javascript
+import React from 'react';
+import { SafeAreaView, View, FlatList, StyleSheet, Text } from 'react-native';
+import Constants from 'expo-constants';
+
+const DATA = [
+  {
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    title: 'First Item',
+  },
+  {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    title: 'Second Item',
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    title: 'Third Item',
+  },
+];
+
+function Item({ title }) {
+  return (
+    <View style={styles.item}>
+      <Text style={styles.title}>{title}</Text>
+    </View>
+  );
+}
+
+export default function App() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={DATA}
+        renderItem={({ item }) => <Item title={item.title} />}
+        keyExtractor={item => item.id}
+      />
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: Constants.statusBarHeight,
+  },
+  item: {
+    backgroundColor: '#f9c2ff',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+  },
+  title: {
+    fontSize: 32,
+  },
+});
+
+```
+
+To render multiple columns, use the numColumns prop. Using this approach instead of a flexWrap layout can prevent conflicts with the item height logic.
+
+More complex, multi-select example demonstrating `` usage for perf optimization and avoiding bugs. ``
+
+* By passing extraData={selected} to FlatList we make sure FlatList itself will re-render when the state changes. Without setting this prop, FlatList would not know it needs to re-render any items because it is a PureComponent and the prop comparison will not show any changes.
+* keyExtractor tells the list to use the ids for the react keys instead of the default key property.
+
+```javascript
+
+import React from 'react';
+import {
+  SafeAreaView,
+  TouchableOpacity,
+  FlatList,
+  StyleSheet,
+  Text,
+} from 'react-native';
+import Constants from 'expo-constants';
+
+const DATA = [
+  {
+    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    title: 'First Item',
+  },
+  {
+    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    title: 'Second Item',
+  },
+  {
+    id: '58694a0f-3da1-471f-bd96-145571e29d72',
+    title: 'Third Item',
+  },
+];
+
+function Item({ id, title, selected, onSelect }) {
+  return (
+    <TouchableOpacity
+      onPress={() => onSelect(id)}
+      style={[
+        styles.item,
+        { backgroundColor: selected ? '#6e3b6e' : '#f9c2ff' },
+      ]}
+    >
+      <Text style={styles.title}>{title}</Text>
+    </TouchableOpacity>
+  );
+}
+
+export default function App() {
+  const [selected, setSelected] = React.useState(new Map());
+
+  const onSelect = React.useCallback(
+    id => {
+      const newSelected = new Map(selected);
+      newSelected.set(id, !selected.get(id));
+
+      setSelected(newSelected);
+    },
+    [selected],
+  );
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={DATA}
+        renderItem={({ item }) => (
+          <Item
+            id={item.id}
+            title={item.title}
+            selected={!!selected.get(item.id)}
+            onSelect={onSelect}
+          />
+        )}
+        keyExtractor={item => item.id}
+        extraData={selected}
+      />
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: Constants.statusBarHeight,
+  },
+  item: {
+    backgroundColor: '#f9c2ff',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+  },
+  title: {
+    fontSize: 32,
+  },
+});
+
+```
+
+This is a convenience wrapper around <VirtualizedList>, and thus inherits its props (as well as those of <ScrollView>) that aren't explicitly listed here, along with the following caveats:
+
+Internal state is not preserved when content scrolls out of the render window. Make sure all your data is captured in the item data or external stores like Flux, Redux, or Relay.
+This is a PureComponent which means that it will not re-render if props remain shallow-equal. Make sure that everything your renderItem function depends on is passed as a prop (e.g. extraData) that is not === after updates, otherwise your UI may not update on changes. This includes the data prop and parent component state.
+In order to constrain memory and enable smooth scrolling, content is rendered asynchronously offscreen. This means it's possible to scroll faster than the fill rate and momentarily see blank content. This is a tradeoff that can be adjusted to suit the needs of each application, and we are working on improving it behind the scenes.
+By default, the list looks for a key prop on each item and uses that for the React key. Alternatively, you can provide a custom keyExtractor prop.
 
 ## FlatList
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/flatList.jpg" width="300px" height="500px" />
