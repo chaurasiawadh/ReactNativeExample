@@ -7,8 +7,8 @@ react native example
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/home.png" />
 
 ## Slide Menu
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/slideMenu.jpg"  width="100px" height="200px"/>
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/slideMenuSort.jpg"  width="100px" height="200px" />
+<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/slideMenu.jpg"  width="200px" height="400px"/>
+<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/slideMenuSort.jpg"  width="200px" height="400px" />
 
 ## Tutorial
 <img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/tutorial.jpeg" />
