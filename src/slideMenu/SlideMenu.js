@@ -10,14 +10,14 @@ import {
 import colors from '../component/color';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-let list = [
+const list = [
   { name: 'Animation', click: 'Animations', icons: 'book' },
   { name: 'Storage', click: 'storage', icons: 'book' },
   { name: 'Api', click: 'ApiHome', icons: 'book' },
   { name: 'Vector Icon', click: 'VectorIcon', icons: 'book' },
 ];
 
-let subList = [
+const subList = [
   { name: 'Text', click: 'Texts', icons: 'book' },
   { name: 'Scroll View', click: 'Scroll', icons: 'book' },
   { name: 'Image', click: 'Images', icons: 'book' },
@@ -32,11 +32,17 @@ let subList = [
   { name: 'Share', click: 'Shares', icons: 'book' },
 ];
 
+const designList = [
+  { name: 'ScrollView', click: 'ScrollViewOpacity', icons: 'book' },
+
+];
+
 class SlideMenu extends Component {
   constructor() {
     super();
     this.state = {
       toggleDown: false,
+      toggleDown2: false
     };
   }
   playStore = () => {
@@ -51,6 +57,9 @@ class SlideMenu extends Component {
 
   toggleSideMenuFolderList = () => {
     this.setState({ toggleDown: !this.state.toggleDown });
+  };
+  toggleSideMenuFolderList2 = () => {
+    this.setState({ toggleDown2: !this.state.toggleDown2 });
   };
 
   render() {
@@ -108,6 +117,36 @@ class SlideMenu extends Component {
               <Text style={styles.txt}>{item.name}</Text>
             </TouchableOpacity>
           ))}
+
+
+          <TouchableOpacity
+            onPress={() => this.toggleSideMenuFolderList2()}
+            style={styles.element}>
+            <View style={styles.sub}>
+              <Icon name="book" color={colors.primary} size={20} />
+              <Text style={styles.txt}>Design App</Text>
+            </View>
+            {this.state.toggleDown2 ?
+              <Icon name="caret-up" color={colors.primary} size={20} />
+              :
+              <Icon name="caret-down" color={colors.primary} size={20} />
+            }
+          </TouchableOpacity>
+
+          {this.state.toggleDown2 ? (
+            <View>
+              {designList.map(item => (
+                <TouchableOpacity
+                  key={item.name}
+                  onPress={() => this.props.navigation.navigate(item.click)}
+                  style={[styles.subCard, { marginLeft: 16 }]}>
+                  <Icon name={item.icons} color={colors.primary} size={20} />
+                  <Text style={styles.txt}>{item.name}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          ) : null}
+
         </ScrollView>
       </View>
     );

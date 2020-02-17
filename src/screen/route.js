@@ -43,6 +43,9 @@ import Tutorial from '../tutorial/tutorial';
 import ApiHome from '../component/Api/apiHome';
 import RedditApi from '../component/Api/Reddit/reddit';
 
+//Design
+import ScrollViewOpacity from '../component/Design/scrollViewOpacity';
+
 const transitionConfig = () => {
   return {
     transitionSpec: {
@@ -660,6 +663,32 @@ const AppNavigator = createStackNavigator(
           elevation: 0,
         },
         headerTintColor: '#fff',
+      }),
+    },
+    ScrollViewOpacity: {
+      screen: ScrollViewOpacity,
+      navigationOptions: ({ navigation }) => ({
+        headerTitle: 'ScrollView Opacity',
+        headerStyle: {
+          backgroundColor: colors.primary,
+          elevation: 0
+        },
+        headerTintColor: '#fff',
+        headerRight: (
+          <TouchableOpacity>
+            <Icon
+              name="code"
+              size={25}
+              color="white"
+              style={{ marginRight: 20 }}
+              onPress={() =>
+                navigation.navigate('Git', {
+                  url: urlCommon + 'component/Api/Reddit/reddit.js',
+                })
+              }
+            />
+          </TouchableOpacity>
+        ),
       }),
     },
   },
