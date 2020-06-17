@@ -17,7 +17,7 @@ const Header = props => {
       <StatusBar backgroundColor={colors.header} />
       <View style={{flexDirection: 'row'}}>
         <TouchableOpacity
-          onPress={props.goBack}
+          onPress={()=> props.goBack('ApiHome')}
           style={{padding: 6, paddingLeft: 10}}>
           <IconMat name="arrow-back" size={30} color={colors.white} />
         </TouchableOpacity>
@@ -49,7 +49,9 @@ const Header = props => {
           <TouchableOpacity style={{paddingRight: 20, paddingTop: 5}}>
             <IconFontisto name="search" size={16} color={colors.white} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={props.goBack} style={{paddingRight: 20}}>
+          <TouchableOpacity 
+          onPress={() => props.goBack('ApiHome')} 
+          style={{paddingRight: 20}}>
           {props.fav ? 
             <Icon name="heart" size={24} color={colors.red} />
             :

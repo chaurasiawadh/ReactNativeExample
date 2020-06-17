@@ -35,9 +35,15 @@ class ApiHome extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <TouchableOpacity 
+        onPress={()=> this.props.navigation.navigate('Home')}
+        style={{alignSelf:'flex-end', padding: 14, borderRadius:4, borderColor: colors.primary, borderWidth: 4, marginTop: 10}}>
+          <Text style={{color: 'green', fontWeight:'bold'}}>Go Home</Text>
+        </TouchableOpacity>
+      <View style={styles.container}>
         <TouchableOpacity
           onPress={() => this.favSlide(true)}
-          style={[styles.box, { opacity: 0.6 }]}>
+          style={[styles.box, { opacity: 0.8 }]}>
           <Text style={styles.name}>Reddit Favourite Api</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -45,6 +51,7 @@ class ApiHome extends Component {
           style={styles.box}>
           <Text style={styles.name}>Reddit Api</Text>
         </TouchableOpacity>
+      </View>
       </View>
     );
   }

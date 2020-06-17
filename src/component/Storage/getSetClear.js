@@ -9,8 +9,6 @@ export default class GetSet extends Component {
 
   async UNSAFE_componentWillMount() {
     const storedNumber = await AsyncStorage.getItem(STORAGE_KEY);
-    console.warn(storedNumber);
-
     if (storedNumber) {
       this.setState({
         storedNumber,

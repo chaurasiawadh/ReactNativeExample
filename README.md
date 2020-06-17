@@ -2,7 +2,7 @@
 
 https://play.google.com/store/apps/details?id=com.ravi
 
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/wallpaper.png" width="100%" height="400px" />
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/wallpaper.png" width="100%" height="400px" />
 
 React Native is an open-source mobile application framework created by Facebook. It is used to develop applications for Android, iOS, Weband UWP by enabling developers to use React along with native platform capabilities.
 
@@ -20,7 +20,7 @@ React Native does not use HTML or CSS. Instead, messages from the JavaScript thr
 
 
 ## Home
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/home.png" />
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/home.png" />
 
 ### What's going on here?
 Some of the things in here might not look like JavaScript to you. Don't panic. This is the future.
@@ -36,8 +36,8 @@ So this code is defining HelloWorldApp, a new Component. When you're building a 
 React component that wraps the platform DrawerLayout (using react-navigation). The Drawer (typically used for navigation) is rendered with renderNavigationView and direct children are the main view (where your content goes). The navigation view is initially not visible on the screen, but can be pulled in from the side of the window specified by the drawerPosition prop and its width can be set by the drawerWidth prop.
 
 ## Slide Menu
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/slideMenu.jpg"  width="300px" height="500px"/>
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/slideMenuSort.jpg"  width="300px" height="500px" />
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/slideMenu.jpg"  width="300px" height="500px"/>
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/slideMenuSort.jpg"  width="300px" height="500px" />
 
 # Images
 ### Static Image Resources
@@ -48,7 +48,7 @@ React Native provides a unified way of managing images and other media assets in
 The image name is resolved the same way JS modules are resolved. In the example above, the packager will look for my-icon.png in the same folder as the component that requires it. Also, if you have my-icon.ios.png and my-icon.android.png, the packager will pick the correct file for the platform.
 
 ## Image View
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/imageView.png" width="300px" height="500px" />
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/imageView.png" width="300px" height="500px" />
 
 # Animations
 Animations are very important to create a great user experience. Stationary objects must overcome inertia as they start moving. Objects in motion have momentum and rarely come to a stop immediately. Animations allow you to convey physically believable motion in your interface.
@@ -134,11 +134,11 @@ Animated.spring(a, {
 ```
 
 ## Animation
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/animation.jpg" width="300px" height="500px" />
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/mutipleAnimation.jpg" width="300px" height="500px" />
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/animation.jpg" width="300px" height="500px" />
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/mutipleAnimation.jpg" width="300px" height="500px" />
 
 ### Shadow Animation
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/shadowAnimation.jpg" width="300px" height="500px" />
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/shadowAnimation.jpg" width="300px" height="500px" />
 
 # FlatList
 A performant interface for rendering basic, flat lists, supporting the most handy features:
@@ -361,7 +361,7 @@ Provides additional metadata like index if you need it, as well as a more generi
 ```
 
 ## FlatList
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/flatList.jpg" width="300px" height="500px" />
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/flatList.jpg" width="300px" height="500px" />
 
 # AsyncStorage
 Deprecated. Use _react-native-community/react-native-async-storage_ instead.
@@ -426,28 +426,28 @@ Merges an existing key value with an input value, assuming both values are strin
 ```static clear([callback]: ?(error: ?Error) => void)```
 
 ## Local Storage
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/localStorage.jpg" width="300px" height="500px" />
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/localStorage2.jpg"  width="300px" height="500px"/>
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/localStorage3.jpg" width="300px" height="500px" />
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/localStorage.jpg" width="300px" height="500px" />
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/localStorage2.jpg"  width="300px" height="500px"/>
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/localStorage3.jpg" width="300px" height="500px" />
 
 ## WebView
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/webView.jpg" width="300px" height="500px" />
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/webView.jpg" width="300px" height="500px" />
 
 ## Icon
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/icon.jpeg" width="300px" height="500px" />
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/icon.jpeg" width="300px" height="500px" />
 
 ## Code
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/code.jpeg" width="300px" height="500px" />
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/code.jpeg" width="300px" height="500px" />
 
 ## Loader
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/loader.jpeg" width="300px" height="500px" />
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/loader.jpeg" width="300px" height="500px" />
 
 
 ## Tutorial
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/tutorial.jpeg" width="300px" height="500px" />
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/tutorial.jpeg" width="300px" height="500px" />
 
 
 
 ## Popular
-<img src="https://github.com/Awadhesh786/ReactNativeExample/blob/master/screenshot/popular.jpeg" width="300px" height="500px" />
+<img src="https://github.com/chaurasiawadh/ReactNativeExample/blob/master/screenshot/popular.jpeg" width="300px" height="500px" />
 

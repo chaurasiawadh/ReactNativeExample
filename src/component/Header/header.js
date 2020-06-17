@@ -16,7 +16,7 @@ import IconMaterial from 'react-native-vector-icons/MaterialIcons';
           title: props.headerTitle,
           back: props.back,
           code: props.code,
-          urlCommon :  'https://raw.githubusercontent.com/Awadhesh786/ReactNativeExample/master/src/',
+          urlCommon :  'https://raw.githubusercontent.com/chaurasiawadh/ReactNativeExample/master/src/',
 
       }
     }

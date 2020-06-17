@@ -605,6 +605,7 @@ const AppNavigator = createStackNavigator(
       screen: ApiHome,
       navigationOptions: ({ navigation }) => ({
         headerTitle: 'API',
+        headerLeft: null,
         headerStyle: {
           backgroundColor: colors.primary,
           elevation: 0,

@@ -21,6 +21,7 @@ import LocalStorage from 'react-native-local-storage';
 import { styles } from './styles';
 
 class Reddit extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -47,8 +48,8 @@ class Reddit extends Component {
     }
   }
 
-  goBack = () => {
-    this.props.navigation.navigate('Home');
+  goBack = (screen) => {
+    this.props.navigation.navigate(screen);
   };
 
   apis = () => {

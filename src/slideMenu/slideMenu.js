@@ -51,7 +51,7 @@ class SlideMenu extends Component {
       supported => {
         supported && Linking.openURL(link);
       },
-      err => console.log(err),
+      err => {},
     );
   };
 
