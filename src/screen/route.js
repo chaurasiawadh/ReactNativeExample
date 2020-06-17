@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { Easing, Animated, View, TouchableOpacity } from 'react-native';
 import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
 
-import Home from './home';
+import Home from './Home';
 import Texts from './text';
 import Shares from './share';
 import Images from './image';
@@ -18,7 +18,7 @@ import StatusBars from './statusBar';
 import Animations from './animation';
 import VectorIcon from './vectorIcon';
 import SectionList from './sectionlist';
-import SlideMenu from '../slideMenu/slideMenu';
+import SlideMenu from '../slideMenu/SlideMenu';
 
 //Animation
 import shadow from '../component/Animation/shadow';
@@ -27,7 +27,7 @@ import fade from '../component/Animation/fade';
 import loader from '../component/Animation/loader';
 
 //Slide List left-right
-import swipe from '../component/Swipe/swipe';
+import swipe from '../component/Swipe/Swipes';
 
 //Local Storage
 import storage from '../component/Storage/index';
@@ -536,7 +536,7 @@ const AppNavigator = createStackNavigator(
               style={{ marginRight: 20 }}
               onPress={() =>
                 navigation.navigate('Git', {
-                  url: urlCommon + 'component/Swipe/swipe.js',
+                  url: urlCommon + 'component/Swipe/Swipes.js',
                 })
               }
             />

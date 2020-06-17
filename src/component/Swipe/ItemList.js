@@ -7,10 +7,11 @@ import {
   Dimensions,
   PanResponder,
 } from 'react-native';
+import color from '../color';
 
 const {width} = Dimensions.get('window');
 
-export default class ListItem extends React.PureComponent {
+export default class ItemList extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -62,7 +63,6 @@ export default class ListItem extends React.PureComponent {
 
   render() {
     return (
-      <View>
         <View style={styles.listItem}>
           <Animated.View
             style={[this.state.position.getLayout()]}
@@ -76,9 +76,6 @@ export default class ListItem extends React.PureComponent {
             </View>
           </Animated.View>
         </View>
-
-      
-      </View>
     );
   }
 }
@@ -87,16 +84,16 @@ const styles = StyleSheet.create({
   listItem: {
     marginLeft: -100,
     justifyContent: 'center',
-    backgroundColor: 'red',
+    backgroundColor: color.primary,
   },
   name: {
-    fontSize: 22,
+    fontSize: 16,
     fontWeight: 'bold',
     color: '#fff',
   },
   population: {
-    marginTop: 6,
-    fontSize: 22,
+    marginTop: 4,
+    fontSize: 16,
     color: '#fff',
   },
   absoluteCell: {
@@ -112,7 +109,7 @@ const styles = StyleSheet.create({
   absoluteCellText: {
     margin: 16,
     color: '#FFF',
-    fontSize: 20,
+    fontSize: 14,
     fontWeight: 'bold',
   },
   innerCell: {
@@ -122,7 +119,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 2,
-    padding: 16,
+    padding: 14,
     borderRadius:6
   },
 });
