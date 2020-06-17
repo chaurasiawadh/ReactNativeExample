@@ -16,7 +16,7 @@ const Intro =
 
 class Home extends Component {
   render() {
-    const url = 'https://github.com/Awadhesh786/ReactNativeExample/tree/master'
+    const url = 'https://github.com/chaurasiawadh/ReactNativeExample/tree/master'
     return (
       <ImageBackground style={styles.container} resizeMode="cover">
         <StatusBar barStyle="light-content" backgroundColor={colors.primary} />
@@ -24,7 +24,7 @@ class Home extends Component {
         <TouchableOpacity
           onPress={() => Linking.openURL(url).catch((err) => alert('Error: ', err))}
           style={styles.head}>
-          <Icon name="code" size={120} color="#fff" style={styles.icn} />
+          <Icon name="code" size={100} color="#fff" style={styles.icn} />
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => this.props.navigation.navigate('Tutorial')}
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   headerTxt: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: "bold",
     margin: 20,
     color: colors.white
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   intro: {
-    color: 'black',
+    color: colors.white,
     fontSize: 18,
     margin: 20,
     textAlign: 'center',
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   get: {
     fontSize: 20,
     textAlign: 'center',
-    color: 'red',
+    color: colors.primary,
     padding: 10,
   },
   tut: {
@@ -101,10 +101,10 @@ const styles = StyleSheet.create({
     margin: 4
   },
   tutxt: {
-    fontSize: 28,
+    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
-    padding: 20,
+    padding: 14,
     color: colors.white,
   },
 });
