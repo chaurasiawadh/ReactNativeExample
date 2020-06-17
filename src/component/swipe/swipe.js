@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, FlatList, Text} from 'react-native';
-import ListItem from './components/ListItem';
+import ListItem from './components/listItem';
+
 
 const listData = [
   {key: 'China', population: '1,433,783,686'},
@@ -69,26 +70,15 @@ class Swipe extends Component {
     return (
       <View style={styles.container}>
         <View>
-          <Text
-            style={{
-              fontSize: 24,
-              color: '#fff',
-              textAlign: 'center',
-              margin: 16,
-              fontWeight: 'bold',
-              backgroundColor: 'red',
-              padding: 16,
-            }}>
-            Country with Population(2019)
-          </Text>
+          <Text style={{fontSize:24, color:"#fff", textAlign:"center", margin:16, fontWeight:"bold", backgroundColor:"red", padding:16}}>Country with Population(2019)</Text>
         </View>
         <FlatList
-          style={this.props.style}
-          data={this.state.data}
-          ItemSeparatorComponent={this.renderSeparator}
-          renderItem={({item}) => this.renderItem(item)}
-          scrollEnabled={this.state.enable}
-        />
+        style={this.props.style}
+        data={this.state.data}
+        ItemSeparatorComponent={this.renderSeparator}
+        renderItem={({item}) => this.renderItem(item)}
+        scrollEnabled={this.state.enable}
+      />
       </View>
     );
   }
@@ -111,6 +101,6 @@ const styles = StyleSheet.create({
   },
   separatorStyle: {
     height: 1,
-    margin: 10,
+    margin:10
   },
 });
