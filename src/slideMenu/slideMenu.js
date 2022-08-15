@@ -12,7 +12,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const list = [
   { name: 'Animation', click: 'Animations', icons: 'book' },
-  { name: 'Storage', click: 'storage', icons: 'book' },
+  { name: 'Storage', click: 'Storage', icons: 'book' },
   { name: 'Api', click: 'ApiHome', icons: 'book' },
   { name: 'Vector Icon', click: 'VectorIcon', icons: 'book' },
 ];
@@ -21,8 +21,8 @@ const subList = [
   { name: 'Text', click: 'Texts', icons: 'book' },
   { name: 'Scroll View', click: 'Scroll', icons: 'book' },
   { name: 'Image', click: 'Images', icons: 'book' },
-  { name: 'Flatlist', click: 'flatList', icons: 'book' },
-  { name: 'Swipe List', click: 'swipe', icons: 'book' },
+  { name: 'FlatList', click: 'FlatList', icons: 'book' },
+  { name: 'Swipe List', click: 'Swipe', icons: 'book' },
   { name: 'Picker', click: 'Pickers', icons: 'book' },
   { name: 'StatusBar', click: 'StatusBars', icons: 'book' },
   { name: 'Progress Bar', click: 'Progress', icons: 'book' },

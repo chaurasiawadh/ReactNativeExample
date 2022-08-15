@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Animated} from 'react-native';
-import colors from '../color';
+import colors from '../../component/color';
 
 class Loader extends Component {
   

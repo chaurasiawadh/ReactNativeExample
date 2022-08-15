@@ -1,6 +1,5 @@
 import React from 'react';
 import {Switch, Text, View, StyleSheet} from 'react-native';
-import Header from '../component/Header/header';
 
 class Switchs extends React.Component {
   state = {

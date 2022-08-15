@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
-import Routes from "./src/screen/route";
+import React from 'react';
+import { StatusBar } from 'react-native';
+import {Routes} from './src/routes/index';
 
-class App extends Component {
-  render() {
-    return (
-      <Routes />
-   );
-  }
-}
-export default App;
+export const App = () => (
+    <>
+    <StatusBar  />
+    <Routes />
+    </>
+);

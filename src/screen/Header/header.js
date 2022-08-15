@@ -5,7 +5,7 @@ import {
   StatusBar,
   TouchableOpacity,
 } from 'react-native';
-import colors from '../color';
+import colors from '../../component/color';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import IconMaterial from 'react-native-vector-icons/MaterialIcons';
 
@@ -24,7 +24,6 @@ import IconMaterial from 'react-native-vector-icons/MaterialIcons';
 
   return (
     <View style={{backgroundColor: colors.primary, paddingBottom:10}}>
-      <StatusBar backgroundColor={colors.primary} />
       <View style={{flexDirection: 'row', justifyContent:"space-between", marginTop:14}}>
         <View style={{flexDirection: 'row', marginLeft:16}}>
         <TouchableOpacity onPress={this.state.back}>

@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, FlatList, Text} from 'react-native';
-import color from '../color';
+import color from '../../component/color';
 import ItemList from './ItemList';
-
 
 const listData = [
   {key: 'China', population: '1,433,783,686'},

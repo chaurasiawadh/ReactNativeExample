@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   ActivityIndicator,
 } from 'react-native';
-import colors from '../../color';
+import colors from '../../../component/color';
 import Header from './header';
 import { popularApi } from './api';
 import { DrawerActions } from 'react-navigation';

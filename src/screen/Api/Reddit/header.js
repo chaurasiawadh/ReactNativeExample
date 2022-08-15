@@ -1,5 +1,5 @@
 import React from 'react';
-import colors from '../../color';
+import colors from '../../../component/color';
 import {View, Text, StatusBar, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import IconFont from 'react-native-vector-icons/FontAwesome5';
@@ -14,7 +14,6 @@ const Header = props => {
         paddingBottom: 10,
         marginTop: 4,
       }}>
-      <StatusBar backgroundColor={colors.header} />
       <View style={{flexDirection: 'row'}}>
         <TouchableOpacity
           onPress={()=> props.goBack('ApiHome')}

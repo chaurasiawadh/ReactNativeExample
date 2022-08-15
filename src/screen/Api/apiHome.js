@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
-import colors from '../color';
+import colors from '../../component/color';
 import { StackActions, NavigationActions } from 'react-navigation';
 
 class ApiHome extends Component {

@@ -7,7 +7,7 @@ import {
   Dimensions,
   PanResponder,
 } from 'react-native';
-import color from '../color';
+import color from '../../component/color';
 
 const {width} = Dimensions.get('window');
 

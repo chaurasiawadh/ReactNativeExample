@@ -9,9 +9,9 @@ import colors from '../component/color';
 
 let list = [
   { name: 'Multiple', click: 'Multiple' },
-  { name: 'Fade', click: 'fade' },
-  { name: 'Shadow', click: 'shadow' },
-  { name: 'Loader', click: 'loader' },
+  { name: 'Fade', click: 'Fade' },
+  { name: 'Shadow', click: 'Shadow' },
+  { name: 'Loader', click: 'Loader' },
 ];
 
 class Animations extends Component {
