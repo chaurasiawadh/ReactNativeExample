@@ -119,6 +119,7 @@ class ScrollViewOpacity extends Component {
                                 transform: [{ translateY: imageTranslate }],
                             },
                         ]}
+                        // @ts-ignore
                         source={require('../../image/girl.jpg')}
                     />
                 </Animated.View>

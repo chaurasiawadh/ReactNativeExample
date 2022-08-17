@@ -9,8 +9,8 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import colors from '../../../assets/color';
-import Header from './header';
-import { popularApi } from './api';
+import Header from './headerPage';
+import { popularApi } from './apiView';
 import { DrawerActions } from 'react-navigation';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FAF from 'react-native-vector-icons/FontAwesome5';
@@ -18,7 +18,7 @@ import IconFont from 'react-native-vector-icons/FontAwesome';
 import IconFontisto from 'react-native-vector-icons/Fontisto';
 import OIcon from 'react-native-vector-icons/Octicons';
 import LocalStorage from 'react-native-local-storage';
-import { styles } from './styles';
+import { styles } from './style';
 
 class Reddit extends Component {
 
@@ -31,13 +31,13 @@ class Reddit extends Component {
       favItems: {},
       starCheck: true,
       scrollPosition: 0,
-      favouriteTab: this.props.navigation.getParam('name'),
+      favoriteTab: this.props.navigation.getParam('name'),
     };
   }
 
   componentDidMount() {
     this.apis();
-    if (!this.state.favouriteTab) {
+    if (!this.state.favoriteTab) {
       this.getLocalFav().then(favItems => {
         if (favItems) {
           this.setState({
@@ -53,7 +53,7 @@ class Reddit extends Component {
   };
 
   apis = () => {
-    if (this.state.favouriteTab) {
+    if (this.state.favoriteTab) {
       this.getLocalFav()
         .then(data => {
           if (data) {
