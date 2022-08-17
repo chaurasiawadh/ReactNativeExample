@@ -1,62 +1,62 @@
-import React, { Component } from 'react';
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
-import colors from '../../component/color';
-import { StackActions, NavigationActions } from 'react-navigation';
+import React from 'react';
+import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
+import {StackActions, NavigationActions} from 'react-navigation';
+import colors from '../../assets/color';
 
-class ApiHome extends Component {
-
-  favSlide = name => {
+export const ApiHome = ({navigation}) => {
+  const favSlide = name => {
     const resetAction = StackActions.reset({
       index: 0,
       actions: [
         NavigationActions.navigate({
           routeName: 'RedditApi',
-          params: { name },
+          params: {name},
         }),
       ],
     });
-    this.props.navigation.dispatch(resetAction);
+    navigation.dispatch(resetAction);
   };
 
-  reddit = name => {
+  const reddit = name => {
     const resetAction = StackActions.reset({
       index: 0,
       actions: [
         NavigationActions.navigate({
           routeName: 'RedditApi',
-          params: { name },
+          params: {name},
         }),
       ],
     });
-    this.props.navigation.dispatch(resetAction);
+    navigation.dispatch(resetAction);
   };
 
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <TouchableOpacity 
-        onPress={()=> this.props.navigation.navigate('Home')}
-        style={{alignSelf:'flex-end', padding: 14, borderRadius:4, borderColor: colors.primary, borderWidth: 4, marginTop: 10}}>
-          <Text style={{color: 'green', fontWeight:'bold'}}>Go Home</Text>
-        </TouchableOpacity>
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Home')}
+        style={{
+          alignSelf: 'flex-end',
+          padding: 14,
+          borderRadius: 4,
+          borderColor: colors.primary,
+          borderWidth: 4,
+          marginTop: 10,
+        }}>
+        <Text style={{color: 'green', fontWeight: 'bold'}}>Go Home</Text>
+      </TouchableOpacity>
       <View style={styles.container}>
         <TouchableOpacity
-          onPress={() => this.favSlide(true)}
-          style={[styles.box, { opacity: 0.8 }]}>
-          <Text style={styles.name}>Reddit Favourite Api</Text>
+          onPress={() => favSlide(true)}
+          style={[styles.box, {opacity: 0.8}]}>
+          <Text style={styles.name}>Reddit Favorite Api</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => this.reddit(false)}
-          style={styles.box}>
+        <TouchableOpacity onPress={() => reddit(false)} style={styles.box}>
           <Text style={styles.name}>Reddit Api</Text>
         </TouchableOpacity>
       </View>
-      </View>
-    );
-  }
-}
-export default ApiHome;
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

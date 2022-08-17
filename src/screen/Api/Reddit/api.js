@@ -14,4 +14,4 @@ export const popularApi = async () =>{
     } catch(err){
         throw(err)
     }
-}
+};

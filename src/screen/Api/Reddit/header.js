@@ -1,5 +1,5 @@
 import React from 'react';
-import colors from '../../../component/color';
+import colors from '../../../assets/color';
 import {View, Text, StatusBar, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import IconFont from 'react-native-vector-icons/FontAwesome5';

@@ -1,5 +1,5 @@
 
-import colors from '../component/color';
+import colors from '../assets/color';
 
 module.exports = {
   container: {

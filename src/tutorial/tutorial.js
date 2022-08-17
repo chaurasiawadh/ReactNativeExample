@@ -10,7 +10,7 @@ import {
 import QuestionList from './component/list';
 import styles from './tutorialStyle';
 import Modal from 'react-native-modal';
-import colors from '../component/color';
+import colors from '../assets/color';
 
 class Tutorial extends Component {
 

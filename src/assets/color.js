@@ -1,5 +1,5 @@
 export default{
-    primary:"#87ceeb",
+    primary:"#866cff",
     white:"#fff",
     black:"#000",
     btn: '#87FEFD',

@@ -1,4 +1,4 @@
-import colors from "../../../component/color";
+import colors from "../../../assets/color";
 exports.styles = {
     container:{flex: 1},
     main:{marginTop: 20, backgroundColor: 'white'},

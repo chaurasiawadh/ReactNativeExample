@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, View, FlatList, Text} from 'react-native';
-import color from '../../component/color';
+import color from '../../assets/color';
 import ItemList from './ItemList';
 
-const listData = [
+const POPULATIONS = [
   {key: 'China', population: '1,433,783,686'},
   {key: 'India', population: '1,366,417,754'},
   {key: 'Indonesia', population: '270,625,568'},
@@ -12,71 +12,70 @@ const listData = [
   {key: 'Thailand', population: '69,625,582'},
 ];
 
-class Swipe extends Component {
-  state = {
-      enable: true,
-      data: listData,
-    };
+export const Swipe = () => {
+  const [populationData, setPopulationData] = useState(POPULATIONS);
+  const [isEnable, setIsEnable] = useState(true);
+  
 
-  renderSeparator = ()=> {
+  const renderSeparator = () => {
     return (
       <View style={styles.separatorViewStyle}>
         <View style={styles.separatorStyle} />
       </View>
     );
-  }
+  };
 
-  success =(key)=> {
-    const data = this.state.data.filter(item => item.key !== key);
-    this.setState({
-      data,
-    });
-  }
+  const success = key => {
+    const data = populationData.filter(item => item.key !== key);
+    setPopulationData(data);
+  };
 
-  setScrollEnabled=(enable)=> {
-    this.setState({
-      enable,
-    });
-  }
+  setScrollEnabled = (enable) => {
+    setIsEnable(enable);
+  };
 
-  renderItem=(item) => {
+  const renderItem = item => {
     return (
       <ItemList
         text={item.key}
         population={item.population}
-        success={this.success}
-        setScrollEnabled={enable => this.setScrollEnabled(enable)}
+        success={success}
+        setScrollEnabled={() => setScrollEnabled(enable)}
       />
     );
-  }
+  };
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Swipe right side of cards</Text>
-        <View>
-          <Text style={{fontSize:16, color:"#fff", textAlign:"center", margin:16, fontWeight:"bold", 
-          backgroundColor: color.header, padding:16}}>Country with Population(2019)</Text>
-        </View>
-        <FlatList
-        style={this.props.style}
-        data={this.state.data}
-        ItemSeparatorComponent={this.renderSeparator}
-        renderItem={({item}) => this.renderItem(item)}
-        scrollEnabled={this.state.enable}
-      />
+  return (
+    <View style={styles.container}>
+      <Text>Swipe right side of cards</Text>
+      <View>
+        <Text style={styles.title}>Country with Population(2019)</Text>
       </View>
-    );
-  }
-}
-
-export default Swipe;
+      <FlatList
+     //   style={style}
+      //  data={data}
+        ItemSeparatorComponent={renderSeparator}
+        renderItem={({item}) => renderItem(item)}
+        scrollEnabled={isEnable}
+      />
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
+  title: {
+    fontSize: 16,
+    color: '#fff',
+    textAlign: 'center',
+    margin: 16,
+    fontWeight: 'bold',
+    backgroundColor: color.header,
+    padding: 16,
+  },
   container: {
     flex: 1,
     backgroundColor: '#FFF',
-    padding:16
+    padding: 16,
   },
   separatorViewStyle: {
     flex: 1,
@@ -84,6 +83,6 @@ const styles = StyleSheet.create({
   },
   separatorStyle: {
     height: 1,
-    margin:10
+    margin: 10,
   },
 });

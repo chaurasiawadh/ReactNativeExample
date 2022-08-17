@@ -1,43 +1,40 @@
 import React from 'react';
-import {
-  View,
-  TouchableOpacity,
-} from 'react-native';
-import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
+import {View, TouchableOpacity} from 'react-native';
+import {createStackNavigator, createDrawerNavigator} from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import colors from '../component/color';
-import Home from '../screen/Home';
-import Profile from '../screen/profile';
-import Texts from '../screen/text';
-import Scroll from '../screen/scroll';
-import Images from '../screen/image';
-import Pickers from '../screen/picker';
-import Progress from '../screen/progress';
-import SectionList from '../screen/sectionlist';
-import Switch from '../screen/switch';
-import Shares from '../screen/share';
-import WebViews from '../screen/webview';
+import colors from '../assets/color';
+import {Home} from '../screen/Home';
+// import Profile from '../screen/profile';
+import {Texts} from '../screen/text';
+import {ScrollViews} from '../screen/scroll';
+import {Images} from '../screen/image';
+import {FlatLists} from '../screen/flatListView';
+import {Swipe} from '../screen/Swipe/Swipes';
+import {Pickers} from '../screen/picker';
 import StatusBars from '../screen/statusBar';
-import VectorIcon from '../screen/vectorIcon';
-import Animations from '../screen/animation';
-import Shadow from '../screen/Animation/shadow';
-import Fade from '../screen/Animation/fade';
-import Multiple from '../screen/Animation/multiple';
-import Loader from '../screen/Animation/loader';
-import Swipe from '../screen/Swipe/Swipes';
-import Storage from '../screen/Storage/index';
-import FlatList from '../screen/flatlist';
-import ApiHome from '../screen/Api/apiHome';
+import {Progress} from '../screen/progress';
+import {SectionLists} from '../screen/sectionLists';
+import {Switches} from '../screen/switchView';
+import {Web} from '../screen/webview';
+import {Shares} from '../screen/shares';
+import {Animations} from '../screen/animation';
+//import Multiple from '../screen/Animation/multiple';
+import {Fade} from '../screen/Animation/fade';
+import {Shadow} from '../screen/Animation/shadow';
+ import {Loader} from '../screen/Animation/loader';
+import {Storage} from '../screen/Storage/index';
+import {ApiHome} from '../screen/Api/apiHome';
+import {VectorIcon} from '../screen/vectorIcons';
 import RedditApi from '../screen/Api/Reddit/reddit';
-import ScrollViewOpacity from '../screen/Api/Reddit/reddit';
+import ScrollViewOpacity from '../screen/Design/scrollViewOpacity';
 
-
-import SlideMenu from './../slideMenu/slideMenu';
+import SlideMenu from './../slideMenu';
 import Tutorial from './../tutorial/tutorial';
+import Gits from './../screen/git';
 
-
-
+const urlCommon =
+  'https://raw.githubusercontent.com/chaurasiawadh/ReactNativeExample/master/src/';
 const hideHeader = {
   navigationOptions: () => ({
     header: <View />,
@@ -45,12 +42,12 @@ const hideHeader = {
       elevation: 0,
       marginTop: 20,
     },
-  })
+  }),
 };
 
 const code = (headerTitle, path) => {
   return {
-    navigationOptions: ({ navigation }) => ({
+    navigationOptions: ({navigation}) => ({
       headerTitle,
       headerStyle: {
         backgroundColor: colors.primary,
@@ -63,7 +60,7 @@ const code = (headerTitle, path) => {
             name="code"
             size={25}
             color="white"
-            style={{ marginRight: 20 }}
+            style={{marginRight: 20}}
             onPress={() =>
               navigation.navigate('Git', {
                 url: urlCommon + `screen/${path}`,
@@ -73,42 +70,50 @@ const code = (headerTitle, path) => {
         </TouchableOpacity>
       ),
     }),
-  }
-}
+  };
+};
 
-const AppNavigator = createStackNavigator(
-  {
-    Home: { screen: Home, ...hideHeader },
-    Profile: { screen: Profile, ...hideHeader },
-    Tutorial: { screen: Tutorial, ...hideHeader },
-    Texts: { screen: Texts, ...code('Text', 'text.js') },
-    Scroll: { screen: Scroll, ...code('ScrollView', 'scroll.js') },
-    Images: { screen: Images, ...code('Image', 'image.js') },
-    Pickers: { screen: Pickers, ...code('Picker', 'picker.js') },
-    Progress: { screen: Progress, ...code('Progress Bar', 'progress.js') },
-    SectionList: { screen: SectionList, ...code('SectionList', 'sectionlist.js') },
-    Switch: { screen: Switch, ...code('Switch', 'switch.js') },
-    Shares: { screen: Shares, ...code('Share', 'share.js') },
-    WebViews: { screen: WebViews, ...code('WebView', 'webView.js') },
-    StatusBars: { screen: StatusBars, ...code('StatusBar', 'statusBar.js') },
-    VectorIcon: { screen: VectorIcon, ...code('Vector Icons', 'vectorIcon.js') },
-    Animations: { screen: Animations, ...code('Animation', 'animation.js') },
-    Shadow: { screen: Shadow, ...code('Shadow', 'Animation/shadow.js') },
-    Fade: { screen: Fade, ...code('Fade Animation', 'Animation/fade.js') },
-    Multiple: { screen: Multiple, ...code('Multiple Animation', 'Animation/multiple.js') },
-    Loader: { screen: Loader, ...code('Loader Animation', 'Animation/loader.js') },
-    Swipe: { screen: Swipe, ...code('Swipe', 'Swipe/Swipes.js') },
-    Storage: { screen: Storage, ...code('Storage', 'Storage/index.js') },
-    FlatList: { screen: FlatList, ...code('FlatList', 'flatlist.js') },
-    ApiHome: { screen: ApiHome, ...code('Api', 'Api/apiHome.js') },
-    RedditApi: { screen: RedditApi, ...code('Reddit Popular Api', 'Api/Reddit/reddit.js') },
-    ScrollViewOpacity: { screen: ScrollViewOpacity, ...code('ScrollView Opacity', 'Api/Reddit/reddit.js') },
-
-  });
+const AppNavigator = createStackNavigator({
+  Home: {screen: Home, ...hideHeader},
+  // Profile: { screen: Profile, ...hideHeader },
+  Tutorial: {screen: Tutorial, ...hideHeader},
+  Git: {screen: Gits},
+  Texts: {screen: Texts, ...code('Text', 'text.js')},
+  ScrollViews: {screen: ScrollViews, ...code('ScrollView', 'scroll.js')},
+  Images: {screen: Images, ...code('Image', 'image.js')},
+  FlatLists: {screen: FlatLists, ...code('FlatList', 'flatListView.js')},
+  Swipe: {screen: Swipe, ...code('Swipe', 'Swipe/Swipes.js')},
+  Pickers: {screen: Pickers, ...code('Picker', 'picker.js')},
+  StatusBars: {screen: StatusBars, ...code('StatusBar', 'statusBar.js')},
+  Progress: {screen: Progress, ...code('Progress Bar', 'progress.js')},
+  SectionLists: {
+    screen: SectionLists,
+    ...code('SectionList', 'sectionLists.js'),
+  },
+  Switch: {screen: Switches, ...code('Switch', 'switchView.js')},
+  WebViews: {screen: Web, ...code('WebView', 'webView.js')},
+  Shares: {screen: Shares, ...code('Share', 'shares.js')},
+  Animations: {screen: Animations, ...code('Animation', 'animation.js')},
+  //  Multiple: { screen: Multiple, ...code('Multiple Animation', 'Animation/multiple.js') },
+  Fade: {screen: Fade, ...code('Fade Animation', 'Animation/fade.js')},
+  Shadow: { screen: Shadow, ...code('Shadow', 'Animation/shadow.js') },
+   Loader: { screen: Loader, ...code('Loader Animation', 'Animation/loader.js') },
+  //  Storage: { screen: Storage, ...code('Storage', 'Storage/index.js') },
+  ApiHome: {screen: ApiHome, ...code('Api', 'Api/apiHome.js')},
+  VectorIcon: {screen: VectorIcon, ...code('Vector Icons', 'vectorIcons.js')},
+  RedditApi: {
+    screen: RedditApi,
+    ...code('Reddit Popular Api', 'Api/Reddit/reddit.js'),
+  },
+  ScrollViewOpacity: {
+    screen: ScrollViewOpacity,
+    ...code('ScrollView Opacity', 'Design/scrollViewOpacity.js'),
+  },
+});
 
 export const Routes = createDrawerNavigator(
   {
-    AppNavigator: { screen: AppNavigator },
+    AppNavigator: {screen: AppNavigator},
   },
   {
     contentComponent: SlideMenu,

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   View,
   Text,
@@ -8,45 +8,41 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
-import colors from '../component/color';
+import colors from '../assets/color';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const Intro =
   'React Native lets you build mobile apps using only JavaScript. It uses the same design as React, letting you compose a rich mobile UI using declarative components.';
 
-class Home extends Component {
-  render() {
-    const url = 'https://github.com/chaurasiawadh/ReactNativeExample/tree/master'
-    return (
-      <ImageBackground style={styles.container} resizeMode="cover">
-        <StatusBar barStyle="light-content" backgroundColor={colors.primary} />
-        <Text style={styles.headerTxt}>React Native Example</Text>
+export const Home = ({navigation}) => {
+  const url = 'https://github.com/chaurasiawadh/ReactNativeExample/tree/master';
+  return (
+    <ImageBackground style={styles.container} resizeMode="cover">
+      <StatusBar barStyle="light-content" backgroundColor={colors.primary} />
+      <Text style={styles.headerTxt}>React Native Example</Text>
+      <TouchableOpacity
+        onPress={() => Linking.openURL(url).catch(err => alert('Error: ', err))}
+        style={styles.head}>
+        <Icon name="code" size={100} color="#fff" style={styles.icn} />
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Tutorial')}
+        style={styles.tut}>
+        <Text style={styles.tutxt}>Tutorial</Text>
+      </TouchableOpacity>
+
+      <View style={styles.foot}>
+        <Text style={styles.intro}>{Intro}</Text>
+
         <TouchableOpacity
-          onPress={() => Linking.openURL(url).catch((err) => alert('Error: ', err))}
-          style={styles.head}>
-          <Icon name="code" size={100} color="#fff" style={styles.icn} />
+          onPress={() => navigation.openDrawer()}
+          style={styles.start}>
+          <Text style={styles.get}> Get Start</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => this.props.navigation.navigate('Tutorial')}
-          style={styles.tut}>
-          <Text style={styles.tutxt}>Tutorial</Text>
-        </TouchableOpacity>
-
-        <View style={styles.foot}>
-          <Text style={styles.intro}>{Intro}</Text>
-
-          <TouchableOpacity
-            onPress={() => this.props.navigation.openDrawer()}
-            style={styles.start}>
-            <Text style={styles.get}> Get Start</Text>
-          </TouchableOpacity>
-        </View>
-      </ImageBackground>
-    );
-  }
-}
-
-export default Home;
+      </View>
+    </ImageBackground>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -60,9 +56,9 @@ const styles = StyleSheet.create({
   },
   headerTxt: {
     fontSize: 24,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     margin: 20,
-    color: colors.white
+    color: colors.white,
   },
   icn: {
     textAlign: 'center',
@@ -98,7 +94,7 @@ const styles = StyleSheet.create({
     borderColor: colors.white,
     borderWidth: 2,
     borderRadius: 10,
-    margin: 4
+    margin: 4,
   },
   tutxt: {
     fontSize: 20,

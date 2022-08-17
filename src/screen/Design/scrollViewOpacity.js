@@ -8,7 +8,7 @@ import {
     View,
     RefreshControl,
 } from 'react-native';
-import color from '../../component/color';
+import color from '../../assets/color';
 
 const HEADER_MAX_HEIGHT = 300;
 const HEADER_MIN_HEIGHT = Platform.OS === 'ios' ? 60 : 73;

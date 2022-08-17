@@ -1,51 +1,41 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Text, View, StyleSheet, Animated, TouchableOpacity} from 'react-native';
 
-class Fade extends Component {
-  constructor() {
-    super();
-    this.state = {
-      fadeValue: new Animated.Value(0),
-    };
-  }
+export const Fade = () => {
+  const fadeValue = new Animated.Value(0);
 
-  fade = () => {
-    Animated.timing(this.state.fadeValue, {
+  const fade = () => {
+    Animated.timing(fadeValue, {
       toValue: 0,
       duration: 500,
     }).start();
   };
-  start = () => {
-    Animated.timing(this.state.fadeValue, {
+  const start = () => {
+    Animated.timing(fadeValue, {
       toValue: 1,
       duration: 1000,
     }).start();
   };
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <TouchableOpacity style={styles.btn} onPress={() => this.start()}>
-          <Text style={styles.textBtn}>Start</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => this.fade()}>
-          <Animated.View
-            style={[
-              styles.item,
-              {
-                opacity: this.state.fadeValue,
-              },
-            ]}>
-            <Text style={styles.text}>Fade </Text>
-          </Animated.View>
-        </TouchableOpacity>
-      </View>
-    );
-  }
-}
-
-export default Fade;
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.btn} onPress={() => start()}>
+        <Text style={styles.textBtn}>Start</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => fade()}>
+        <Animated.View
+          style={[
+            styles.item,
+            {
+              opacity: fadeValue,
+            },
+          ]}>
+          <Text style={styles.text}>Fade </Text>
+        </Animated.View>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -77,7 +67,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-
   textBtn: {
     color: '#f4f4f4',
     fontWeight: 'bold',

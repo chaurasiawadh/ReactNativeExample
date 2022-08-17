@@ -7,7 +7,7 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import colors from '../component/color';
+import colors from '../assets/color';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const list = [
@@ -19,16 +19,16 @@ const list = [
 
 const subList = [
   { name: 'Text', click: 'Texts', icons: 'book' },
-  { name: 'Scroll View', click: 'Scroll', icons: 'book' },
+  { name: 'Scroll View', click: 'ScrollViews', icons: 'book' },
   { name: 'Image', click: 'Images', icons: 'book' },
-  { name: 'FlatList', click: 'FlatList', icons: 'book' },
+  { name: 'FlatList', click: 'FlatLists', icons: 'book' },
   { name: 'Swipe List', click: 'Swipe', icons: 'book' },
   { name: 'Picker', click: 'Pickers', icons: 'book' },
   { name: 'StatusBar', click: 'StatusBars', icons: 'book' },
   { name: 'Progress Bar', click: 'Progress', icons: 'book' },
-  { name: 'SectionList', click: 'SectionList', icons: 'book' },
+  { name: 'SectionList', click: 'SectionLists', icons: 'book' },
   { name: 'Switch', click: 'Switch', icons: 'book' },
-  { name: 'WebView', click: 'WebViews', icons: 'book' },
+  { name: 'WebView', click: 'Web', icons: 'book' },
   { name: 'Share', click: 'Shares', icons: 'book' },
 ];
 
