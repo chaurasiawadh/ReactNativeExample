@@ -12,7 +12,6 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const list = [
   { name: 'Animation', click: 'Animations', icons: 'book' },
-  { name: 'Storage', click: 'Storage', icons: 'book' },
   { name: 'Api', click: 'ApiHome', icons: 'book' },
   { name: 'Vector Icon', click: 'VectorIcon', icons: 'book' },
 ];

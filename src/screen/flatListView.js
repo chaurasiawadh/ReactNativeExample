@@ -71,7 +71,7 @@ export const FlatLists = () => {
         renderItem={({item}) => (
           <TouchableOpacity
             key={item.key}
-            style={styles.container}
+            style={styles.container1}
             onPress={() => getFlatListItem(item)}>
             <Text style={styles.key}>{item.key}</Text>
             <Text style={styles.population}>
@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
   MainContainer: {
     justifyContent: 'center',
     flex: 1,
+    // @ts-ignore
     paddingTop: Platform.OS === 'iOS' ? 20 : 0,
   },
   key: {
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 21,
   },
-  container: {
+  container1: {
     alignItems: 'center',
     padding: 20,
     backgroundColor: 'yellow',

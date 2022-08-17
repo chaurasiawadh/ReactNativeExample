@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, FlatList, Text} from 'react-native';
 import color from '../../assets/color';
-import ItemList from './ItemList';
+import ItemList from './itemList';
 
 const POPULATIONS = [
   {key: 'China', population: '1,433,783,686'},

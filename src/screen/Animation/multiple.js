@@ -9,7 +9,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-class Multiple extends Component {
+class Zoom extends Component {
   
 
   constructor() {
@@ -72,34 +72,87 @@ class Multiple extends Component {
         <ScrollView>
           <View>
             <Animated.View
-              style={styles.animation1}
+              style={{
+                marginLeft,
+                height: 100,
+                width: 100,
+                marginTop: 30,
+                borderRadius: 50,
+                backgroundColor: 'green',
+              }}
             />
             <Animated.View
-              style={styles.animation2}
+              style={{
+                opacity,
+                marginTop: 40,
+                height: 100,
+                width: 100,
+                borderRadius: 10,
+                alignSelf: 'center',
+                backgroundColor: 'red',
+              }}
             />
             <Animated.View
-              style={styles.animation3}
+              style={{
+                marginLeft: movingMargin,
+                height: 100,
+                width: 100,
+                marginTop: 30,
+                borderRadius: 50,
+                backgroundColor: 'blue',
+              }}
             />
             <Animated.Text
-              style={styles.animation4}>
+              style={{
+                fontSize: textSize,
+                alignSelf: 'center',
+                marginTop: 40,
+                color: 'green',
+              }}>
               React Native Animation Example
             </Animated.Text>
             <Animated.View
-              style={styles.animation5}>
+              style={{
+                transform: [{rotateX}],
+                marginTop: 50,
+                height: 100,
+                width: 160,
+                alignSelf: 'center',
+                justifyContent: 'center',
+                backgroundColor: 'yellow',
+              }}>
               <Text
-                style={styles.text}>
+                style={{
+                  color: 'black',
+                  textAlign: 'center',
+                  fontSize: 20,
+                  padding: 20,
+                }}>
                 Rotate TransformX
               </Text>
             </Animated.View>
 
             <Animated.Image
               resizeMode="contain"
-              style={styles.animation6}
+              style={{
+                width: 200,
+                height: 200,
+                marginTop: 30,
+                alignSelf: 'center',
+                transform: [{rotate: spin}],
+              }}
               source={require('../../image/up.png')}
             />
             <Animated.Image
               resizeMode="contain"
-              style={styles.animation7}
+              style={{
+                width: 200,
+                height: 200,
+                marginTop: 30,
+                marginBottom: 40,
+                alignSelf: 'center',
+                transform: [{rotate: spin}],
+              }}
               source={require('../../image/down.png')}
             />
           </View>
@@ -108,71 +161,10 @@ class Multiple extends Component {
     );
   }
 }
-export default Multiple;
+export default Zoom;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-  },
-  animation1:{
-    marginLeft,
-    height: 100,
-    width: 100,
-    marginTop: 30,
-    borderRadius: 50,
-    backgroundColor: 'green',
-  },
-  animation2:{
-    opacity,
-    marginTop: 40,
-    height: 100,
-    width: 100,
-    borderRadius: 10,
-    alignSelf: 'center',
-    backgroundColor: 'red',
-  },
-  animation3:{
-    marginLeft: {movingMargin},
-    height: 100,
-    width: 100,
-    marginTop: 30,
-    borderRadius: 50,
-    backgroundColor: 'blue',
-  },
-  animation4:{
-    fontSize: {textSize},
-    alignSelf: 'center',
-    marginTop: 40,
-    color: 'green',
-  },
-  animation5:{
-    transform: [{rotateX}],
-    marginTop: 50,
-    height: 100,
-    width: 160,
-    alignSelf: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'yellow',
-  },
-  text:{
-    color: 'black',
-    textAlign: 'center',
-    fontSize: 20,
-    padding: 20,
-  },
-  animation6:{
-    width: 200,
-    height: 200,
-    marginTop: 30,
-    alignSelf: 'center',
-    transform: [{rotate: spin}],
-  },
-  animation7:{
-    width: 200,
-    height: 200,
-    marginTop: 30,
-    marginBottom: 40,
-    alignSelf: 'center',
-    transform: [{rotate: spin}],
   },
 });
