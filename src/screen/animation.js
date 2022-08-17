@@ -1,36 +1,28 @@
-import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-} from 'react-native';
-import colors from '../component/color';
+import React from 'react';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import colors from '../assets/color';
 
 let list = [
-  { name: 'Multiple', click: 'Multiple' },
-  { name: 'Fade', click: 'Fade' },
-  { name: 'Shadow', click: 'Shadow' },
-  { name: 'Loader', click: 'Loader' },
+  {name: 'Multiple', click: 'Multiple'},
+  {name: 'Fade', click: 'Fade'},
+  {name: 'Shadow', click: 'Shadow'},
+  {name: 'Loader', click: 'Loader'},
 ];
 
-class Animations extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        {list.map(item => (
-          <TouchableOpacity
-            key={item.name}
-            onPress={() => this.props.navigation.navigate(item.click)}
-            style={styles.box}>
-            <Text style={styles.name}>{item.name}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
-    );
-  }
-}
-export default Animations;
+export const Animations = ({navigation}) => {
+  return (
+    <View style={styles.container}>
+      {list.map(item => (
+        <TouchableOpacity
+          key={item.name}
+          onPress={() => navigation.navigate(item.click)}
+          style={styles.box}>
+          <Text style={styles.name}>{item.name}</Text>
+        </TouchableOpacity>
+      ))}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
