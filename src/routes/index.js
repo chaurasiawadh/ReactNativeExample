@@ -34,7 +34,7 @@ import { Web } from '../screen/website';
 // const urlCommon =
 //   'https://raw.githubusercontent.com/chaurasiawadh/ReactNativeExample/master/src/';
 const urlCommon =
-  'https://github.com/chaurasiawadh/ReactNativeExample/tree/fix-functional-components/src';
+  'https://github.com/chaurasiawadh/ReactNativeExample/tree/fix-functional-components/src/';
 
 const hideHeader = {
   navigationOptions: () => ({
