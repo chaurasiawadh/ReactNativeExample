@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, Picker } from 'react-native';
+import React, {useCallback, useState} from 'react';
+import {View, Text, StyleSheet, Picker} from 'react-native';
 
 export const Pickers = () => {
   const [user, setUser] = useState('');
-  const updateUser = (item) => {
+
+  const updateUser = useCallback(item => {
     setUser(item);
-  };
+  }, []);
 
   return (
     <View>
