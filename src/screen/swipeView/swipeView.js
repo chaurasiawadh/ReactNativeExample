@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, FlatList, Text} from 'react-native';
+
 import color from '../../assets/color';
 import ItemList from './itemList';
 
@@ -15,7 +16,6 @@ const POPULATIONS = [
 export const Swipe = () => {
   const [populationData, setPopulationData] = useState(POPULATIONS);
   const [isEnable, setIsEnable] = useState(true);
-  
 
   const renderSeparator = () => {
     return (
@@ -30,7 +30,7 @@ export const Swipe = () => {
     setPopulationData(data);
   };
 
-  setScrollEnabled = (enable) => {
+  const setScrollEnabled = enable => {
     setIsEnable(enable);
   };
 
@@ -40,7 +40,7 @@ export const Swipe = () => {
         text={item.key}
         population={item.population}
         success={success}
-        setScrollEnabled={() => setScrollEnabled(enable)}
+        setScrollEnabled={setScrollEnabled}
       />
     );
   };
@@ -52,8 +52,7 @@ export const Swipe = () => {
         <Text style={styles.title}>Country with Population(2019)</Text>
       </View>
       <FlatList
-     //   style={style}
-      //  data={data}
+        data={populationData}
         ItemSeparatorComponent={renderSeparator}
         renderItem={({item}) => renderItem(item)}
         scrollEnabled={isEnable}

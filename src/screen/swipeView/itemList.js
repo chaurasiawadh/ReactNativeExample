@@ -63,19 +63,19 @@ export default class ItemList extends React.PureComponent {
 
   render() {
     return (
-        <View style={styles.listItem}>
-          <Animated.View
-            style={[this.state.position.getLayout()]}
-            {...this.panResponder.panHandlers}>
-            <View style={styles.absoluteCell}>
-              <Text style={styles.absoluteCellText}>DELETE</Text>
-            </View>
-            <View style={styles.innerCell}>
-              <Text style={styles.name}>{this.props.text}</Text>
-              <Text style={styles.population}>{this.props.population}</Text>
-            </View>
-          </Animated.View>
-        </View>
+      <View style={styles.listItem}>
+        <Animated.View
+          style={[this.state.position.getLayout()]}
+          {...this.panResponder.panHandlers}>
+          <View style={styles.absoluteCell}>
+            <Text style={styles.absoluteCellText}>DELETE</Text>
+          </View>
+          <View style={styles.innerCell}>
+            <Text style={styles.name}>{this.props.text}</Text>
+            <Text style={styles.population}>{this.props.population}</Text>
+          </View>
+        </Animated.View>
+      </View>
     );
   }
 }
@@ -118,8 +118,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'pink',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 2,
     padding: 14,
-    borderRadius:6
+    borderRadius: 6,
   },
 });

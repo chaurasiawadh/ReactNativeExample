@@ -4,12 +4,12 @@ import {createStackNavigator, createDrawerNavigator} from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import colors from '../assets/color';
-import {Home} from '../screen/home';
+import {Home} from '../screen/homeView';
 import {Texts} from '../screen/text';
 import {ScrollViews} from '../screen/scrollView';
 import {Images} from '../screen/image';
 import {FlatLists} from '../screen/flatListView';
-import {Swipe} from '../screen/swipe/swipeView';
+import {Swipe} from '../screen/swipeView/swipeView';
 import {Pickers} from '../screen/picker';
 import StatusBars from '../screen/statusBar';
 import {Progress} from '../screen/progressView';
