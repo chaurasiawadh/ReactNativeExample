@@ -15,7 +15,6 @@ import StatusBars from '../screen/statusBar';
 import {Progress} from '../screen/progressView';
 import {SectionLists} from '../screen/sectionLists';
 import {Switches} from '../screen/switchView';
-import {Web} from '../screen/webview';
 import {Shares} from '../screen/shares';
 import {Animations} from '../screen/animation';
 import Multiple from '../screen/animationView/multipleView';
@@ -30,6 +29,7 @@ import ScrollViewOpacity from '../screen/designPage/scrollOpacityView';
 import SlideMenu from './../slideMenu';
 import Tutorial from './../tutorial/tutorial';
 import Gits from './../screen/git';
+import { Web } from '../screen/website';
 
 // const urlCommon =
 //   'https://raw.githubusercontent.com/chaurasiawadh/ReactNativeExample/master/src/';
@@ -91,7 +91,7 @@ const AppNavigator = createStackNavigator({
     ...code('SectionList', 'sectionLists.js'),
   },
   Switch: {screen: Switches, ...code('Switch', 'switchView.js')},
-  WebViews: {screen: Web, ...code('WebView', 'webView.js')},
+  Web: {screen: Web, ...code('WebView', 'website.js')},
   Shares: {screen: Shares, ...code('Share', 'shares.js')},
   Animations: {screen: Animations, ...code('Animation', 'animation.js')},
   Multiple: {
