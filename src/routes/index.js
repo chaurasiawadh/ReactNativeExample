@@ -4,12 +4,12 @@ import {createStackNavigator, createDrawerNavigator} from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import colors from '../assets/color';
-import {Home} from '../screen/Home';
+import {Home} from '../screen/home';
 import {Texts} from '../screen/text';
 import {ScrollViews} from '../screen/scrollView';
 import {Images} from '../screen/image';
 import {FlatLists} from '../screen/flatListView';
-import {Swipe} from '../screen/Swipe/swipeView';
+import {Swipe} from '../screen/swipe/swipeView';
 import {Pickers} from '../screen/picker';
 import StatusBars from '../screen/statusBar';
 import {Progress} from '../screen/progressView';
@@ -18,21 +18,24 @@ import {Switches} from '../screen/switchView';
 import {Web} from '../screen/webview';
 import {Shares} from '../screen/shares';
 import {Animations} from '../screen/animation';
-import Multiple from '../screen/Animation/multiple';
-import {Fade} from '../screen/Animation/fade';
-import {Shadow} from '../screen/Animation/shadow';
- import {Loader} from '../screen/Animation/loader';
-import {ApiHome} from '../screen/Api/apiHome';
+import Multiple from '../screen/animation/multiple';
+import {Fade} from '../screen/animation/fade';
+import {Shadow} from '../screen/animation/shadow';
+import {Loader} from '../screen/animation/loader';
+import {ApiHome} from '../screen/api/apiHome';
 import {VectorIcon} from '../screen/vectorIcons';
-import RedditApi from '../screen/Api/Reddit/reddit';
-import ScrollViewOpacity from '../screen/Design/scrollViewOpacity';
+import RedditApi from '../screen/api/reddit/reddit';
+import ScrollViewOpacity from '../screen/design/scrollViewOpacity';
 
 import SlideMenu from './../slideMenu';
 import Tutorial from './../tutorial/tutorial';
 import Gits from './../screen/git';
 
+// const urlCommon =
+//   'https://raw.githubusercontent.com/chaurasiawadh/ReactNativeExample/master/src/';
 const urlCommon =
-  'https://raw.githubusercontent.com/chaurasiawadh/ReactNativeExample/master/src/';
+  'https://github.com/chaurasiawadh/ReactNativeExample/tree/fix-functional-components/src';
+
 const hideHeader = {
   navigationOptions: () => ({
     header: <View />,
@@ -79,7 +82,7 @@ const AppNavigator = createStackNavigator({
   ScrollViews: {screen: ScrollViews, ...code('ScrollView', 'scrollView.js')},
   Images: {screen: Images, ...code('Image', 'image.js')},
   FlatLists: {screen: FlatLists, ...code('FlatList', 'flatListView.js')},
-  Swipe: {screen: Swipe, ...code('Swipe', 'Swipe/SwipeView.js')},
+  Swipe: {screen: Swipe, ...code('Swipe', 'swipe/swipeView.js')},
   Pickers: {screen: Pickers, ...code('Picker', 'picker.js')},
   StatusBars: {screen: StatusBars, ...code('StatusBar', 'statusBar.js')},
   Progress: {screen: Progress, ...code('Progress Bar', 'progressView.js')},
@@ -91,10 +94,13 @@ const AppNavigator = createStackNavigator({
   WebViews: {screen: Web, ...code('WebView', 'webView.js')},
   Shares: {screen: Shares, ...code('Share', 'shares.js')},
   Animations: {screen: Animations, ...code('Animation', 'animation.js')},
-   Multiple: { screen: Multiple, ...code('Multiple Animation', 'animation/multiple.js') },
+  Multiple: {
+    screen: Multiple,
+    ...code('Multiple Animation', 'animation/multiple.js'),
+  },
   Fade: {screen: Fade, ...code('Fade Animation', 'animation/fade.js')},
-  Shadow: { screen: Shadow, ...code('Shadow', 'animation/shadow.js') },
-   Loader: { screen: Loader, ...code('Loader Animation', 'animation/loader.js') },
+  Shadow: {screen: Shadow, ...code('Shadow', 'animation/shadow.js')},
+  Loader: {screen: Loader, ...code('Loader Animation', 'animation/loader.js')},
   ApiHome: {screen: ApiHome, ...code('Api', 'api/apiHome.js')},
   VectorIcon: {screen: VectorIcon, ...code('Vector Icons', 'vectorIcons.js')},
   RedditApi: {
