@@ -8,12 +8,14 @@ export const Fade = () => {
     Animated.timing(fadeValue, {
       toValue: 0,
       duration: 500,
+      useNativeDriver: false
     }).start();
   };
   const start = () => {
     Animated.timing(fadeValue, {
       toValue: 1,
       duration: 1000,
+      useNativeDriver: false
     }).start();
   };
 

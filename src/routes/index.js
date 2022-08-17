@@ -18,10 +18,10 @@ import {Switches} from '../screen/switchView';
 import {Web} from '../screen/webview';
 import {Shares} from '../screen/shares';
 import {Animations} from '../screen/animation';
-import Multiple from '../screen/animation/multiple';
-import {Fade} from '../screen/animation/fade';
-import {Shadow} from '../screen/animation/shadow';
-import {Loader} from '../screen/animation/loader';
+import Multiple from '../screen/animationView/multipleView';
+import {Fade} from '../screen/animationView/fadeView';
+import {Shadow} from '../screen/animationView/shadowView';
+import {Loader} from '../screen/animationView/loaderView';
 import {ApiHome} from '../screen/api/apiHome';
 import {VectorIcon} from '../screen/vectorIcons';
 import RedditApi from '../screen/api/reddit/reddit';
@@ -96,11 +96,11 @@ const AppNavigator = createStackNavigator({
   Animations: {screen: Animations, ...code('Animation', 'animation.js')},
   Multiple: {
     screen: Multiple,
-    ...code('Multiple Animation', 'animation/multiple.js'),
+    ...code('Multiple Animation', 'animationView/multipleView.js'),
   },
-  Fade: {screen: Fade, ...code('Fade Animation', 'animation/fade.js')},
-  Shadow: {screen: Shadow, ...code('Shadow', 'animation/shadow.js')},
-  Loader: {screen: Loader, ...code('Loader Animation', 'animation/loader.js')},
+  Fade: {screen: Fade, ...code('Fade Animation', 'animationView/fadeView.js')},
+  Shadow: {screen: Shadow, ...code('Shadow', 'animationView/shadowView.js')},
+  Loader: {screen: Loader, ...code('Loader Animation', 'animation/loaderView.js')},
   ApiHome: {screen: ApiHome, ...code('Api', 'api/apiHome.js')},
   VectorIcon: {screen: VectorIcon, ...code('Vector Icons', 'vectorIcons.js')},
   RedditApi: {

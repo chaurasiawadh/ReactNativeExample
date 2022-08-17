@@ -20,7 +20,7 @@ export const Shadow = () => {
     ChangeColorFunction();
   }, []);
 
-  ChangeColorFunction = () => {
+  const ChangeColorFunction = () => {
     let ColorCode =
       'rgb(' +
       Math.floor(Math.random() * 256) +
@@ -38,6 +38,7 @@ export const Shadow = () => {
       return Animated.timing(animatedValue[item], {
         toValue: 1,
         duration: 6000,
+        useNativeDriver: false
       });
     });
     Animated.stagger(10, animations).start();

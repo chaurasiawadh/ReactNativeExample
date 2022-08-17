@@ -6,7 +6,6 @@ import {
   Animated,
   Easing,
   ScrollView,
-  TouchableOpacity
 } from 'react-native';
 
 class Zoom extends Component {
@@ -29,6 +28,7 @@ class Zoom extends Component {
       toValue: 1,
       duration: 4000,
       easing: Easing.linear,
+      useNativeDriver: false
     }).start(() => this.spin());
   }
 
@@ -38,6 +38,7 @@ class Zoom extends Component {
       toValue: 1,
       duration: 2000,
       easing: Easing.linear,
+      useNativeDriver: false
     }).start(() => this.animate());
   }
 
@@ -141,6 +142,7 @@ class Zoom extends Component {
                 alignSelf: 'center',
                 transform: [{rotate: spin}],
               }}
+              // @ts-ignore
               source={require('../../image/up.png')}
             />
             <Animated.Image
@@ -153,6 +155,7 @@ class Zoom extends Component {
                 alignSelf: 'center',
                 transform: [{rotate: spin}],
               }}
+              // @ts-ignore
               source={require('../../image/down.png')}
             />
           </View>
