@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {
   Platform,
   StyleSheet,
@@ -8,7 +8,6 @@ import {
   Alert,
   TouchableOpacity,
 } from 'react-native';
-import colors from '../assets/color';
 
 const POPULATIONS = [
   {key: 'China', population: '1,433,783,686'},
@@ -30,36 +29,36 @@ const POPULATIONS = [
 export const FlatLists = () => {
   const [refreshing, setRefreshing] = useState(false);
 
-  const flatListItemSeparator = () => {
+  const flatListItemSeparator = useCallback(() => {
     return <View style={styles.container} />;
-  };
+  }, []);
 
-  const onRefresh = async () => {
+  const onRefresh = useCallback(async () => {
     setRefreshing(true);
     setTimeout(() => {
       setRefreshing(false);
     }, 2000);
-  };
+  }, []);
 
-  const getFlatListItem = item => {
+  const getFlatListItem = useCallback(item => {
     Alert.alert(item.key, item.population);
-  };
+  }, []);
 
-  const renderFlatListFooter = () => {
+  const renderFlatListFooter = useCallback(() => {
     return (
       <View style={styles.header_footer_style}>
         <Text style={styles.textStyle}> Footer </Text>
       </View>
     );
-  };
+  }, []);
 
-  const renderFlatListHeader = () => {
+  const renderFlatListHeader = useCallback(() => {
     return (
       <View style={styles.header_footer_style}>
         <Text style={styles.textStyle}> Header </Text>
       </View>
     );
-  };
+  }, []);
 
   return (
     <View style={styles.MainContainer}>
@@ -90,7 +89,6 @@ const styles = StyleSheet.create({
   container: {
     height: 8,
     width: '100%',
-    backgroundColor: colors.primary,
   },
   MainContainer: {
     justifyContent: 'center',
@@ -100,18 +98,20 @@ const styles = StyleSheet.create({
   },
   key: {
     fontSize: 28,
-    color: 'blue',
+    fontWeight: 'bold',
+    color: '#000000',
   },
   population: {
-    color: 'red',
+    color: '#ffffff',
     fontSize: 20,
   },
   header_footer_style: {
     width: '100%',
     height: 44,
-    backgroundColor: '#4CAF50',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: 12,
   },
   textStyle: {
     textAlign: 'center',
@@ -121,6 +121,6 @@ const styles = StyleSheet.create({
   container1: {
     alignItems: 'center',
     padding: 20,
-    backgroundColor: 'yellow',
+    backgroundColor: 'gray',
   },
 });
