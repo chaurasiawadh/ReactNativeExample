@@ -14,7 +14,7 @@ export const Shares = () => {
     try {
       const result = await Share.share({
         message:
-          'React Native Example Android Application. Now Available on Play Store. Download now http://bit.ly/2URxDJQ',
+          'React Native Android Application. Now Available on Play Store. Download now http://bit.ly/2URxDJQ',
       });
     } catch (error) {
       alert(error.message);

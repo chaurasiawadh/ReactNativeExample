@@ -20,7 +20,7 @@ export const Home = ({navigation}) => {
   return (
     <ImageBackground style={styles.container} resizeMode="cover">
       <StatusBar barStyle="light-content" backgroundColor={colors.primary} />
-      <Text style={styles.headerTxt}>React Native Example</Text>
+      <Text style={styles.headerTxt}>React Native </Text>
       <TouchableOpacity
         onPress={() => Linking.openURL(url).catch(err => alert('Error: ', err))}
         style={styles.head}>

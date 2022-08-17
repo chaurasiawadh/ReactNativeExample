@@ -33,7 +33,7 @@ import {Web} from '../screen/website';
 
 const urlCommon =
   'https://raw.githubusercontent.com/chaurasiawadh/ReactNativeExample/master/src/';
-
+  
 const hideHeader = {
   navigationOptions: () => ({
     header: <View />,
@@ -54,18 +54,14 @@ const code = (headerTitle, path) => {
       },
       headerTintColor: '#fff',
       headerRight: (
-        <TouchableOpacity>
-          <Icon
-            name="code"
-            size={25}
-            color="white"
-            style={{marginRight: 20}}
-            onPress={() =>
-              navigation.navigate('Git', {
-                url: urlCommon + `screen/${path}`,
-              })
-            }
-          />
+        <TouchableOpacity
+          style={{padding: 20}}
+          onPress={() =>
+            navigation.navigate('Git', {
+              url: urlCommon + `screen/${path}`,
+            })
+          }>
+          <Icon name="code" size={25} color="white" style={{marginRight: 20}} />
         </TouchableOpacity>
       ),
     }),
