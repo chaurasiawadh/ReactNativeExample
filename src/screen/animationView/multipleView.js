@@ -8,7 +8,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-class Zoom extends Component {
+class Multiple extends Component {
   
 
   constructor() {
@@ -164,7 +164,7 @@ class Zoom extends Component {
     );
   }
 }
-export default Zoom;
+export default Multiple;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

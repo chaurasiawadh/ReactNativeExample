@@ -8,14 +8,12 @@ for (let i = 0; i < 150; i++) {
 
 export const Shadow = () => {
   const [color, setColor] = useState('#00BCD4');
-
   let animatedValue = [];
 
   useEffect(() => {
     arr.forEach(value => {
       animatedValue[value] = new Animated.Value(0);
     });
-
     animate();
     ChangeColorFunction();
   }, []);
@@ -29,21 +27,18 @@ export const Shadow = () => {
       ',' +
       Math.floor(Math.random() * 256) +
       ')';
-
     setColor(ColorCode);
   };
-
   const animate = () => {
     const animations = arr.map(item => {
       return Animated.timing(animatedValue[item], {
         toValue: 1,
         duration: 6000,
-        useNativeDriver: false
+        useNativeDriver: false,
       });
     });
     Animated.stagger(10, animations).start();
   };
-
   const animations = arr.map((a, i) => {
     return (
       <Animated.View
@@ -59,10 +54,9 @@ export const Shadow = () => {
       />
     );
   });
+
   return <View style={styles.container}>{animations}</View>;
 };
-
-export default Shadow;
 
 const styles = StyleSheet.create({
   container: {

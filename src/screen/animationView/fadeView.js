@@ -3,22 +3,21 @@ import {Text, View, StyleSheet, Animated, TouchableOpacity} from 'react-native';
 
 export const Fade = () => {
   const fadeValue = new Animated.Value(0);
-
   const fade = () => {
     Animated.timing(fadeValue, {
       toValue: 0,
       duration: 500,
-      useNativeDriver: false
+      useNativeDriver: false,
     }).start();
   };
   const start = () => {
     Animated.timing(fadeValue, {
       toValue: 1,
       duration: 1000,
-      useNativeDriver: false
+      useNativeDriver: false,
     }).start();
   };
-
+  
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.btn} onPress={() => start()}>

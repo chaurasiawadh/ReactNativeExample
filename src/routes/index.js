@@ -29,12 +29,10 @@ import ScrollViewOpacity from '../screen/designPage/scrollOpacityView';
 import SlideMenu from './../slideMenu';
 import Tutorial from './../tutorial/tutorial';
 import Gits from './../screen/git';
-import { Web } from '../screen/website';
+import {Web} from '../screen/website';
 
-// const urlCommon =
-//   'https://raw.githubusercontent.com/chaurasiawadh/ReactNativeExample/master/src/';
 const urlCommon =
-  'https://github.com/chaurasiawadh/ReactNativeExample/tree/fix-functional-components/src/';
+  'https://raw.githubusercontent.com/chaurasiawadh/ReactNativeExample/master/src/';
 
 const hideHeader = {
   navigationOptions: () => ({
@@ -82,7 +80,7 @@ const AppNavigator = createStackNavigator({
   ScrollViews: {screen: ScrollViews, ...code('ScrollView', 'scrollView.js')},
   Images: {screen: Images, ...code('Image', 'image.js')},
   FlatLists: {screen: FlatLists, ...code('FlatList', 'flatListView.js')},
-  Swipe: {screen: Swipe, ...code('Swipe', 'swipe/swipeView.js')},
+  Swipe: {screen: Swipe, ...code('Swipe', 'swipeView/swipeView.js')},
   Pickers: {screen: Pickers, ...code('Picker', 'picker.js')},
   StatusBars: {screen: StatusBars, ...code('StatusBar', 'statusBar.js')},
   Progress: {screen: Progress, ...code('Progress Bar', 'progressView.js')},
@@ -100,7 +98,10 @@ const AppNavigator = createStackNavigator({
   },
   Fade: {screen: Fade, ...code('Fade Animation', 'animationView/fadeView.js')},
   Shadow: {screen: Shadow, ...code('Shadow', 'animationView/shadowView.js')},
-  Loader: {screen: Loader, ...code('Loader Animation', 'animation/loaderView.js')},
+  Loader: {
+    screen: Loader,
+    ...code('Loader Animation', 'animation/loaderView.js'),
+  },
   ApiHome: {screen: ApiHome, ...code('Api', 'apiView/apiHomePage.js')},
   VectorIcon: {screen: VectorIcon, ...code('Vector Icons', 'vectorIcons.js')},
   RedditApi: {
