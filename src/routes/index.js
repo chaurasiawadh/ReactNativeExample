@@ -22,10 +22,10 @@ import Multiple from '../screen/animationView/multipleView';
 import {Fade} from '../screen/animationView/fadeView';
 import {Shadow} from '../screen/animationView/shadowView';
 import {Loader} from '../screen/animationView/loaderView';
-import {ApiHome} from '../screen/api/apiHome';
+import {ApiHome} from '../screen/apiView/apiHomePage';
 import {VectorIcon} from '../screen/vectorIcons';
-import RedditApi from '../screen/api/reddit/reddit';
-import ScrollViewOpacity from '../screen/design/scrollViewOpacity';
+import RedditApi from '../screen/apiView/redditView/redditView';
+import ScrollViewOpacity from '../screen/designPage/scrollOpacityView';
 
 import SlideMenu from './../slideMenu';
 import Tutorial from './../tutorial/tutorial';
@@ -101,15 +101,15 @@ const AppNavigator = createStackNavigator({
   Fade: {screen: Fade, ...code('Fade Animation', 'animationView/fadeView.js')},
   Shadow: {screen: Shadow, ...code('Shadow', 'animationView/shadowView.js')},
   Loader: {screen: Loader, ...code('Loader Animation', 'animation/loaderView.js')},
-  ApiHome: {screen: ApiHome, ...code('Api', 'api/apiHome.js')},
+  ApiHome: {screen: ApiHome, ...code('Api', 'apiView/apiHomePage.js')},
   VectorIcon: {screen: VectorIcon, ...code('Vector Icons', 'vectorIcons.js')},
   RedditApi: {
     screen: RedditApi,
-    ...code('Reddit Popular Api', 'api/reddit/reddit.js'),
+    ...code('Reddit Popular Api', 'apiView/redditView/redditView.js'),
   },
   ScrollViewOpacity: {
     screen: ScrollViewOpacity,
-    ...code('ScrollView Opacity', 'design/scrollViewOpacity.js'),
+    ...code('ScrollView Opacity', 'designPage/scrollOpacityView.js'),
   },
 });
 
