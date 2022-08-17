@@ -7,13 +7,13 @@ import colors from '../assets/color';
 import {Home} from '../screen/Home';
 // import Profile from '../screen/profile';
 import {Texts} from '../screen/text';
-import {ScrollViews} from '../screen/scroll';
+import {ScrollViews} from '../screen/scrollView';
 import {Images} from '../screen/image';
 import {FlatLists} from '../screen/flatListView';
 import {Swipe} from '../screen/Swipe/Swipes';
 import {Pickers} from '../screen/picker';
 import StatusBars from '../screen/statusBar';
-import {Progress} from '../screen/progress';
+import {Progress} from '../screen/progressView';
 import {SectionLists} from '../screen/sectionLists';
 import {Switches} from '../screen/switchView';
 import {Web} from '../screen/webview';
@@ -79,13 +79,13 @@ const AppNavigator = createStackNavigator({
   Tutorial: {screen: Tutorial, ...hideHeader},
   Git: {screen: Gits},
   Texts: {screen: Texts, ...code('Text', 'text.js')},
-  ScrollViews: {screen: ScrollViews, ...code('ScrollView', 'scroll.js')},
+  ScrollViews: {screen: ScrollViews, ...code('ScrollView', 'scrollView.js')},
   Images: {screen: Images, ...code('Image', 'image.js')},
   FlatLists: {screen: FlatLists, ...code('FlatList', 'flatListView.js')},
   Swipe: {screen: Swipe, ...code('Swipe', 'Swipe/Swipes.js')},
   Pickers: {screen: Pickers, ...code('Picker', 'picker.js')},
   StatusBars: {screen: StatusBars, ...code('StatusBar', 'statusBar.js')},
-  Progress: {screen: Progress, ...code('Progress Bar', 'progress.js')},
+  Progress: {screen: Progress, ...code('Progress Bar', 'progressView.js')},
   SectionLists: {
     screen: SectionLists,
     ...code('SectionList', 'sectionLists.js'),

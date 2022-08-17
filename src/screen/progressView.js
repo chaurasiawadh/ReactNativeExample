@@ -23,7 +23,18 @@ export const Progress = () => {
 };
 
 const styles = StyleSheet.create({
-  container1: {alignSelf: 'center', padding: 10},
-  container2: {fontSize: 25, fontWeight: 'bold', color: 'black'},
-  container3: {flex: 1, justifyContent: 'space-evenly', padding: 20},
+  container1: {
+    alignSelf: 'center',
+    padding: 10,
+  },
+  container2: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: 'black',
+  },
+  container3: {
+    flex: 1,
+    justifyContent: 'space-evenly',
+    padding: 20,
+  },
 });
