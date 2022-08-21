@@ -141,7 +141,7 @@ const AppNavigator = createStackNavigator({
   Texts: {screen: Texts, ...code('Text', 'screen/text.js')},
   ScrollViews: {
     screen: ScrollViews,
-    ...code('ScrollView', 'screen/scrollView.js'),
+    ...code('Scroll', 'screen/scrollView.js'),
   },
   Images: {screen: Images, ...code('Image', 'screen/image.js')},
   FlatLists: {screen: FlatLists, ...code('FlatList', 'screen/flatListView.js')},
@@ -174,7 +174,7 @@ const AppNavigator = createStackNavigator({
   },
   Loader: {
     screen: Loader,
-    ...code('Loader Animation', 'screen/animation/loaderView.js'),
+    ...code('Loader Animation', 'screen/animationView/loaderView.js'),
   },
   ApiHome: {screen: ApiHome, ...code('Api', 'screen/apiView/apiHomePage.js')},
   VectorIcon: {
@@ -199,13 +199,13 @@ const AppNavigator = createStackNavigator({
   },
   HollowCandleStick: {
     screen: HollowCandleStick,
-    ...code('Hollow Candle Stick', 'charts/stocks/candleStick.js'),
+    ...code('Candle Stick', 'charts/stocks/candleStick.js'),
   },
   CompareMultipleSeries: {
     screen: CompareMultipleSeries,
     ...code('Compare Multiple Series', 'charts/stocks/compareMultipleSeries.js'),
   },
-  Spline: {screen: Spline, ...code('Spline', 'charts/stocks/Spline.js')},
+  Spline: {screen: Spline, ...code('Spline', 'charts/stocks/spline.js')},
   StepLine: {
     screen: StepLine,
     ...code('Step Line', 'charts/stocks/stepLine.js'),
@@ -250,11 +250,11 @@ const AppNavigator = createStackNavigator({
   },
   SemiCircleDonut: {
     screen: SemiCircleDonut,
-    ...code('Semi Circle Donut', 'charts/stocks/semiCircleDonut.js'),
+    ...code('Semi Circle Donut', 'charts/pieChart/semiCircleDonut.js'),
   },
   VariableRadiusPie: {
     screen: VariableRadiusPie,
-    ...code('Variable Radius Pie', 'charts/stocks/variableRadiusPie.js'),
+    ...code('Variable Radius Pie', 'charts/pieChart/variableRadiusPie.js'),
   },
   BasicBar: {screen: BasicBar, ...code('BasicBar', 'charts/bar/basicBar.js')},
   BasicColumn: {
@@ -281,14 +281,14 @@ const AppNavigator = createStackNavigator({
     screen: HtmlTable,
     ...code('Html Table', 'charts/bar/htmlTable.js'),
   },
-  Stacked: {screen: Stacked, ...code('Stacked', 'charts/stocks/stacked.js')},
+  Stacked: {screen: Stacked, ...code('Stacked', 'charts/bar/stacked.js')},
   StackedBar: {
     screen: StackedBar,
-    ...code('Stacked Bar', 'charts/stocks/stackedBar.js'),
+    ...code('Stacked Bar', 'charts/bar/stackedBar.js'),
   },
   StackedColumn: {
     screen: StackedColumn,
-    ...code('Stacked Column', 'charts/stocks/stackedColumn.js'),
+    ...code('Stacked Column', 'charts/bar/stackedColumn.js'),
   },
 
   //  -----------------------CHART END--------------------------------

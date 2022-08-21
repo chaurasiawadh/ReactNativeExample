@@ -10,7 +10,7 @@ export const DEFAULT_LIST = [
   {name: 'Picker', click: 'Pickers', icons: 'check-circle'},
   {name: 'Progress Bar', click: 'Progress', icons: 'spinner'},
   {name: 'Scroll', click: 'ScrollViews', icons: 'scroll'},
-  {name: 'ScrollView', click: 'ScrollViewOpacity', icons: 'scroll'},
+  {name: 'Scroll View', click: 'ScrollViewOpacity', icons: 'scroll'},
   {name: 'SectionList', click: 'SectionLists', icons: 'grip-horizontal'},
   {name: 'Share', click: 'Shares', icons: 'share-alt'},
   {name: 'StatusBar', click: 'StatusBars', icons: 'window-restore'},
@@ -21,6 +21,12 @@ export const DEFAULT_LIST = [
 ];
 
 export const STOCKS_CHARTS = [
+  {
+    name: 'Candle Stick',
+    click: 'HollowCandleStick',
+    type: 'SimpleLineIcons',
+    icons: 'chart',
+  },
   {
     name: 'Column',
     click: 'Column',
@@ -38,12 +44,6 @@ export const STOCKS_CHARTS = [
     click: 'FlagsMarkingEvents',
     type: 'AntDesign',
     icons: 'barchart',
-  },
-  {
-    name: 'Hollow Candle Stick',
-    click: 'HollowCandleStick',
-    type: 'SimpleLineIcons',
-    icons: 'chart',
   },
   {
     name: 'Point Markers',
