@@ -34,7 +34,7 @@ export const STOCKS_CHARTS = [
     icons: 'multiline-chart',
   },
   {
-    name: 'FlagsMarkingEvents',
+    name: 'Flags Marking Events',
     click: 'FlagsMarkingEvents',
     type: 'AntDesign',
     icons: 'barchart',
