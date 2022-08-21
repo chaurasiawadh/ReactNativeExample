@@ -71,9 +71,7 @@ export const Spline = () => {
         scrollEnabled={false}
         onMessage={onMessage}
         onLoadEnd={() => setIsLoading(false)}
-        source={{
-          html,
-        }}
+        source={{html}}
       />
       {isLoading && (
         <View

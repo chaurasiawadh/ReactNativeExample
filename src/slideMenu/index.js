@@ -73,7 +73,7 @@ export const SlideMenu = ({navigation}) => {
 
   return (
     <View style={{paddingBottom: 30}}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <TouchableOpacity onPress={() => playStore()} style={styles.card}>
           <Text style={{color: colors.white, fontSize: 22}}>React Native</Text>
         </TouchableOpacity>

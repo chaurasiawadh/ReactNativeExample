@@ -118,9 +118,7 @@ export const PieWithLegend = () => {
         scrollEnabled={false}
         onMessage={onMessage}
         onLoadEnd={() => setIsLoading(false)}
-        source={{
-          html,
-        }}
+        source={{html}}
       />
       {isLoading && (
         <View

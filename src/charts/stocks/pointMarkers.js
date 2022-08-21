@@ -82,9 +82,7 @@ export const PointMarkers = () => {
         scrollEnabled={false}
         onMessage={onMessage}
         onLoadEnd={() => setIsLoading(false)}
-        source={{
-          html,
-        }}
+        source={{html}}
       />
       {isLoading && (
         <View

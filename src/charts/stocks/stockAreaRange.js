@@ -79,9 +79,7 @@ Highcharts.getJSON('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/sam
         scrollEnabled={false}
         onMessage={onMessage}
         onLoadEnd={() => setIsLoading(false)}
-        source={{
-          html,
-        }}
+        source={{html}}
       />
       {isLoading && (
         <View

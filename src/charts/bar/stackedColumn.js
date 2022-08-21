@@ -138,9 +138,7 @@ export const StackedColumn = () => {
         scrollEnabled={false}
         onMessage={onMessage}
         onLoadEnd={() => setIsLoading(false)}
-        source={{
-          html,
-        }}
+        source={{html}}
       />
       {isLoading && (
         <View

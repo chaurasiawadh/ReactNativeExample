@@ -1,8 +1,9 @@
 import React from 'react';
-import {View, TouchableOpacity, Text} from 'react-native';
+import {View, TouchableOpacity, Clipboard, Alert} from 'react-native';
 import {createStackNavigator, createDrawerNavigator} from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import MatIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import colors from '../assets/color';
 import {Home} from '../screen/homeView';
@@ -28,7 +29,7 @@ import RedditApi from '../screen/apiView/redditView/redditView';
 import ScrollViewOpacity from '../screen/designPage/scrollOpacityView';
 
 import {SlideMenu} from './../slideMenu';
-import Gits from './../screen/git';
+import {Git} from './../screen/git';
 import {Web} from '../screen/website';
 
 import {
@@ -98,7 +99,8 @@ const code = (headerTitle, path) => {
           style={{padding: 20, paddingRight: 16}}
           onPress={() =>
             navigation.navigate('Git', {
-              url: urlCommon + `${path}`, title: `${headerTitle} code`
+              url: `${urlCommon}${path}`,
+              title: `${headerTitle} Code`,
             })
           }>
           <Icon name="code" size={25} color="white" />
@@ -108,9 +110,34 @@ const code = (headerTitle, path) => {
   };
 };
 
+const copyToClipboard = url => {
+  Clipboard.setString(url);
+  Alert.alert('URL copied', 'Visit to browser for code');
+};
+
+const gitHeader = () => {
+  return {
+    navigationOptions: ({navigation}) => ({
+      headerTitle: navigation.state.params.title,
+      headerStyle: {
+        backgroundColor: colors.primary,
+        elevation: 0,
+      },
+      headerTintColor: '#fff',
+      headerRight: (
+        <TouchableOpacity
+          style={{padding: 20, paddingRight: 16}}
+          onPress={() => copyToClipboard(navigation.state.params.url)}>
+          <MatIcon name="content-copy" size={25} color="white" />
+        </TouchableOpacity>
+      ),
+    }),
+  };
+};
+
 const AppNavigator = createStackNavigator({
   Home: {screen: Home, ...hideHeader},
-  Git: {screen: Gits},
+  Git: {screen: Git, ...gitHeader()},
   Texts: {screen: Texts, ...code('Text', 'screen/text.js')},
   ScrollViews: {
     screen: ScrollViews,
@@ -168,50 +195,50 @@ const AppNavigator = createStackNavigator({
   StockGUI: {screen: StockGUI, ...code('Stock GUI', 'charts/stocks/gui.js')},
   SingleLineSeries: {
     screen: SingleLineSeries,
-    ...code('SingleLineSeries', 'charts/stocks/singleLineSeries.js'),
+    ...code('Single Line Series', 'charts/stocks/singleLineSeries.js'),
   },
   HollowCandleStick: {
     screen: HollowCandleStick,
-    ...code('HollowCandleStick', 'charts/stocks/candleStick.js'),
+    ...code('Hollow Candle Stick', 'charts/stocks/candleStick.js'),
   },
   CompareMultipleSeries: {
     screen: CompareMultipleSeries,
-    ...code('CompareMultipleSeries', 'charts/stocks/compareMultipleSeries.js'),
+    ...code('Compare Multiple Series', 'charts/stocks/compareMultipleSeries.js'),
   },
   Spline: {screen: Spline, ...code('Spline', 'charts/stocks/Spline.js')},
   StepLine: {
     screen: StepLine,
-    ...code('StepLine', 'charts/stocks/stepLine.js'),
+    ...code('Step Line', 'charts/stocks/stepLine.js'),
   },
   StockArea: {
     screen: StockArea,
-    ...code('StockArea', 'charts/stocks/stockArea.js'),
+    ...code('Stock Area', 'charts/stocks/stockArea.js'),
   },
   StockAreaRange: {
     screen: StockAreaRange,
-    ...code('StockAreaRange', 'charts/stocks/stockAreaRange.js'),
+    ...code('Stock Area Range', 'charts/stocks/stockAreaRange.js'),
   },
   Column: {screen: Column, ...code('Column', 'charts/stocks/column.js')},
 
   PointMarkers: {
     screen: PointMarkers,
-    ...code('PointMarkers', 'charts/stocks/pointMarkers.js'),
+    ...code('Point Markers', 'charts/stocks/pointMarkers.js'),
   },
   FlagsMarkingEvents: {
     screen: FlagsMarkingEvents,
-    ...code('FlagsMarkingEvents', 'charts/stocks/flagsMarkingEvents.js'),
+    ...code('Flags Marking Events', 'charts/stocks/flagsMarkingEvents.js'),
   },
   PieChart: {
     screen: PieChart,
-    ...code('PieChart', 'charts/pieChart/pieChart.js'),
+    ...code('Pie Chart', 'charts/pieChart/pieChart.js'),
   },
   DonutChart: {
     screen: DonutChart,
-    ...code('DonutChart', 'charts/pieChart/donutChart.js'),
+    ...code('Donut Chart', 'charts/pieChart/donutChart.js'),
   },
   GradientFill: {
     screen: GradientFill,
-    ...code('GradientFill', 'charts/pieChart/pieWithGradientFill.js'),
+    ...code('Gradient Fill', 'charts/pieChart/pieWithGradientFill.js'),
   },
   PieWithLegend: {
     screen: PieWithLegend,
@@ -219,49 +246,49 @@ const AppNavigator = createStackNavigator({
   },
   MonochromeFill: {
     screen: MonochromeFill,
-    ...code('MonochromeFill', 'charts/pieChart/pieWithLegend.js'),
+    ...code('Monochrome Fill', 'charts/pieChart/pieWithLegend.js'),
   },
   SemiCircleDonut: {
     screen: SemiCircleDonut,
-    ...code('SemiCircleDonut', 'charts/stocks/semiCircleDonut.js'),
+    ...code('Semi Circle Donut', 'charts/stocks/semiCircleDonut.js'),
   },
   VariableRadiusPie: {
     screen: VariableRadiusPie,
-    ...code('VariableRadiusPie', 'charts/stocks/variableRadiusPie.js'),
+    ...code('Variable Radius Pie', 'charts/stocks/variableRadiusPie.js'),
   },
   BasicBar: {screen: BasicBar, ...code('BasicBar', 'charts/bar/basicBar.js')},
   BasicColumn: {
     screen: BasicColumn,
-    ...code('BasicColumn', 'charts/bar/basicColumn.js'),
+    ...code('Basic Column', 'charts/bar/basicColumn.js'),
   },
   NegativeStack: {
     screen: NegativeStack,
-    ...code('NegativeStack', 'charts/bar/negativeStack.js'),
+    ...code('Negative Stack', 'charts/bar/negativeStack.js'),
   },
   ColumnRange: {
     screen: ColumnRange,
-    ...code('ColumnRange', 'charts/bar/columnRange.js'),
+    ...code('Column Range', 'charts/bar/columnRange.js'),
   },
   ColumnWithDrillDown: {
     screen: ColumnWithDrillDown,
-    ...code('ColumnWithDrillDown', 'charts/bar/drillDownColumn.js'),
+    ...code('Column With Drill Down', 'charts/bar/drillDownColumn.js'),
   },
   NegativeColumn: {
     screen: NegativeColumn,
-    ...code('NegativeColumn', 'charts/bar/negativeColumn.js'),
+    ...code('Negative Column', 'charts/bar/negativeColumn.js'),
   },
   HtmlTable: {
     screen: HtmlTable,
-    ...code('HtmlTable', 'charts/bar/htmlTable.js'),
+    ...code('Html Table', 'charts/bar/htmlTable.js'),
   },
   Stacked: {screen: Stacked, ...code('Stacked', 'charts/stocks/stacked.js')},
   StackedBar: {
     screen: StackedBar,
-    ...code('StackedBar', 'charts/stocks/stackedBar.js'),
+    ...code('Stacked Bar', 'charts/stocks/stackedBar.js'),
   },
   StackedColumn: {
     screen: StackedColumn,
-    ...code('StackedColumn', 'charts/stocks/stackedColumn.js'),
+    ...code('Stacked Column', 'charts/stocks/stackedColumn.js'),
   },
 
   //  -----------------------CHART END--------------------------------
