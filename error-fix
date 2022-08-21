@@ -1,8 +1,7 @@
-link; https://stackoverflow.com/questions/58120990/how-to-resolve-the-error-on-react-native-start
+link: https://stackoverflow.com/questions/58120990/how-to-resolve-the-error-on-react-native-start
 
-WHEN SERVER IS NOT LOAD
-
-I just got a similar error for the first time today. It appears in \node_modules\metro-config\src\defaults\blacklist.js, there is an invalid regular expression that needed changed. I changed the first expression under sharedBlacklist from:
+// WHEN SERVER IS NOT LOAD
+// I just got a similar error for the first time today. It appears in \node_modules\metro-config\src\defaults\blacklist.js, there is an invalid regular expression that needed changed. I changed the first expression under sharedBlacklist from:
 
 var sharedBlacklist = [
   /node_modules[/\\]react[/\\]dist[/\\].*/,

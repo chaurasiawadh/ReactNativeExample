@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -9,42 +9,46 @@ import {
 } from 'react-native';
 import colors from '../assets/color';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import { BAR_CHARTS, DEFAULT_LIST, MENU_LIST, PIE_CHARTS, STOCKS_CHARTS } from './constants';
 
-const list = [
-  { name: 'Animation', click: 'Animations', icons: 'book' },
-  { name: 'Api', click: 'ApiHome', icons: 'book' },
-  { name: 'Vector Icon', click: 'VectorIcon', icons: 'book' },
-];
+const renderIcons = item => {
+  switch (item.type) {
+    case 'FontAwesome5':
+      return <Icon name={item.icons} color={colors.primary} size={20} />;
+    case 'MaterialCommunityIcons':
+      return (
+        <MaterialIcon name={item.icons} color={colors.primary} size={20} />
+      );
+    case 'MaterialIcons':
+      return (
+        <MaterialIcons name={item.icons} color={colors.primary} size={20} />
+      );
+    case 'SimpleLineIcons':
+      return (
+        <SimpleLineIcons name={item.icons} color={colors.primary} size={20} />
+      );
+    case 'Fontisto':
+      return <Fontisto name={item.icons} color={colors.primary} size={20} />;
+    case 'AntDesign':
+      return <AntDesign name={item.icons} color={colors.primary} size={20} />;
 
-const subList = [
-  { name: 'Text', click: 'Texts', icons: 'book' },
-  { name: 'Scroll View', click: 'ScrollViews', icons: 'book' },
-  { name: 'Image', click: 'Images', icons: 'book' },
-  { name: 'FlatList', click: 'FlatLists', icons: 'book' },
-  { name: 'Swipe List', click: 'Swipe', icons: 'book' },
-  { name: 'Picker', click: 'Pickers', icons: 'book' },
-  { name: 'StatusBar', click: 'StatusBars', icons: 'book' },
-  { name: 'Progress Bar', click: 'Progress', icons: 'book' },
-  { name: 'SectionList', click: 'SectionLists', icons: 'book' },
-  { name: 'Switch', click: 'Switch', icons: 'book' },
-  { name: 'WebView', click: 'Web', icons: 'book' },
-  { name: 'Share', click: 'Shares', icons: 'book' },
-];
-
-const designList = [
-  { name: 'ScrollView', click: 'ScrollViewOpacity', icons: 'book' },
-
-];
-
-class SlideMenu extends Component {
-  constructor() {
-    super();
-    this.state = {
-      toggleDown: false,
-      toggleDown2: false
-    };
+    default:
+      return <Icon name={item.icons} color={colors.primary} size={20} />;
   }
-  playStore = () => {
+};
+
+export const SlideMenu = ({navigation}) => {
+  const [toggleDown, setToggleDown] = useState(false);
+  const [toggleDown2, setToggleDown2] = useState(false);
+  const [toggleDown3, setToggleDown3] = useState(false);
+  const [toggleDown4, setToggleDown4] = useState(false);
+
+  const playStore = () => {
     let link = 'https://play.google.com/store/apps/details?id=com.ravi';
     Linking.canOpenURL(link).then(
       supported => {
@@ -54,105 +58,157 @@ class SlideMenu extends Component {
     );
   };
 
-  toggleSideMenuFolderList = () => {
-    this.setState({ toggleDown: !this.state.toggleDown });
+  const toggleSideMenuFolderList = () => {
+    setToggleDown(preState => !preState);
   };
-  toggleSideMenuFolderList2 = () => {
-    this.setState({ toggleDown2: !this.state.toggleDown2 });
+  const toggleSideMenuFolderList2 = () => {
+    setToggleDown2(preState => !preState);
+  };
+  const toggleSideMenuFolderList3 = () => {
+    setToggleDown3(preState => !preState);
+  };
+  const toggleSideMenuFolderList4 = () => {
+    setToggleDown4(preState => !preState);
   };
 
-  render() {
-    return (
-      <View style={{ paddingBottom: 30 }}>
-        <ScrollView>
+  return (
+    <View style={{paddingBottom: 30}}>
+      <ScrollView>
+        <TouchableOpacity onPress={() => playStore()} style={styles.card}>
+          <Text style={{color: colors.white, fontSize: 22}}>React Native</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Home')}
+          style={styles.subCard}>
+          <Icon name="home" color={colors.primary} size={20} />
+          <Text style={styles.txt}>Home</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => toggleSideMenuFolderList3()}
+          style={styles.element}>
+          <View style={styles.sub}>
+            <Icon name="chart-bar" color={colors.primary} size={20} />
+            <Text style={styles.txt}>Bar Charts</Text>
+          </View>
+          {toggleDown3 ? (
+            <Icon name="caret-up" color={colors.primary} size={20} />
+          ) : (
+            <Icon name="caret-down" color={colors.primary} size={20} />
+          )}
+        </TouchableOpacity>
+
+        {toggleDown3 ? (
+          <View>
+            {BAR_CHARTS.map(item => (
+              <TouchableOpacity
+                key={item.name}
+                onPress={() => navigation.navigate(item.click)}
+                style={[styles.subCard, {marginLeft: 16}]}>
+                {renderIcons(item)}
+                <Text style={styles.txt}>{item.name}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        ) : null}
+
+        <TouchableOpacity
+          onPress={() => toggleSideMenuFolderList2()}
+          style={styles.element}>
+          <View style={styles.sub}>
+            <Icon name="chart-line" color={colors.primary} size={20} />
+            <Text style={styles.txt}>Stock Charts</Text>
+          </View>
+          {toggleDown2 ? (
+            <Icon name="caret-up" color={colors.primary} size={20} />
+          ) : (
+            <Icon name="caret-down" color={colors.primary} size={20} />
+          )}
+        </TouchableOpacity>
+
+        {toggleDown2 ? (
+          <View>
+            {STOCKS_CHARTS.map(item => (
+              <TouchableOpacity
+                key={item.name}
+                onPress={() => navigation.navigate(item.click)}
+                style={[styles.subCard, {marginLeft: 16}]}>
+                {renderIcons(item)}
+                <Text style={styles.txt}>{item.name}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        ) : null}
+
+        <TouchableOpacity
+          onPress={() => toggleSideMenuFolderList4()}
+          style={styles.element}>
+          <View style={styles.sub}>
+            <Icon name="chart-pie" color={colors.primary} size={20} />
+            <Text style={styles.txt}>Pie Charts</Text>
+          </View>
+          {toggleDown4 ? (
+            <Icon name="caret-up" color={colors.primary} size={20} />
+          ) : (
+            <Icon name="caret-down" color={colors.primary} size={20} />
+          )}
+        </TouchableOpacity>
+
+        {toggleDown4 ? (
+          <View>
+            {PIE_CHARTS.map(item => (
+              <TouchableOpacity
+                key={item.name}
+                onPress={() => navigation.navigate(item.click)}
+                style={[styles.subCard, {marginLeft: 16}]}>
+                {renderIcons(item)}
+                <Text style={styles.txt}>{item.name}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        ) : null}
+
+        <TouchableOpacity
+          onPress={() => toggleSideMenuFolderList()}
+          style={styles.element}>
+          <View style={styles.sub}>
+            <Icon name="book-reader" color={colors.primary} size={20} />
+            <Text style={styles.txt}>Default Component</Text>
+          </View>
+          {toggleDown ? (
+            <Icon name="caret-up" color={colors.primary} size={20} />
+          ) : (
+            <Icon name="caret-down" color={colors.primary} size={20} />
+          )}
+        </TouchableOpacity>
+
+        {toggleDown ? (
+          <View>
+            {DEFAULT_LIST.map(item => (
+              <TouchableOpacity
+                key={item.name}
+                onPress={() => navigation.navigate(item.click)}
+                style={[styles.subCard, {marginLeft: 16}]}>
+                <Icon name={item.icons} color={colors.primary} size={20} />
+                <Text style={styles.txt}>{item.name}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        ) : null}
+
+        {MENU_LIST.map(item => (
           <TouchableOpacity
-            onPress={() => this.playStore()}
-            style={styles.card}>
-            <Text style={{ color: colors.white, fontSize: 22 }}>
-              React Native
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('Home')}
+            key={item.name}
+            onPress={() => navigation.navigate(item.click)}
             style={styles.subCard}>
-            <Icon name="home" color={colors.primary} size={20} />
-            <Text style={styles.txt}>Home</Text>
+            <Icon name={item.icons} color={colors.primary} size={20} />
+            <Text style={styles.txt}>{item.name}</Text>
           </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => this.toggleSideMenuFolderList()}
-            style={styles.element}>
-            <View style={styles.sub}>
-              <Icon name="book" color={colors.primary} size={20} />
-              <Text style={styles.txt}>Default Component</Text>
-            </View>
-            {this.state.toggleDown ?
-              <Icon name="caret-up" color={colors.primary} size={20} />
-              :
-              <Icon name="caret-down" color={colors.primary} size={20} />
-            }
-          </TouchableOpacity>
-
-          {this.state.toggleDown ? (
-            <View>
-              {subList.map(item => (
-                <TouchableOpacity
-                  key={item.name}
-                  onPress={() => this.props.navigation.navigate(item.click)}
-                  style={[styles.subCard, { marginLeft: 16 }]}>
-                  <Icon name={item.icons} color={colors.primary} size={20} />
-                  <Text style={styles.txt}>{item.name}</Text>
-                </TouchableOpacity>
-              ))}
-            </View>
-          ) : null}
-
-          {list.map(item => (
-            <TouchableOpacity
-              key={item.name}
-              onPress={() => this.props.navigation.navigate(item.click)}
-              style={styles.subCard}>
-              <Icon name={item.icons} color={colors.primary} size={20} />
-              <Text style={styles.txt}>{item.name}</Text>
-            </TouchableOpacity>
-          ))}
-
-
-          <TouchableOpacity
-            onPress={() => this.toggleSideMenuFolderList2()}
-            style={styles.element}>
-            <View style={styles.sub}>
-              <Icon name="book" color={colors.primary} size={20} />
-              <Text style={styles.txt}>Design App</Text>
-            </View>
-            {this.state.toggleDown2 ?
-              <Icon name="caret-up" color={colors.primary} size={20} />
-              :
-              <Icon name="caret-down" color={colors.primary} size={20} />
-            }
-          </TouchableOpacity>
-
-          {this.state.toggleDown2 ? (
-            <View>
-              {designList.map(item => (
-                <TouchableOpacity
-                  key={item.name}
-                  onPress={() => this.props.navigation.navigate(item.click)}
-                  style={[styles.subCard, { marginLeft: 16 }]}>
-                  <Icon name={item.icons} color={colors.primary} size={20} />
-                  <Text style={styles.txt}>{item.name}</Text>
-                </TouchableOpacity>
-              ))}
-            </View>
-          ) : null}
-
-        </ScrollView>
-      </View>
-    );
-  }
-}
-
-export default SlideMenu;
+        ))}
+      </ScrollView>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   card: {

@@ -26,12 +26,7 @@ export const Home = ({navigation}) => {
         style={styles.head}>
         <Icon name="code" size={100} color="#fff" style={styles.icn} />
       </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => navigation.navigate('Tutorial')}
-        style={styles.tut}>
-        <Text style={styles.tutxt}>Tutorial</Text>
-      </TouchableOpacity>
-
+    
       <View style={styles.foot}>
         <Text style={styles.intro}>{Intro}</Text>
 

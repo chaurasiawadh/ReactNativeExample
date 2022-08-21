@@ -5,7 +5,7 @@ import colors from '../assets/color'
 
 export default class Gits extends Component {
   static navigationOptions = ({navigation}) => ({
-    headerTitle: 'Code load',
+    headerTitle: navigation.state. params.title,
     headerStyle: {
       backgroundColor: colors.primary,
       elevation: 0,
