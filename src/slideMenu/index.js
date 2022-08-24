@@ -7,14 +7,15 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import colors from '../assets/color';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+
 import { BAR_CHARTS, DEFAULT_LIST, MENU_LIST, PIE_CHARTS, STOCKS_CHARTS } from './constants';
+import colors from '../assets/color';
 
 const renderIcons = item => {
   switch (item.type) {

@@ -20,6 +20,69 @@ export const DEFAULT_LIST = [
   {name: 'WebView', click: 'Web', icons: 'globe-asia'},
 ];
 
+export const BAR_CHARTS = [
+  {
+    name: 'Basic Bar',
+    click: 'BasicBar',
+    type: 'MaterialCommunityIcons',
+    icons: 'chart-bar',
+  },
+  {
+    name: 'Basic Column',
+    click: 'BasicColumn',
+    type: 'SimpleLineIcons',
+    icons: 'chart',
+  },
+  {
+    name: 'Column Range',
+    click: 'ColumnRange',
+    type: 'Fontisto',
+    icons: 'bar-chart',
+  },
+  {
+    name: 'Column With Drill Down',
+    click: 'ColumnWithDrillDown',
+    type: '',
+    icons: 'chart-bar',
+  },
+  {
+    name: 'Html Table',
+    click: 'HtmlTable',
+    type: 'MaterialCommunityIcons',
+    icons: 'file-chart',
+  },
+  {
+    name: 'Negative Column',
+    click: 'NegativeColumn',
+    type: 'AntDesign',
+    icons: 'barschart',
+  },
+  {
+    name: 'Negative Stack',
+    click: 'NegativeStack',
+    type: 'MaterialCommunityIcons',
+    icons: 'chart-gantt',
+  },
+  {
+    name: 'Stacked',
+    click: 'Stacked',
+    type: 'MaterialIcons',
+    icons: 'insert-chart',
+  },
+  {
+    name: 'Stacked Bar',
+    click: 'StackedBar',
+    type: 'MaterialCommunityIcons',
+    icons: 'chart-timeline',
+  },
+  {
+    name: 'Stacked Column',
+    click: 'StackedColumn',
+    type: 'MaterialCommunityIcons',
+    icons: 'chart-bar-stacked',
+  },
+];
+
 export const STOCKS_CHARTS = [
   {
     name: 'Candle Stick',
@@ -134,65 +197,3 @@ export const PIE_CHARTS = [
   },
 ];
 
-export const BAR_CHARTS = [
-  {
-    name: 'Basic Bar',
-    click: 'BasicBar',
-    type: 'MaterialCommunityIcons',
-    icons: 'chart-bar',
-  },
-  {
-    name: 'Basic Column',
-    click: 'BasicColumn',
-    type: 'SimpleLineIcons',
-    icons: 'chart',
-  },
-  {
-    name: 'Column Range',
-    click: 'ColumnRange',
-    type: 'Fontisto',
-    icons: 'bar-chart',
-  },
-  {
-    name: 'Column With Drill Down',
-    click: 'ColumnWithDrillDown',
-    type: '',
-    icons: 'chart-bar',
-  },
-  {
-    name: 'Html Table',
-    click: 'HtmlTable',
-    type: 'MaterialCommunityIcons',
-    icons: 'file-chart',
-  },
-  {
-    name: 'Negative Column',
-    click: 'NegativeColumn',
-    type: 'AntDesign',
-    icons: 'barschart',
-  },
-  {
-    name: 'Negative Stack',
-    click: 'NegativeStack',
-    type: 'MaterialCommunityIcons',
-    icons: 'chart-gantt',
-  },
-  {
-    name: 'Stacked',
-    click: 'Stacked',
-    type: 'MaterialIcons',
-    icons: 'insert-chart',
-  },
-  {
-    name: 'Stacked Bar',
-    click: 'StackedBar',
-    type: 'MaterialCommunityIcons',
-    icons: 'chart-timeline',
-  },
-  {
-    name: 'Stacked Column',
-    click: 'StackedColumn',
-    type: 'MaterialCommunityIcons',
-    icons: 'chart-bar-stacked',
-  },
-];

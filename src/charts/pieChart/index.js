@@ -1,5 +1,5 @@
-export * from './pieChart';
 export * from './donutChart';
+export * from './pieChart';
 export * from './pieWithGradientFill';
 export * from './pieWithLegend';
 export * from './pieWithMonochromeFill';

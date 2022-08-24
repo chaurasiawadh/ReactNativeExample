@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Image,
 } from 'react-native';
+
 import colors from '../assets/color';
 
 export const Shares = () => {
